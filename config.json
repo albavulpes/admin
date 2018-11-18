@@ -1,0 +1,5 @@
+{
+  "development": {
+    "ApiPath": "http://localhost:43222"
+  }
+}
