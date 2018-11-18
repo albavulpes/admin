@@ -1,6 +1,6 @@
 export interface Model {
-    Id: ModelIdentity;
+    Id: ModelIdentifier;
     Hash: string;
 }
 
-export type ModelIdentity = string;
+export type ModelIdentifier = string;

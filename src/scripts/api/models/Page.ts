@@ -1,4 +1,4 @@
-import {Model, ModelIdentity} from './base/Model';
+import {Model, ModelIdentifier} from './base/Model';
 import {PageImage} from './PageImage';
 
 export interface Page extends PageCompact {
@@ -8,5 +8,5 @@ export interface Page extends PageCompact {
 
 export interface PageCompact extends Model {
     Number: number;
-    ChapterId: ModelIdentity;
+    ChapterId: ModelIdentifier;
 }
