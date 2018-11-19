@@ -5,29 +5,14 @@ import * as RoutingHooks from './Hooks';
 
 import App from '../../components/App.vue';
 
-import Reader from '../../components/views/Reader/Reader.vue';
-import ReaderPages from '../../components/views/Reader/ReaderPages/ReaderPages.vue';
-
+import auth from './routes/auth';
 import {home} from './routes/home';
 import {comics} from './routes/comics';
 
 const routes: RouteConfig[] = [
     home,
-    ...comics,
-    {
-        name: 'reader',
-        path: '/reader',
-        meta: {
-            title: 'Reader'
-        },
-        component: Reader,
-        children: [
-            {
-                name: 'reader.page',
-                path: 'page/:pageId'
-            }
-        ]
-    }
+    ...auth,
+    ...comics
 ];
 
 export function mount(): void {

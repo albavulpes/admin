@@ -6,7 +6,8 @@ export const home: RouteConfig = {
     name: 'home',
     path: '/',
     meta: {
-        title: 'Home'
+        title: 'Home',
+        authorize: true
     },
     component: Home
 };

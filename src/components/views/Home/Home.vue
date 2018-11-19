@@ -2,13 +2,13 @@
 
 <template>
     <div class="container">
-        <div class="card bg-dark text-white">
+        <div class="card">
             <div class="card-body">
                 <h1>
                     Welcome to the Home Page!
                 </h1>
                 <hr class="border-light">
-                <h3>
+                <h3 class="my-4">
                     Go to the following links for more awesome placeholders:
                 </h3>
                 <router-link class="btn btn-primary" :to="{name: 'reader'}">

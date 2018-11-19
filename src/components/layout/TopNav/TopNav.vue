@@ -1,7 +1,7 @@
 <style lang="scss" src="./TopNav.scss"></style>
 
 <template>
-    <nav class="TopNavComponent navbar navbar-expand fixed-top navbar-dark bg-primary shadow-3">
+    <nav class="TopNavComponent navbar navbar-expand fixed-top navbar-dark bg-primary">
         <router-link class="navbar-brand" :to="{name: 'home'}">
             <div class="row align-items-center">
                 <div class="col">
@@ -9,7 +9,7 @@
                 </div>
                 <div class="col">
                     <div class="h3 brand-name">
-                        Alba Vulpes
+                        Alba Vulpes - Admin
                     </div>
                 </div>
             </div>
