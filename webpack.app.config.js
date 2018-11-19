@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 const env = require('./config/env');
 const common = require('./config/common');
@@ -22,7 +23,7 @@ const CONFIG = merge([
         },
         devServer: {
             contentBase: './dist',
-            port: 5164,
+            port: 40319,
             hot: true,
             historyApiFallback: true,
             stats: {
@@ -37,6 +38,15 @@ const CONFIG = merge([
                 inject: true,
                 template: path.join(env.paths.src, 'index.html')
             }),
+            new AddAssetHtmlPlugin([
+                {
+                    filepath: path.join(env.paths.dist, 'js/vendor.*.js')
+                },
+                {
+                    filepath: path.join(env.paths.dist, 'css/vendor.*.css'),
+                    typeOfAsset: 'css'
+                }
+            ]),
             new ManifestPlugin({
                 fileName: env.filenames.manifests.app
             }),
