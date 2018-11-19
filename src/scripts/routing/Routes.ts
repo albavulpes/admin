@@ -5,14 +5,12 @@ import * as RoutingHooks from './Hooks';
 
 import App from '../../components/App.vue';
 
+import home from './routes/home';
 import auth from './routes/auth';
-import {home} from './routes/home';
-import {comics} from './routes/comics';
 
 const routes: RouteConfig[] = [
     home,
-    ...auth,
-    ...comics
+    ...auth
 ];
 
 export function mount(): void {

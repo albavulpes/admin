@@ -3,6 +3,6 @@ import {AlbaVulpesApi} from '@albavulpes/ui-data';
 
 declare module 'vue/types/vue' {
     interface Vue {
-        readonly $http: AlbaVulpesApi;
+        readonly $http: InstanceType<AlbaVulpesApi>;
     }
 }

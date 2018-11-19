@@ -2,7 +2,8 @@
 
 <template>
     <div class="container">
-        import {AlbaVulpesApi} from '@albavulpes/ui-data';
+        <h1>Welcome back, {{User.UserName}}</h1>
+        <h3>Your email is: {{User.Email}}</h3>
     </div>
 </template>
 

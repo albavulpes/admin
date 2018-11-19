@@ -3,7 +3,10 @@ import {Component} from 'vue-property-decorator';
 
 @Component
 export default class extends Vue {
-    async mounted() {
 
+    User: StatusResponse = null;
+
+    async created() {
+        this.User = await this.$http.auth.me();
     }
 }

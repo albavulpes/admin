@@ -2,7 +2,7 @@ import {RouteConfig} from 'vue-router';
 
 import Home from '../../../components/views/Home/Home.vue';
 
-export const home: RouteConfig = {
+export default {
     name: 'home',
     path: '/',
     meta: {
@@ -10,4 +10,4 @@ export const home: RouteConfig = {
         authorize: true
     },
     component: Home
-};
+} as RouteConfig;
