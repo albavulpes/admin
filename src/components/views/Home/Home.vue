@@ -2,23 +2,7 @@
 
 <template>
     <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h1>
-                    Welcome to the Home Page!
-                </h1>
-                <hr class="border-light">
-                <h3 class="my-4">
-                    Go to the following links for more awesome placeholders:
-                </h3>
-                <router-link class="btn btn-primary" :to="{name: 'reader'}">
-                    Reader
-                </router-link>
-                <router-link class="btn btn-secondary" :to="{name: 'comics'}">
-                    Comics
-                </router-link>
-            </div>
-        </div>
+        import {AlbaVulpesApi} from '@albavulpes/ui-data';
     </div>
 </template>
 
