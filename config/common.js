@@ -65,7 +65,9 @@ const configs = [
                     test: /\.ts$/,
                     loader: 'ts-loader',
                     options: {
-                        onlyCompileBundledFiles: true
+                        transpileOnly: true,
+                        onlyCompileBundledFiles: true,
+                        allowTsInNodeModules: true
                     }
                 }
             ]
