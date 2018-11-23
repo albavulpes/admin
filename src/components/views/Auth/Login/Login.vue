@@ -14,7 +14,7 @@
                         <h2>Log In</h2>
                         <hr>
 
-                        <form @submit.prevent="">
+                        <form @submit.prevent="SubmitForm">
                             <div class="mt-3 mb-5">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Username</label>
