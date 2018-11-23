@@ -1,3 +1,10 @@
 import Vue from 'vue';
 
-/* Here goes app related Vue modules */
+import UiCore from '@albavulpes/ui-core';
+
+Vue.use(UiCore, {
+    http: {
+        baseURL: AppConfig.ApiPath,
+        withCredentials: true
+    }
+});
