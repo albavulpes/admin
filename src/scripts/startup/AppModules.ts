@@ -1,5 +1,3 @@
 import Vue from 'vue';
 
-import http from '../plugins/http';
-
-Vue.use(http);
+/* Here goes app related Vue modules */

@@ -14,15 +14,15 @@
                         <h2>Log In</h2>
                         <hr>
 
-                        <form>
+                        <form @submit.prevent="">
                             <div class="mt-3 mb-5">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input class="form-control" id="exampleInputEmail1" type="email" placeholder="Your username or email address">
+                                    <label for="exampleInputEmail1">Username</label>
+                                    <input class="form-control" id="exampleInputEmail1" type="text" placeholder="Your username or email address" v-model="Form.Username">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Your password">
+                                    <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Your password" v-model="Form.Password">
                                 </div>
                             </div>
 
