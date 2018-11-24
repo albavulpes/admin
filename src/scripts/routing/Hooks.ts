@@ -1,5 +1,7 @@
 import VueRouter from 'vue-router';
 import {Component} from 'vue-property-decorator';
+import di from '@albavulpes/ui-core/dist/di';
+import {IdentityStore} from '@albavulpes/ui-core/dist/stores/auth/IdentityStore';
 
 Component.registerHooks([
     'beforeRouteEnter',
@@ -8,8 +10,8 @@ Component.registerHooks([
 ]);
 
 export function init(router: VueRouter) {
-    setTitleHook(router);
     authGuardHook(router);
+    setTitleHook(router);
 }
 
 function setTitleHook(router: VueRouter) {
@@ -23,12 +25,16 @@ function setTitleHook(router: VueRouter) {
 }
 
 function authGuardHook(router: VueRouter) {
-    router.beforeEach((to, from, next) => {
-        const needsAuth = to.meta.authorize === true;
+    router.beforeEach(async (to, from, next) => {
+        const identityStore = di.container.IdentityStore as IdentityStore;
+        await identityStore.fetchIdentity();
+
+        const needsAuth = (to.meta.authorize === true) && !identityStore.IsAuthenticated;
 
         if (needsAuth) {
             return next({
-                name: 'auth.login'
+                name: 'auth.login',
+                replace: true
             });
         }
 
