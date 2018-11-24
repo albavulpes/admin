@@ -2,12 +2,14 @@
 # yarn lockfile v1
 
 
-"@albavulpes/ui-core@https://github.com/albavulpes/ui-core/#^0.3.0":
-  version "0.3.0"
-  resolved "https://github.com/albavulpes/ui-core/#9902e842f3b5f5ff01693314748c22fd25e19220"
+"@albavulpes/ui-core@https://github.com/albavulpes/ui-core":
+  version "0.4.0"
+  resolved "https://github.com/albavulpes/ui-core#6ce4358e5ce273e67d85cfe8af9fb6fc06ad4ffa"
   dependencies:
     axios "^0.18.0"
     bottlejs "^1.7.1"
+    izitoast "^1.4.0"
+    lodash "^4.17.11"
     reflect-metadata "^0.1.12"
     store "2.0.12"
     url-parse "^1.4.4"
@@ -3182,6 +3184,11 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
+
+izitoast@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/izitoast/-/izitoast-1.4.0.tgz#1aa4e3408b7159fba743506af66d8be54fd929fb"
+  integrity sha512-Oc1X2wiQtPp39i5VpIjf3GJf5sfCtHKXZ5szx7RareyEeFLUlcEW0FSfBni28+Ul6KNKZRKzhVuWzSP4Xngh0w==
 
 jquery@^3.2.1:
   version "3.3.1"
