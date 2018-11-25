@@ -51,7 +51,7 @@ const CONFIG = merge([
                 fileName: env.filenames.manifests.app
             }),
             new webpack.DefinePlugin({
-                'AppConfig': JSON.stringify(require('./config')[process.env.NODE_ENV])
+                'AppConfig': JSON.stringify(require('./config.json')[process.env.NODE_ENV])
             }),
             new webpack.HotModuleReplacementPlugin()
         ]
