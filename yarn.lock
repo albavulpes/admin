@@ -3,8 +3,8 @@
 
 
 "@albavulpes/ui-core@https://github.com/albavulpes/ui-core":
-  version "0.4.0"
-  resolved "https://github.com/albavulpes/ui-core#6ce4358e5ce273e67d85cfe8af9fb6fc06ad4ffa"
+  version "0.5.1"
+  resolved "https://github.com/albavulpes/ui-core#669a6b04920616e646c9eb13a4c15defe01d01ba"
   dependencies:
     axios "^0.18.0"
     bottlejs "^1.7.1"
@@ -12,6 +12,7 @@
     lodash "^4.17.11"
     reflect-metadata "^0.1.12"
     store "2.0.12"
+    typedi "^0.8.0"
     url-parse "^1.4.4"
     vue "^2.5.17"
     vue-router "^3.0.1"
@@ -5988,6 +5989,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typedi@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
+  integrity sha512-/c7Bxnm6eh5kXx2I+mTuO+2OvoWni5+rXA3PhXwVWCtJRYmz3hMok5s1AKLzoDvNAZqj/Q/acGstN0ri5aQoOA==
 
 typescript@^3.1.6:
   version "3.1.6"
