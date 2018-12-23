@@ -7,10 +7,12 @@ import App from '../../components/App.vue';
 
 import home from './routes/home';
 import auth from './routes/auth';
+import comics from './routes/comics';
 
 const routes: RouteConfig[] = [
     home,
-    ...auth
+    ...auth,
+    ...comics
 ];
 
 export function mount(): void {
