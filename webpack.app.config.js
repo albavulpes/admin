@@ -18,7 +18,6 @@ const CONFIG = merge([
         output: {
             publicPath: '/',
             path: env.paths.dist,
-            library: '[name]',
             filename: 'js/[name].[hash:8].js'
         },
         devServer: {
@@ -26,6 +25,7 @@ const CONFIG = merge([
             port: 40319,
             hot: true,
             historyApiFallback: true,
+            disableHostCheck: true,
             stats: {
                 modules: false
             }

@@ -69,6 +69,11 @@ const configs = [
                         onlyCompileBundledFiles: true,
                         allowTsInNodeModules: true
                     }
+                },
+                {
+                    test: /\.js$/,
+                    use: ["source-map-loader"],
+                    enforce: "pre"
                 }
             ]
         },
