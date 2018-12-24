@@ -3,21 +3,8 @@
 
 
 "@albavulpes/ui-core@https://github.com/albavulpes/ui-core":
-  version "0.5.1"
-  resolved "https://github.com/albavulpes/ui-core#669a6b04920616e646c9eb13a4c15defe01d01ba"
-  dependencies:
-    axios "^0.18.0"
-    bottlejs "^1.7.1"
-    izitoast "^1.4.0"
-    lodash "^4.17.11"
-    reflect-metadata "^0.1.12"
-    store "2.0.12"
-    typedi "^0.8.0"
-    url-parse "^1.4.4"
-    vue "^2.5.17"
-    vue-router "^3.0.1"
-    vuex "^3.0.1"
-    vuex-module-decorators "^0.9.1"
+  version "0.6.0"
+  resolved "https://github.com/albavulpes/ui-core#6258357ac8d486d42863f9318220f6068c766e7d"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -633,7 +620,7 @@ bootswatch@^4.1.1:
   resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.1.3.tgz#30e3723b19fa89568cffcdc9c8943b469a2745e9"
   integrity sha1-MONyOxn6iVaM/83JyJQ7RponRek=
 
-bottlejs@^1.6.3, bottlejs@^1.7.1:
+bottlejs@^1.6.3:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/bottlejs/-/bottlejs-1.7.1.tgz#f2673c42feb2ba092d94b8add390e66b3f7d948f"
   integrity sha512-OUex4/uBgIyanzPpMzie5NfMfjJ23Z1mUy8ZC6omFBPwExMeoSrwyndlaZW0tci0unMH2LVfNn+jwDPRQLPncw==
@@ -5098,7 +5085,7 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-reflect-metadata@^0.1.10, reflect-metadata@^0.1.12:
+reflect-metadata@^0.1.10:
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.12.tgz#311bf0c6b63cd782f228a81abe146a2bfa9c56f2"
   integrity sha512-n+IyV+nGz3+0q3/Yf1ra12KpCyi001bi4XFxSjbiWWjfqb52iTTtpGXmCCAOWWIAn9KEuFZKGqBERHmrtScZ3A==
@@ -5755,7 +5742,7 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-store@2.0.12, store@^2.0.12:
+store@^2.0.12:
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/store/-/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
   integrity sha1-jFNOKguDH3K3X8XxEZhXxE711ZM=
@@ -6207,7 +6194,7 @@ urix@^0.1.0:
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
 
-url-parse@^1.4.3, url-parse@^1.4.4:
+url-parse@^1.4.3:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.4.tgz#cac1556e95faa0303691fec5cf9d5a1bc34648f8"
   integrity sha512-/92DTTorg4JjktLNLe6GPS2/RvAd/RGr6LuktmWSMLEOa6rjnlrFXNgSbSmkNvCoL2T028A0a1JaJLzRMlFoHg==
@@ -6344,7 +6331,7 @@ vue-property-decorator@^7.0.0:
   dependencies:
     vue-class-component "^6.2.0"
 
-vue-router@^3.0.1:
+vue-router@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.2.tgz#dedc67afe6c4e2bc25682c8b1c2a8c0d7c7e56be"
   integrity sha512-opKtsxjp9eOcFWdp6xLQPLmRGgfM932Tl56U9chYTnoWqKxQ8M20N7AkdEbM5beUh6wICoFGYugAX9vQjyJLFg==
@@ -6375,20 +6362,10 @@ vue2-filters@^0.3.0:
   resolved "https://registry.yarnpkg.com/vue2-filters/-/vue2-filters-0.3.0.tgz#3d6b71169fb14b32a2ddbfa45f94d9a0fdee1094"
   integrity sha512-/i2gHtSfedzbgaC6rHuWTggCW9G6mLWZQ8TQgYciE2ei9iOlyB4iobubNr/7APjoYmupFtXv125yZfXygPV2+A==
 
-vue@^2.5.13:
+vue@^2.5.21:
   version "2.5.21"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.21.tgz#3d33dcd03bb813912ce894a8303ab553699c4a85"
   integrity sha512-Aejvyyfhn0zjVeLvXd70h4hrE4zZDx1wfZqia6ekkobLmUZ+vNFQer53B4fu0EjWBSiqApxPejzkO1Znt3joxQ==
-
-vue@^2.5.17:
-  version "2.5.17"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
-  integrity sha512-mFbcWoDIJi0w0Za4emyLiW72Jae0yjANHbCVquMKijcavBGypqlF7zHRgMa5k4sesdv7hv2rB4JPdZfR+TPfhQ==
-
-vuex-module-decorators@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/vuex-module-decorators/-/vuex-module-decorators-0.9.1.tgz#17765cc38c68904884504698a301bd99d74bb36c"
-  integrity sha512-SN0rScpeCXU4gVPJssyqlyu+QCWfyrVSQC07D9MxjX7oaQZ3Bsfibf4uBM8n3bGE//lbub4BfLg7FITl5CgZ9g==
 
 vuex@^3.0.1:
   version "3.0.1"
