@@ -6,7 +6,7 @@ const comics: RouteConfig = {
     name: 'comics',
     path: '/comics',
     meta: {
-        title: 'Log In'
+        title: 'Comics'
     },
     component: Comics
 };
