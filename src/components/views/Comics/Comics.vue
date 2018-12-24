@@ -1,4 +1,5 @@
 <script lang="ts" src=./Comics.ts></script>
+<style lang="scss" src="./Comic.scss"></style>
 
 <template>
     <div class="ComicsComponent container">
@@ -8,8 +9,8 @@
 
         <div class="row comicItems">
             <div class="col-6 col-md-2" v-for="comic in Comics">
-                <div class="card comicItem">
-                    <img :src="comic.CoverImage.Thumbnail" :alt="comic.Title" class="card-img-top">
+                <router-link class="card comicItem" :to="{name: 'comics.id', params: {ComicId: comic.Id}}">
+                    <img class="card-img-top" :src="comic.CoverImage.Thumbnail" :alt="comic.Title">
                     <div class="card-body">
                         <h5 class="card-title">
                             {{comic.Title}}
@@ -18,12 +19,12 @@
                             {{comic.ArcsCount}} Arcs
                         </p>
                     </div>
-                </div>
+                </router-link>
             </div>
             <div class="col-6 col-md-2">
-                <button type="button" class="btn btn-block btn-light comicAddItem h-100">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="text-center">
+                <router-link class="btn btn-block btn-light comicAddItem h-100" :to="{name: 'comics.new'}">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="">
                             <i class="mdi mdi-48px mdi-plus"></i>
 
                             <p class="h5 mt-2">
@@ -31,7 +32,7 @@
                             </p>
                         </div>
                     </div>
-                </button>
+                </router-link>
             </div>
         </div>
     </div>

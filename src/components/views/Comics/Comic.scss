@@ -1,0 +1,18 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.ComicsComponent {
+    .comicItems {
+        .comicItem {
+            @include transition((margin-top, box-shadow));
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+
+                margin-top: -2px;
+                box-shadow: $box-shadow;
+            }
+        }
+    }
+}
