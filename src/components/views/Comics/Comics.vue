@@ -11,13 +11,18 @@
                 <div class="card comicItem">
                     <img :src="comic.CoverImage.Thumbnail" :alt="comic.Title" class="card-img-top">
                     <div class="card-body">
-                        {{comic.Title}}
+                        <h5 class="card-title">
+                            {{comic.Title}}
+                        </h5>
+                        <p class="h6 card-text">
+                            {{comic.ArcsCount}} Arcs
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-2">
                 <button type="button" class="btn btn-block btn-light comicAddItem h-100">
-                    <div class="card-body d-flex justify-content-center align-items-center">
+                    <div class="d-flex justify-content-center align-items-center">
                         <div class="text-center">
                             <i class="mdi mdi-48px mdi-plus"></i>
 
