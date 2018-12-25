@@ -29,6 +29,10 @@ nav.navbar {
         .nav-link {
             padding: 10px 20px;
             margin: 0 8px;
+
+            &.router-link-active {
+                color: $navbar-dark-active-color;
+            }
         }
     }
 }

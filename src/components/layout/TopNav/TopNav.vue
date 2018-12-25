@@ -16,8 +16,8 @@
         </router-link>
 
         <ul class="navbar-nav d-none d-md-flex">
-            <li class="nav-item active">
-                <router-link class="btn nav-link" :to="{name: 'home'}">
+            <li class="nav-item">
+                <router-link class="btn nav-link" exact :to="{name: 'home'}">
                     Home
                 </router-link>
             </li>
