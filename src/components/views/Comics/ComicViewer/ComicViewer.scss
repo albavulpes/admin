@@ -2,16 +2,13 @@
 @import "~root/styles/meta";
 
 .ComicViewerComponent {
-    .editableField {
-        &:not(:hover) {
-            border-color: transparent;
+    .comicEditor {
+        .editMode {
+            .editableField {
+                &:not(:hover) {
+                    border-color: transparent;
+                }
+            }
         }
-    }
-
-    .comicTitle {
-        font-size: $h1-font-size;
-        font-weight: $font-weight-light;
-
-        height: $h1-font-size * 1.75;
     }
 }

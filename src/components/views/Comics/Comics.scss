@@ -14,5 +14,11 @@
                 box-shadow: $box-shadow;
             }
         }
+
+        .comicItem,
+        .comicAddItem {
+            min-height: 300px;
+            margin-bottom: 1.5rem;
+        }
     }
 }

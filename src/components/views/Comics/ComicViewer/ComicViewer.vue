@@ -12,13 +12,34 @@
 
         <hr>
 
-        <div class="form-group">
-            <input type="text" class="form-control form-control-lg comicTitle editableField" placeholder="Comic Title" v-model="Comic.Title">
-        </div>
+        <div class="row comicEditor" :class="{editMode: !IsCreateMode}">
+            <div class="col-12 col-md-5 col-lg-4">
+                <img class="img-fluid mb-4" :src="Comic.CoverImage.FullSize" :alt="Comic.Title">
+            </div>
+            <div class="col">
+                <form @submit.prevent="SubmitForm">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control form-control-lg editableField" placeholder="Title for your comic" v-model="Comic.Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Author</label>
+                        <input type="text" class="form-control editableField" placeholder="Author of your comic" v-model="Comic.Author">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control editableField" placeholder="Short description of the comic" rows="4" v-model="Comic.Description"></textarea>
+                    </div>
 
-        <div class="card">
-            <div class="card-body">
-                <pre>{{Comic}}</pre>
+                    <div class="row justify-content-end">
+                        <div class="col-12 col-lg-6">
+                            <button type="submit" class="btn btn-block btn-primary">
+                                <i class="mdi mdi-content-save-outline"></i>
+                                Save Comic
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

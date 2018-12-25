@@ -5,5 +5,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/cosmo/bootswatch";
 
+/* Bootstrap Overrides */
+@import "./components/forms";
+
 /* App Specific */
 @import "./theme/shadows";
