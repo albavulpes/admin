@@ -22,7 +22,7 @@
                 </router-link>
             </div>
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2">
-                <router-link class="btn btn-block btn-light comicAddItem h-100" :to="{name: 'comics.new'}">
+                <router-link class="btn btn-block btn-light comicAddItem" :to="{name: 'comics.new'}">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <div class="">
                             <i class="mdi mdi-48px mdi-plus"></i>
