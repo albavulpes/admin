@@ -3,11 +3,9 @@
 
 .ComicViewerComponent {
     .comicEditor {
-        .editMode {
-            .editableField {
-                &:not(:hover) {
-                    border-color: transparent;
-                }
+        .coverContainer {
+            @include breakpoint(lg) {
+                max-width: 480px;
             }
         }
     }
