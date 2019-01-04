@@ -2,16 +2,34 @@
 @import "~root/styles/meta";
 
 .MediaCardComponent {
-    .media-card {
-        @include transition(margin-top, 0.1s);
+    min-height: 280px;
+
+    .card {
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+
+        @include transition((margin-top, box-shadow));
 
         &:hover,
-        &:active,
         &:focus {
+            text-decoration: none !important;
+
             margin-top: -2px;
+            box-shadow: $box-shadow;
+
+            .card-img-top {
+                transform: scale(1.025);
+            }
         }
 
-        .media-title {
+        .card-img-top {
+            @include transition(transform);
+
+            transform-origin: bottom;
+        }
+
+        .card-title {
+            line-height: 1.5rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;

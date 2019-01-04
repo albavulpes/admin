@@ -3,7 +3,15 @@ import {Component} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 
-@Component
+import MediaCard from '../../shared/MediaCard/MediaCard.vue';
+import MediaAddButton from '../../shared/MediaAddButton/MediaAddButton.vue';
+
+@Component({
+    components: {
+        MediaCard,
+        MediaAddButton
+    }
+})
 export default class extends Vue {
 
     Comics: Comic[] = [];

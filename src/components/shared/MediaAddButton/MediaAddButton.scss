@@ -1,0 +1,8 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.MediaAddButtonComponent {
+    box-shadow: none !important;
+
+    height: calc(100% - 1.5rem);
+}

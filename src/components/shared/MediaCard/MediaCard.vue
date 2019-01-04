@@ -3,18 +3,20 @@
 
 <template>
     <div class="MediaCardComponent">
-        <div class="media-card">
-            <div class="shadow-4">
-                <slot name="image"></slot>
+        <slot>
+            <div class="card">
+                <img class="card-img-top" :src="Image" :alt="ImageAlt">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <slot name="title"></slot>
+                    </h5>
+                    <p class="h6 card-text">
+                        <small>
+                            <slot name="content"></slot>
+                        </small>
+                    </p>
+                </div>
             </div>
-            <div class="mt-2 px-1">
-                <h3 class="h5 media-title text-white font-weight-light">
-                    <slot name="title"></slot>
-                </h3>
-                <p class="text-info">
-                    <slot name="subheading"></slot>
-                </p>
-            </div>
-        </div>
+        </slot>
     </div>
 </template>
