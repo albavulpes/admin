@@ -5,13 +5,22 @@ import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ComicEditForm} from '../../../../scripts/forms/comics/ComicEditForm';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 
-@Component
+import MediaCard from '../../../shared/MediaCard/MediaCard.vue';
+import MediaAddButton from '../../../shared/MediaAddButton/MediaAddButton.vue';
+
+@Component({
+    components: {
+        MediaCard,
+        MediaAddButton
+    }
+})
 export default class extends Vue {
 
     @Prop()
     ComicId: string;
 
     Comic: Comic = null;
+    Arcs: Arc[] = null;
 
     @Require()
     HttpService: HttpService;
@@ -28,6 +37,7 @@ export default class extends Vue {
         }
         else {
             this.Comic = await this.HttpService.api.comics.get(this.ComicId);
+            this.Arcs = await this.HttpService.api.arcs.getAll(this.ComicId);
         }
     }
 

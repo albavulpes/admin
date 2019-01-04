@@ -61,7 +61,27 @@
                         <h2>Arcs</h2>
                     </div>
 
-
+                    <div class="row comicItems">
+                        <div class="col-6 col-md-4 col-lg-3 col-xxl-2" v-for="arc in Arcs">
+                            <router-link class="text-decoration-none" :to="{name: 'arc.id', params: {ArcId: arc.Id}}">
+                                <MediaCard :Image="arc.CoverImage.Thumbnail" :ImageAlt="arc.Title">
+                                    <template slot="title">
+                                        {{arc.Title}}
+                                    </template>
+                                    <template slot="content">
+                                        {{arc.ChaptersCount}} Chapters
+                                    </template>
+                                </MediaCard>
+                            </router-link>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 col-xxl-2">
+                            <router-link class="text-decoration-none" :to="{name: 'arcs.new'}">
+                                <MediaAddButton>
+                                    Add Arc
+                                </MediaAddButton>
+                            </router-link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
