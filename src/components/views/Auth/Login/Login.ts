@@ -5,7 +5,11 @@ import {AuthService} from '@albavulpes/ui-core/dist/services/auth/AuthService';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {IdentityStore} from '@albavulpes/ui-core/dist/stores/auth/IdentityStore';
 
-@Component
+@Component({
+    metaInfo: {
+        title: 'Log In'
+    }
+})
 export default class extends Vue {
 
     Form: any = {};

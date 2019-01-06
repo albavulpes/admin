@@ -4,11 +4,8 @@ import Arcs from '../../../components/views/Arcs/Arcs.vue';
 
 export default [
     {
-        name: 'arcs',
-        path: '/arcs',
-        meta: {
-            title: 'Comics'
-        },
+        name: 'arc.id',
+        path: '/arc/:ArcId',
         component: Arcs
     },
     // {

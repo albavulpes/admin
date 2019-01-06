@@ -10,6 +10,9 @@ import MediaAddButton from '../../shared/MediaAddButton/MediaAddButton.vue';
     components: {
         MediaCard,
         MediaAddButton
+    },
+    metaInfo: {
+        title: 'Comics'
     }
 })
 export default class extends Vue {

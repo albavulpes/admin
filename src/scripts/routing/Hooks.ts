@@ -11,17 +11,6 @@ Component.registerHooks([
 
 export function init(router: VueRouter) {
     authGuardHook(router);
-    setTitleHook(router);
-}
-
-function setTitleHook(router: VueRouter) {
-    router.beforeEach((to, from, next) => {
-        const pageTitle = to.meta.title;
-
-        document.title = `${pageTitle ? `${pageTitle} - ` : ''}Alba Vulpes`;
-
-        next();
-    });
 }
 
 function authGuardHook(router: VueRouter) {

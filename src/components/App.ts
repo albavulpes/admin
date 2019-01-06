@@ -8,6 +8,9 @@ import FooterNav from './layout/FooterNav/FooterNav.vue';
     components: {
         TopNav,
         FooterNav
+    },
+    metaInfo: {
+        titleTemplate: chunk => (chunk ? chunk + ' - ' : '') + 'Alba Vulpes Admin'
     }
 })
 export default class extends Vue {

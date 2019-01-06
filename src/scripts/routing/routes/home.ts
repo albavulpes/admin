@@ -6,7 +6,6 @@ export default {
     name: 'home',
     path: '/',
     meta: {
-        title: 'Home',
         authorize: true
     },
     component: Home
