@@ -1,4 +1,4 @@
-<script lang="ts" src=./Comics.ts></script>
+<script lang="ts" src="./Comics.ts"></script>
 
 <template>
     <div class="ComicsComponent container">
@@ -6,9 +6,9 @@
 
         <hr>
 
-        <div class="row comicItems">
+        <div class="row">
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2" v-for="comic in Comics">
-                <router-link class="text-decoration-none" :to="{name: 'comics.id', params: {ComicId: comic.Id}}">
+                <router-link class="text-decoration-none" :to="{name: 'comic.id', params: {ComicId: comic.Id}}">
                     <MediaCard :Image="comic.CoverImage.Thumbnail" :ImageAlt="comic.Title">
                         <template slot="title">
                             {{comic.Title}}

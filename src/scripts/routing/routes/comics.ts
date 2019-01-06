@@ -2,6 +2,7 @@ import {RouteConfig} from 'vue-router';
 
 import Comics from '../../../components/views/Comics/Comics.vue';
 import ComicViewer from '../../../components/views/Comics/ComicViewer/ComicViewer.vue';
+import ComicArcsViewer from '../../../components/views/Comics/ComicViewer/ComicArcsViewer/ComicArcsViewer.vue';
 
 export default [
     {
@@ -21,12 +22,18 @@ export default [
         component: ComicViewer
     },
     {
-        name: 'comics.id',
+        name: 'comic.id',
         path: '/comics/:ComicId',
         meta: {
             title: 'Comics'
         },
         component: ComicViewer,
+        props: true
+    },
+    {
+        name: 'comic.arcs',
+        path: '/comics/:ComicId/arcs',
+        component: ComicArcsViewer,
         props: true
     }
 ] as RouteConfig[];
