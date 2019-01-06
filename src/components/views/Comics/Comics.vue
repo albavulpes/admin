@@ -20,7 +20,7 @@
                 </router-link>
             </div>
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2">
-                <router-link class="text-decoration-none" :to="{name: 'comics.new'}">
+                <router-link class="text-decoration-none" :to="{name: 'comic.new'}">
                     <MediaAddButton>
                         Add Comic
                     </MediaAddButton>

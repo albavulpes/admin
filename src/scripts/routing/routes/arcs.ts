@@ -8,21 +8,21 @@ export default [
         path: '/arc/:ArcId',
         component: Arcs
     },
-    // {
-    //     name: 'comics.new',
-    //     path: '/comics/new',
-    //     meta: {
-    //         title: 'Comics'
-    //     },
-    //     component: ComicViewer
-    // },
-    // {
-    //     name: 'comics.id',
-    //     path: '/comics/:ComicId',
-    //     meta: {
-    //         title: 'Comics'
-    //     },
-    //     component: ComicViewer,
-    //     props: true
-    // }
+    {
+        name: 'arc.new',
+        path: '/arc/new',
+        meta: {
+            title: 'Arcs'
+        },
+        component: ComicViewer
+    },
+    {
+        name: 'arc.id',
+        path: '/arc/:ArcId',
+        meta: {
+            title: 'Arcs'
+        },
+        component: ComicViewer,
+        props: true
+    }
 ] as RouteConfig[];

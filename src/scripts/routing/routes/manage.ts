@@ -1,10 +1,16 @@
 import {RouteConfig} from 'vue-router';
 
+import Manage from '../../../components/views/Manage/Manage.vue';
+
 import Comics from '../../../components/views/Comics/Comics.vue';
 import ComicViewer from '../../../components/views/Comics/ComicViewer/ComicViewer.vue';
 import ComicArcsViewer from '../../../components/views/Comics/ComicViewer/ComicArcsViewer/ComicArcsViewer.vue';
 
 export default [
+    {
+        path: '/manage',
+        component: Manage
+    },
     {
         name: 'comics',
         path: '/comics',
