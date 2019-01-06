@@ -6,7 +6,6 @@
             :Comic="ComicId"
             :Arc="ArcId"
             :Chapter="ChapterId"
-            :Page="PageId"
         ></router-view>
     </div>
 </template>

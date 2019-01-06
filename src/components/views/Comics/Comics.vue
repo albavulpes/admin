@@ -8,7 +8,7 @@
 
         <div class="row">
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2" v-for="comic in Comics">
-                <router-link class="text-decoration-none" :to="{name: 'comic.id', params: {ComicId: comic.Id}}">
+                <router-link class="text-decoration-none" :to="{name: 'manage.comic.id', params: {ComicId: comic.Id}}">
                     <MediaCard :Image="comic.CoverImage.Thumbnail" :ImageAlt="comic.Title">
                         <template slot="title">
                             {{comic.Title}}
@@ -20,7 +20,7 @@
                 </router-link>
             </div>
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2">
-                <router-link class="text-decoration-none" :to="{name: 'comic.new'}">
+                <router-link class="text-decoration-none" :to="{name: 'manage.comic.new'}">
                     <MediaAddButton>
                         Add Comic
                     </MediaAddButton>

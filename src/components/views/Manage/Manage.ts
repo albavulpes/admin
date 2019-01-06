@@ -26,10 +26,6 @@ export default class extends Vue {
         return this.$route.params.ChapterId;
     }
 
-    get PageId() {
-        return this.$route.params.PageId;
-    }
-
     @Watch('ComicId', {immediate: true})
     async WatchComicId(ComicId: string) {
         if (!ComicId)
@@ -52,13 +48,5 @@ export default class extends Vue {
             return;
 
         this.Chapter = await this.HttpService.api.chapters.get(ChapterId);
-    }
-
-    @Watch('PageId', {immediate: true})
-    async WatchPageId(PageId: string) {
-        if (!PageId)
-            return;
-
-        this.Page = await this.HttpService.api.pages.get(PageId);
     }
 }

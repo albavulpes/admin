@@ -37,39 +37,36 @@
                     <hr>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Author</label>
+                        <label class="col-sm-2 col-form-label">
+                            Author
+                        </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly v-model="Comic.Author">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Release Date</label>
+                        <label class="col-sm-2 col-form-label">
+                            Release Date
+                        </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly :value="Comic.ReleaseDate | moment('LL')">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Description</label>
+                        <label class="col-sm-2 col-form-label">
+                            Description
+                        </label>
                         <div class="col-sm-10">
-                            <textarea class="form-control-plaintext" placeholder="Short description of the comic" rows="4" readonly v-model="Comic.Description"></textarea>
+                            <p class="form-control-plaintext" placeholder="Short description of the comic" v-html="Comic.Description"></p>
                         </div>
                     </div>
 
                     <hr>
 
-                    <p class="h3 mb-3">
-                        This comic has {{Comic.ArcsCount}} arcs
-                    </p>
-
-                    <router-link class="btn btn-secondary" :to="{name: 'comic.arcs', params: {ComicId: Comic.Id}}">
-                        View Arcs
-                    </router-link>
-
-                    <!--
                     <div class="mt-5">
                         <h2>Arcs</h2>
                     </div>
-<div class="row comicItems">
+                    <div class="row comicItems">
                         <div class="col-6 col-md-4 col-lg-3 col-xxl-2" v-for="arc in Arcs">
                             <router-link class="text-decoration-none" :to="{name: 'arc.id', params: {ArcId: arc.Id}}">
                                 <MediaCard :Image="arc.CoverImage.Thumbnail" :ImageAlt="arc.Title">
@@ -89,7 +86,7 @@
                                 </MediaAddButton>
                             </router-link>
                         </div>
-                    </div>-->
+                    </div>
 
                     <div class="d-flex justify-content-end mt-5">
                         <div>

@@ -25,6 +25,7 @@ export default class extends Vue {
     ComicId: string;
 
     Comic: Comic = null;
+    Arcs: Arc[] = null;
 
     @Require()
     HttpService: HttpService;
@@ -41,6 +42,7 @@ export default class extends Vue {
         }
         else {
             this.Comic = await this.HttpService.api.comics.get(this.ComicId);
+            this.Arcs = await this.HttpService.api.arcs.getAll(this.ComicId);
         }
     }
 
