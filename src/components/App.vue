@@ -9,7 +9,9 @@
             </div>
             <div class="col p-0 appContentContainer">
                 <div class="viewContainer">
-                    <router-view></router-view>
+                    <transition name="fade" mode="out-in">
+                        <router-view></router-view>
+                    </transition>
                 </div>
 
                 <FooterNav></FooterNav>

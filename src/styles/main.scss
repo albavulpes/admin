@@ -1,9 +1,9 @@
 ﻿/* App Theme */
 @import "./meta";
 
-/* Libraries */
-@import "~bootstrap/scss/bootstrap";
-@import "~bootswatch/dist/cosmo/bootswatch";
+/* Vendors */
+@import "./vendors/bootstrap";
+@import "./vendors/vue2-animate";
 
 /* Bootstrap Overrides */
 @import "./components/forms";
