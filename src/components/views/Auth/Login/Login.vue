@@ -11,7 +11,10 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h2>Log In</h2>
+                        <h2>
+                            <i class="mdi mdi-login"></i>
+                            Log In
+                        </h2>
                         <hr>
 
                         <form @submit.prevent="SubmitForm">

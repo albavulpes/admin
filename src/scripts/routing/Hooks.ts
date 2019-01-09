@@ -2,6 +2,7 @@ import VueRouter from 'vue-router';
 import {Component} from 'vue-property-decorator';
 import {Container} from 'typedi';
 import {IdentityStore} from '@albavulpes/ui-core/dist/stores/auth/IdentityStore';
+import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 
 Component.registerHooks([
     'beforeRouteEnter',
@@ -11,6 +12,7 @@ Component.registerHooks([
 
 export function init(router: VueRouter) {
     authGuardHook(router);
+    toastClearHook(router);
 }
 
 function authGuardHook(router: VueRouter) {
@@ -26,6 +28,15 @@ function authGuardHook(router: VueRouter) {
                 replace: true
             });
         }
+
+        next();
+    });
+}
+
+function toastClearHook(router: VueRouter) {
+    router.beforeEach(async (to, from, next) => {
+        const toastService = Container.get(ToastService);
+        await toastService.clear();
 
         next();
     });

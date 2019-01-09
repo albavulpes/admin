@@ -1,3 +1,4 @@
+<script lang="ts" src="./MainNav.ts"></script>
 <style lang="scss" src="./MainNav.scss"></style>
 
 <template>
@@ -14,19 +15,40 @@
         </div>
 
         <ul class="nav flex-column">
-            <router-link tag="li" class="nav-item" exact :to="{name: 'home'}">
-                <a class="nav-link">Admin Home</a>
-            </router-link>
+            <template v-if="IsLoggedIn">
+                <router-link tag="li" class="nav-item" exact :to="{name: 'home'}">
+                    <a class="nav-link">
+                        <i class="mdi mdi-home"></i>
+                        Admin Home
+                    </a>
+                </router-link>
 
-            <router-link tag="li" class="nav-item" :to="{name: 'manage.comics'}">
-                <a class="nav-link">Comics</a>
-            </router-link>
+                <router-link tag="li" class="nav-item" :to="{name: 'manage.comics'}">
+                    <a class="nav-link">
+                        <i class="mdi mdi-library-books"></i>
+                        Comics
+                    </a>
+                </router-link>
 
-            <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div>
+            </template>
 
-            <router-link tag="li" class="nav-item" :to="{name: 'auth.login'}">
-                <a class="nav-link">Log In</a>
-            </router-link>
+            <template v-if="!IsLoggedIn">
+                <router-link tag="li" class="nav-item" :to="{name: 'auth.login'}">
+                    <a class="nav-link">
+                        <i class="mdi mdi-login"></i>
+                        Log In
+                    </a>
+                </router-link>
+            </template>
+            <template v-else>
+                <router-link tag="li" class="nav-item" :to="{name: 'auth.logout'}">
+                    <a class="nav-link">
+                        <i class="mdi mdi-logout"></i>
+                        Log Out
+                    </a>
+                </router-link>
+            </template>
         </ul>
     </nav>
 </template>

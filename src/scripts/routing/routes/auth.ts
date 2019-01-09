@@ -1,6 +1,7 @@
 import {RouteConfig} from 'vue-router';
 
 import Login from '../../../components/views/Auth/Login/Login.vue';
+import Logout from '../../../components/views/Auth/Logout/Logout';
 
 const login: RouteConfig = {
     name: 'auth.login',
@@ -8,6 +9,13 @@ const login: RouteConfig = {
     component: Login
 };
 
+const logout: RouteConfig = {
+    name: 'auth.logout',
+    path: '/auth/logout',
+    component: Logout
+};
+
 export default [
-    login
+    login,
+    logout
 ];

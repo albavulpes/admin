@@ -24,8 +24,24 @@ export default class extends Vue {
     IdentityStore: IdentityStore;
 
     async SubmitForm() {
-        await this.AuthService.login(this.Form.Username, this.Form.Password);
+        try {
+            await this.AuthService.login(this.Form.Username, this.Form.Password);
 
-        this.ToastService.success(`Welcome back, ${this.IdentityStore.UserName}`);
+            this.$router.replace({
+                name: 'home'
+            }, () => {
+                this.ToastService.success(`Welcome back, ${this.IdentityStore.UserName}`);
+            });
+        }
+        catch (error) {
+            if (error.response && error.response.status === 400) {
+                this.ToastService.error(`The username or password you provided are incorrect. Please try again.`, {
+                    timeout: false
+                });
+            }
+            else {
+                this.ToastService.error(error.message);
+            }
+        }
     }
 }

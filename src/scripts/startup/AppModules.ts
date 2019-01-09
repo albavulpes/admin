@@ -9,7 +9,7 @@ Vue.use(UiCore, {
     },
     toast: {
         position: 'bottomCenter',
-        transitionOut: 'fadeOutDown',
-        timeout: 3000
+        displayMode: 'replace',
+        timeout: 5000
     }
 });
