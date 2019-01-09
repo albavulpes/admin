@@ -9,7 +9,6 @@ export default class extends Vue {
     Comic: Comic = null;
     Arc: Arc = null;
     Chapter: Chapter = null;
-    Page: Page = null;
 
     @Require()
     HttpService: HttpService;

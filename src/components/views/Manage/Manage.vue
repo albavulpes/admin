@@ -1,11 +1,12 @@
 <script lang="ts" src="./Manage.ts"></script>
+<style lang="scss" src="./Manage.scss"></style>
 
 <template>
     <div class="ManageComponent">
         <router-view
-            :Comic="ComicId"
-            :Arc="ArcId"
-            :Chapter="ChapterId"
+            :Comic="Comic"
+            :Arc="Arc"
+            :Chapter="Chapter"
         ></router-view>
     </div>
 </template>

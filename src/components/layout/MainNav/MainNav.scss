@@ -1,0 +1,45 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.MainNavComponent {
+    width: 320px;
+    min-height: 100vh;
+
+    .logoContainer {
+        background: transparentize($black, 0.8);
+
+        .brandLogo {
+            width: 72px;
+            height: 72px;
+        }
+    }
+
+    .nav {
+        .dropdown-divider {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            border-color: transparentize($navbar-dark-color, 0.4);
+        }
+
+        .nav-item {
+            .nav-link {
+                padding: 10px 20px;
+                margin: 0 8px;
+
+                color: $navbar-dark-color;
+
+                &:hover {
+                    color: $navbar-dark-hover-color;
+                }
+            }
+
+            &.router-link-active {
+                background-color: $navbar-dark-toggler-border-color;
+
+                .nav-link {
+                    color: $navbar-dark-active-color;
+                }
+            }
+        }
+    }
+}

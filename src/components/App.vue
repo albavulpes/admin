@@ -3,12 +3,17 @@
 
 <template>
     <div class="AppComponent">
-        <TopNav></TopNav>
+        <div class="appLayoutContainer d-flex h-100">
+            <div class="col-auto p-0">
+                <MainNav></MainNav>
+            </div>
+            <div class="col p-0 appContentContainer">
+                <div class="viewContainer">
+                    <router-view></router-view>
+                </div>
 
-        <div class="page-container">
-            <router-view></router-view>
+                <FooterNav></FooterNav>
+            </div>
         </div>
-
-        <FooterNav></FooterNav>
     </div>
 </template>
