@@ -10,11 +10,17 @@ export default class extends Vue {
     AuthService: AuthService;
 
     async beforeRouteEnter(to: any, from: any, next: any) {
-        await this.AuthService.logout();
+        next(async (vm: this) => {
+            try {
+                await vm.AuthService.logout();
+            }
+            catch (error) {
+            }
 
-        next({
-            name: 'home',
-            replace: true
+            vm.$router.replace({
+                name: 'auth.login',
+                replace: true
+            });
         });
     }
 }
