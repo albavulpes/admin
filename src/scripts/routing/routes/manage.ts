@@ -25,7 +25,6 @@ export default [
                 name: 'manage.comic.id',
                 path: '/comic/:ComicId',
                 component: ComicViewer,
-                props: true,
                 children: [
                     {
                         name: 'manage.arc.new',
@@ -36,7 +35,6 @@ export default [
                         name: 'manage.arc.id',
                         path: 'arc/:ArcId',
                         component: ComicViewer,
-                        props: true,
                         children: [
                             {
                                 name: 'manage.chapter.new',
@@ -46,8 +44,7 @@ export default [
                             {
                                 name: 'manage.chapter.id',
                                 path: 'chapter/:ChapterId',
-                                component: ComicViewer,
-                                props: true
+                                component: ComicViewer
                             },
                         ]
                     },

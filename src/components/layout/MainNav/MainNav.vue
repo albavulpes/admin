@@ -2,7 +2,7 @@
 <style lang="scss" src="./MainNav.scss"></style>
 
 <template>
-    <nav class="MainNavComponent navbar-dark">
+    <nav class="MainNavComponent navbar-dark h-100">
         <div class="logoContainer text-center p-3 mb-3">
             <img class="brandLogo m-2" src="../../../assets/images/logo_shadow.png" alt="AlbaVulpes Logo">
 

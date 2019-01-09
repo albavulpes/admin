@@ -22,9 +22,8 @@ import MediaAddButton from '../../../shared/MediaAddButton/MediaAddButton.vue';
 export default class extends Vue {
 
     @Prop()
-    ComicId: string;
+    Comic: Comic;
 
-    Comic: Comic = null;
     Arcs: Arc[] = null;
 
     @Require()
@@ -41,13 +40,12 @@ export default class extends Vue {
             this.Comic = this.ComicEditForm.getDefaultData();
         }
         else {
-            this.Comic = await this.HttpService.api.comics.get(this.ComicId);
-            this.Arcs = await this.HttpService.api.arcs.getAll(this.ComicId);
+            this.Arcs = await this.HttpService.api.arcs.getAll(this.Comic.Id);
         }
     }
 
     get IsCreateMode() {
-        return !this.ComicId;
+        return !this.Comic;
     }
 
     async SubmitForm() {

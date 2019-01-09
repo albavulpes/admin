@@ -2,6 +2,20 @@
 @import "~root/styles/meta";
 
 .ComicViewerComponent {
+    .comicViewerTabs {
+        margin-top: -4rem;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+
+        .nav-item {
+            .nav-link {
+                &:hover {
+                    background-color: transparentize($white, 0.5);
+                }
+            }
+        }
+    }
+
     .comicEditor {
         .coverContainer {
             @include breakpoint(lg) {

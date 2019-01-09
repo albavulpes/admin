@@ -10,10 +10,15 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        padding-bottom: 4.5rem;
+
+        background-color: mix(white, desaturate($primary, 5%), 95%);
     }
 
     .viewContainer {
-        padding-top: 4.5rem;
-        padding-bottom: 4.5rem;
+        background-color: $white;
+
+        padding: 1.5rem;
     }
 }

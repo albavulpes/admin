@@ -1,7 +1,7 @@
 <script lang="ts" src="./Comics.ts"></script>
 
 <template>
-    <div class="ComicsComponent container">
+    <div class="ComicsComponent viewContainer">
         <h1>Your Comics</h1>
 
         <hr>
