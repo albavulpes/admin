@@ -5,8 +5,10 @@
     width: 320px;
     min-height: 100vh;
 
+    background-color: mix(black, desaturate($primary, 25%), 40%);
+
     .logoContainer {
-        background: transparentize($black, 0.8);
+        background-color: $primary;
 
         .brandLogo {
             width: 72px;
@@ -34,8 +36,6 @@
             }
 
             &.router-link-active {
-                background-color: $navbar-dark-toggler-border-color;
-
                 .nav-link {
                     color: $navbar-dark-active-color;
                 }

@@ -1,18 +1,21 @@
 <style lang="scss" src="./MainNav.scss"></style>
 
 <template>
-    <nav class="MainNavComponent navbar-dark bg-primary">
+    <nav class="MainNavComponent navbar-dark">
         <div class="logoContainer text-center p-3 mb-3">
             <img class="brandLogo m-2" src="../../../assets/images/logo_shadow.png" alt="AlbaVulpes Logo">
 
-            <p class="h3 text-white">
+            <p class="h3 text-white mb-1">
                 Alba Vulpes
             </p>
+            <small class="text-white-50">
+                Admin Panel
+            </small>
         </div>
 
         <ul class="nav flex-column">
             <router-link tag="li" class="nav-item" exact :to="{name: 'home'}">
-                <a class="nav-link">Home</a>
+                <a class="nav-link">Admin Home</a>
             </router-link>
 
             <router-link tag="li" class="nav-item" :to="{name: 'manage.comics'}">
