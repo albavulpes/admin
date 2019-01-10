@@ -8,14 +8,10 @@
                 <MainNav></MainNav>
             </div>
             <div class="col p-0 appContentContainer">
-                <div>
-                    <TopNav></TopNav>
-
-                    <div class="viewContainer">
-                        <transition name="fade" mode="out-in">
-                            <router-view></router-view>
-                        </transition>
-                    </div>
+                <div class="viewContainer">
+                    <transition name="fade" mode="out-in">
+                        <router-view></router-view>
+                    </transition>
                 </div>
 
                 <FooterNav></FooterNav>

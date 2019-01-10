@@ -13,12 +13,10 @@
 
         padding-bottom: 4.5rem;
 
-        background-color: mix(white, desaturate($primary, 5%), 95%);
+        background-color: $white;
     }
 
     .viewContainer {
-        background-color: $white;
-
-        padding: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 }

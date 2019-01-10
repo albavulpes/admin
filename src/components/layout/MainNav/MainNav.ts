@@ -12,4 +12,8 @@ export default class extends Vue {
     get IsLoggedIn() {
         return this.IdentityStore.IsAuthenticated;
     }
+
+    get AccountName() {
+        return this.IdentityStore.UserName;
+    }
 }
