@@ -5,6 +5,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = require('./config/env');
 const common = require('./config/common');
@@ -53,6 +54,12 @@ const CONFIG = merge([
             new webpack.DefinePlugin({
                 'AppConfig': JSON.stringify(require('./config.json')[process.env.NODE_ENV])
             }),
+            new CopyWebpackPlugin([
+                {
+                    from: path.join(env.paths.root, 'runtime/*'),
+                    flatten: true
+                }
+            ]),
             new webpack.HotModuleReplacementPlugin()
         ]
     }
