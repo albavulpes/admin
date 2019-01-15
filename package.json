@@ -1,6 +1,6 @@
 {
-  "name": "@albavulpes/web",
-  "description": "Alba Vulpes - Web Client",
+  "name": "@albavulpes/admin",
+  "description": "Alba Vulpes - Admin Panel Client",
   "version": "0.0.0",
   "private": true,
   "copyright": "Copyright © 2017",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/albavulpes/web.git"
+    "url": "https://github.com/albavulpes/admin.git"
   },
   "license": "UNLICENSED",
   "dependencies": {
