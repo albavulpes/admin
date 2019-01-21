@@ -10,17 +10,26 @@
             </div>
 
             <div>
-                <b-dropdown variant="primary" right>
+                <b-dropdown variant="primary" right offset="-2">
                     <template slot="button-content">
                         <i class="mdi mdi-24px mdi-account-circle mr-1"></i>
                     </template>
 
-                    <b-dropdown-item>First Action</b-dropdown-item>
-                    <b-dropdown-item>Second Action</b-dropdown-item>
-                    <b-dropdown-item>Third Action</b-dropdown-item>
+                    <b-dropdown-item>
+                        <i class="mdi mdi-account-edit mr-1"></i>
+                        My Profile
+                    </b-dropdown-item>
+                    <b-dropdown-item>
+                        <i class="mdi mdi-account-settings-variant mr-1"></i>
+                        Account Settings
+                    </b-dropdown-item>
+
                     <b-dropdown-divider></b-dropdown-divider>
-                    <b-dropdown-item>Something else here...</b-dropdown-item>
-                    <b-dropdown-item disabled>Disabled action</b-dropdown-item>
+
+                    <b-dropdown-item :to="{name: 'auth.logout'}">
+                        <i class="mdi mdi-logout mr-1"></i>
+                        Log Out
+                    </b-dropdown-item>
                 </b-dropdown>
             </div>
         </div>

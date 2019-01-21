@@ -36,15 +36,6 @@
                         Comics
                     </a>
                 </router-link>
-
-                <div class="dropdown-divider"></div>
-
-                <router-link tag="li" class="nav-item" :to="{name: 'auth.logout'}">
-                    <a class="nav-link">
-                        <i class="mdi mdi-logout"></i>
-                        Log Out
-                    </a>
-                </router-link>
             </template>
 
             <template v-if="!IsLoggedIn">
