@@ -35,6 +35,21 @@
                             <b-form-input type="text" placeholder="Publish date for your comic" v-model="Comic.ReleaseDate"></b-form-input>
                         </b-form-group>
                     </section>
+
+                    <section class="d-flex justify-content-between py-3">
+                        <div>
+                            <b-button variant="light" @click="ResetForm">
+                                <i class="mdi mdi-refresh"></i>
+                                Reset Form
+                            </b-button>
+                        </div>
+                        <div>
+                            <b-button type="submit" variant="primary">
+                                <i class="mdi mdi-creation"></i>
+                                Create Comic
+                            </b-button>
+                        </div>
+                    </section>
                 </div>
                 <div class="col-6">
                     <section class="py-3">

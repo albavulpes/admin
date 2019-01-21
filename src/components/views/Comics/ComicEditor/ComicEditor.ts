@@ -18,6 +18,10 @@ export default class extends Vue {
     Comic: Comic = null;
 
     created() {
+        this.ResetForm();
+    }
+
+    ResetForm() {
         this.Comic = this.ComicEditForm.getDefaultData();
     }
 }
