@@ -7,7 +7,14 @@
 
         <b-form @submit.prevent="SubmitForm">
             <div class="row mt-3">
-                <div class="col-6">
+                <div class="col-4">
+                    <section class="py-3">
+                        <MediaAddButton class="addCoverImageButton">
+                            Add a cover image
+                        </MediaAddButton>
+                    </section>
+                </div>
+                <div class="col-8">
                     <section class="py-3">
                         <h4 class="text-black-50 mb-4">
                             Comic Details
@@ -44,23 +51,12 @@
                             </b-button>
                         </div>
                         <div>
-                            <b-button type="submit" variant="primary">
+                            <b-button variant="primary" type="submit" class="px-5">
                                 <i class="mdi mdi-creation"></i>
                                 Create Comic
                             </b-button>
                         </div>
                     </section>
-                </div>
-                <div class="col-6">
-                    <section class="py-3">
-                        <h4 class="text-black-50 mb-4">
-                            Cover Image
-                        </h4>
-                    </section>
-
-                    <MediaAddButton class="addCoverImageButton">
-                        Add a cover image
-                    </MediaAddButton>
                 </div>
             </div>
         </b-form>
