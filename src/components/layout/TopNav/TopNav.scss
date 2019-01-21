@@ -3,4 +3,6 @@
 
 .TopNavComponent {
     background: mix(white, $primary, 95%);
+
+    border-bottom: $border-color 1px solid;
 }
