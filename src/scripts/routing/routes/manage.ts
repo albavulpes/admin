@@ -10,6 +10,9 @@ export default [
     {
         path: '/manage',
         component: Manage,
+        meta: {
+            authorize: true
+        },
         children: [
             {
                 name: 'manage.comics',

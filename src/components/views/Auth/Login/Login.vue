@@ -2,7 +2,7 @@
 <style lang="scss" src="./Login.scss"></style>
 
 <template>
-    <div class="LoginComponent container">
+    <div class="LoginComponent pt-5">
         <div class="row justify-content-center">
             <div class="col loginCardContainer">
                 <h1 class="text-center mb-5">

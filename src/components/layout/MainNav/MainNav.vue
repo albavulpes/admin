@@ -38,21 +38,20 @@
                 </router-link>
 
                 <div class="dropdown-divider"></div>
-            </template>
 
-            <template v-if="!IsLoggedIn">
-                <router-link tag="li" class="nav-item" :to="{name: 'auth.login'}">
-                    <a class="nav-link">
-                        <i class="mdi mdi-login"></i>
-                        Log In
-                    </a>
-                </router-link>
-            </template>
-            <template v-else>
                 <router-link tag="li" class="nav-item" :to="{name: 'auth.logout'}">
                     <a class="nav-link">
                         <i class="mdi mdi-logout"></i>
                         Log Out
+                    </a>
+                </router-link>
+            </template>
+
+            <template v-if="!IsLoggedIn">
+                <router-link tag="li" class="nav-item mt-3" :to="{name: 'auth.login'}">
+                    <a class="nav-link">
+                        <i class="mdi mdi-login"></i>
+                        Log In
                     </a>
                 </router-link>
             </template>
