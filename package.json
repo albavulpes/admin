@@ -17,6 +17,7 @@
     "@albavulpes/ui-core": "https://github.com/albavulpes/ui-core",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
+    "bootstrap-vue": "^2.0.0-rc.11",
     "bootswatch": "^4.1.1",
     "bottlejs": "^1.6.3",
     "fullscreen": "^1.1.1",
