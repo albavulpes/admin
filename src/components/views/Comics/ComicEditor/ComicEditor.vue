@@ -5,7 +5,7 @@
     <div class="ComicEditorComponent">
         <h1>Let's create a new comic!</h1>
 
-        <b-form>
+        <b-form @submit.prevent="SubmitForm">
             <div class="row mt-3">
                 <div class="col-6">
                     <section class="py-3">
