@@ -4,6 +4,7 @@ import Manage from '../../../components/views/Manage/Manage.vue';
 
 import Comics from '../../../components/views/Comics/Comics.vue';
 import ComicViewer from '../../../components/views/Comics/ComicViewer/ComicViewer.vue';
+import ComicEditor from '../../../components/views/Comics/ComicEditor/ComicEditor.vue';
 import ComicArcsViewer from '../../../components/views/Comics/ComicViewer/ComicArcsViewer/ComicArcsViewer.vue';
 
 export default [
@@ -22,7 +23,7 @@ export default [
             {
                 name: 'manage.comic.new',
                 path: '/comic/new',
-                component: ComicViewer
+                component: ComicEditor
             },
             {
                 name: 'manage.comic.id',

@@ -21,7 +21,8 @@ export class ComicEditForm {
                 FullSize: `https://placeimg.com/2400/3200/nature`,
                 Thumbnail: `https://placeimg.com/240/320/nature`
             },
-            Description: null
+            Description: null,
+            ReleaseDate: null
         } as Comic;
     }
 
