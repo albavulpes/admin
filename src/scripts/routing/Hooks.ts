@@ -20,16 +20,18 @@ function authGuardHook(router: VueRouter) {
         const identityStore = Container.get(IdentityStore);
         await identityStore.fetchIdentity();
 
-        const needsAuth = (to.meta.authorize === true) && !identityStore.IsAuthenticated;
+        const needsAuth = (to.matched.some(r => r.meta.authorize === true)) && !identityStore.IsAuthenticated;
 
-        if (needsAuth) {
-            return next({
-                name: 'auth.login',
-                replace: true
-            });
+        if (!needsAuth) {
+            next();
+
+            return;
         }
 
-        next();
+        next({
+            name: 'auth.login',
+            replace: true
+        });
     });
 }
 

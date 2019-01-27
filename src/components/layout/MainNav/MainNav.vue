@@ -23,14 +23,14 @@
                     </a>
                 </li>
 
-                <router-link tag="li" class="nav-item" exact :to="{name: 'home'}">
+                <router-link tag="li" class="nav-item" exact :to="{name: 'home'}" key="home">
                     <a class="nav-link">
                         <i class="mdi mdi-home"></i>
                         Admin Home
                     </a>
                 </router-link>
 
-                <router-link tag="li" class="nav-item" :to="{name: 'manage.comics'}">
+                <router-link tag="li" class="nav-item" :to="{name: 'manage.comics'}" key="manage.comics">
                     <a class="nav-link">
                         <i class="mdi mdi-library-books"></i>
                         Comics
@@ -39,7 +39,7 @@
             </template>
 
             <template v-if="!IsLoggedIn">
-                <router-link tag="li" class="nav-item mt-3" :to="{name: 'auth.login'}">
+                <router-link tag="li" class="nav-item mt-3" :to="{name: 'auth.login'}" key="auth.login">
                     <a class="nav-link">
                         <i class="mdi mdi-login"></i>
                         Log In

@@ -5,7 +5,6 @@ import Manage from '../../../components/views/Manage/Manage.vue';
 import Comics from '../../../components/views/Comics/Comics.vue';
 import ComicViewer from '../../../components/views/Comics/ComicViewer/ComicViewer.vue';
 import ComicEditor from '../../../components/views/Comics/ComicEditor/ComicEditor.vue';
-import ComicArcsViewer from '../../../components/views/Comics/ComicViewer/ComicArcsViewer/ComicArcsViewer.vue';
 
 export default [
     {
@@ -49,11 +48,11 @@ export default [
                                 name: 'manage.chapter.id',
                                 path: 'chapter/:ChapterId',
                                 component: ComicViewer
-                            },
+                            }
                         ]
-                    },
+                    }
                 ]
-            },
+            }
         ]
     }
 ] as RouteConfig[];

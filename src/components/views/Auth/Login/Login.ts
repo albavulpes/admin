@@ -27,11 +27,10 @@ export default class extends Vue {
         try {
             await this.AuthService.login(this.Form.Username, this.Form.Password);
 
-            this.$router.replace({
-                name: 'home'
-            }, () => {
-                this.ToastService.success(`Welcome back, ${this.IdentityStore.UserName}`);
-            });
+            this.$router.replace({name: 'home'},
+                () => {
+                    this.ToastService.success(`Welcome back, ${this.IdentityStore.UserName}`);
+                });
         }
         catch (error) {
             if (error.response && error.response.status === 400) {
