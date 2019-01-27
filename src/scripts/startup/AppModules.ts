@@ -8,7 +8,7 @@ Vue.use(UiCore, {
         withCredentials: true
     },
     toast: {
-        position: 'bottomRight',
+        position: 'topCenter',
         displayMode: 'replace',
         timeout: 5000
     }
