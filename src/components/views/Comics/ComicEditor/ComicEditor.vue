@@ -1,5 +1,4 @@
 <script lang="ts" src="./ComicEditor.ts"></script>
-<style lang="scss" src="./ComicEditor.scss"></style>
 
 <template>
     <div class="ComicEditorComponent">
@@ -9,9 +8,9 @@
             <div class="row mt-3">
                 <div class="col-4">
                     <section class="py-3">
-                        <MediaAddButton class="addCoverImageButton">
+                        <UploadImageButton v-model="Comic.CoverImage.FullSize">
                             Add a cover image
-                        </MediaAddButton>
+                        </UploadImageButton>
                     </section>
                 </div>
                 <div class="col-8">

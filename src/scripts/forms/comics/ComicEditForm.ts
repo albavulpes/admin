@@ -17,9 +17,9 @@ export class ComicEditForm {
         return {
             Title: null,
             Author: userName,
-            CoverImage: { // TODO: This is test data of course
-                FullSize: `https://placeimg.com/2400/3200/nature`,
-                Thumbnail: `https://placeimg.com/240/320/nature`
+            CoverImage: {
+                FullSize: null,
+                Thumbnail: null
             },
             Description: null,
             ReleaseDate: null
