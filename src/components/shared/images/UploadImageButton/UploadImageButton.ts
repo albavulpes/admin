@@ -10,7 +10,20 @@ import MediaAddButton from '../../MediaAddButton/MediaAddButton.vue';
 })
 export default class extends Vue {
 
-    created() {
-        console.log(process.env.NODE_ENV)
+    ChooseFile() {
+        const fileInput = this.$refs['fileInput'] as HTMLInputElement;
+
+        fileInput.click();
+    }
+
+    async StartUpload(event: Event) {
+        const target = event.target as HTMLInputElement;
+
+        const file = target.files && target.files[0];
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        console.log(formData);
     }
 }

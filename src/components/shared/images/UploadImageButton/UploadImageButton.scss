@@ -1,4 +1,13 @@
 .UploadImageButtonComponent {
-    max-width: 360px;
-    height: 480px;
+    .MediaAddButtonComponent {
+        max-width: 360px;
+        height: 480px;
+    }
+
+    .fileInput {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        z-index: -1;
+    }
 }

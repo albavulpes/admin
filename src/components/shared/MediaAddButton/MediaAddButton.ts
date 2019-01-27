@@ -1,13 +1,12 @@
 import Vue from 'vue';
-import {Component, Prop} from 'vue-property-decorator';
+import {Component} from 'vue-property-decorator';
 
-import MediaCard from '../MediaCard/MediaCard.vue';
-
-@Component({
-    components: {
-        MediaCard
-    }
-})
+@Component
 export default class extends Vue {
 
+    ButtonClick() {
+        if (typeof this.$listeners.click === 'function') {
+            this.$listeners.click();
+        }
+    }
 }
