@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 
+import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
+import {Require} from '@albavulpes/ui-core/dist/di';
+
 import MediaAddButton from '../../MediaAddButton/MediaAddButton.vue';
 
 @Component({
@@ -9,6 +12,9 @@ import MediaAddButton from '../../MediaAddButton/MediaAddButton.vue';
     }
 })
 export default class extends Vue {
+
+    @Require()
+    HttpService: HttpService;
 
     ChooseFile() {
         const fileInput = this.$refs['fileInput'] as HTMLInputElement;
@@ -24,6 +30,8 @@ export default class extends Vue {
         const formData = new FormData();
         formData.append('file', file);
 
-        console.log(formData);
+        const imageResponse = await this.HttpService.api.images.post(formData);
+
+        this.$emit('input', imageResponse.ImagePath);
     }
 }

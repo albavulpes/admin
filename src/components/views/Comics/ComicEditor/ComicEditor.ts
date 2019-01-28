@@ -4,11 +4,11 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {ComicEditForm} from '../../../../scripts/forms/comics/ComicEditForm';
 
-import UploadImageButton from '../../../shared/images/UploadImageButton/UploadImageButton.vue';
+import ImageUploader from '../../../shared/images/ImageUploader/ImageUploader.vue';
 
 @Component({
     components: {
-        UploadImageButton
+        ImageUploader
     }
 })
 export default class extends Vue {

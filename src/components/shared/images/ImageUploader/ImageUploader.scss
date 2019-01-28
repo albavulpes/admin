@@ -1,0 +1,10 @@
+.ImageUploaderComponent {
+    .UploadImageButtonComponent .MediaAddButtonComponent {
+        height: 480px;
+    }
+
+    .UploadImageButtonComponent .MediaAddButtonComponent,
+    .uploadedImage {
+        max-width: 360px;
+    }
+}

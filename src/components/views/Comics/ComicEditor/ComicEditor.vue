@@ -8,9 +8,9 @@
             <div class="row mt-3">
                 <div class="col-4">
                     <section class="py-3">
-                        <UploadImageButton v-model="Comic.CoverImage.FullSize">
+                        <ImageUploader v-model="Comic.CoverImage.FullSize">
                             Add a cover image
-                        </UploadImageButton>
+                        </ImageUploader>
                     </section>
                 </div>
                 <div class="col-8">
