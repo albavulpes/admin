@@ -5,59 +5,20 @@ import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ComicEditForm} from '../../../../scripts/forms/comics/ComicEditForm';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 
-import MediaCard from '../../../shared/MediaCard/MediaCard.vue';
-import MediaAddButton from '../../../shared/MediaAddButton/MediaAddButton.vue';
+import ImageViewer from '../../../shared/images/ImageViewer/ImageViewer.vue';
 
 @Component({
     components: {
-        MediaCard,
-        MediaAddButton
+        ImageViewer
     },
     metaInfo() {
         return {
             title: this.Comic && this.Comic.Title
-        }
+        };
     }
 })
 export default class extends Vue {
 
     @Prop()
     Comic: Comic;
-
-    Arcs: Arc[] = null;
-
-    @Require()
-    HttpService: HttpService;
-
-    @Require()
-    ToastService: ToastService;
-
-    @Require()
-    ComicEditForm: ComicEditForm;
-
-    async created() {
-        if (this.IsCreateMode) {
-            this.Comic = this.ComicEditForm.getDefaultData();
-        }
-        else {
-            this.Arcs = await this.HttpService.api.arcs.getAll(this.Comic.Id);
-        }
-    }
-
-    get IsCreateMode() {
-        return !this.Comic;
-    }
-
-    async SubmitForm() {
-        this.Comic = await this.ComicEditForm.submit(this.Comic);
-
-        this.ToastService.success(`Success! <b>${this.Comic.Title}</b> has been saved.`);
-
-        this.$router.push({
-            name: 'comics.id',
-            params: {
-                ComicId: this.Comic.Id
-            }
-        })
-    }
 }

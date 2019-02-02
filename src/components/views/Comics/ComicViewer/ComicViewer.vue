@@ -3,7 +3,7 @@
 
 <template>
     <div class="ComicViewerComponent" v-if="Comic">
-        <div class="bg-light pt-4">
+        <div class="">
             <h1 class="mx-3 mb-5">
                 {{Comic.Title}}
             </h1>
@@ -31,77 +31,50 @@
         </div>
 
         <div class="container-fluid">
-            <form @submit.prevent="SubmitForm">
-                <div class="pt-4">
-                    <div class="row comicEditor">
-                        <div class="col-xs-12 col-md coverContainer">
-                            <img class="img-fluid mb-4" :src="Comic.CoverImage.FullSize" :alt="Comic.Title">
+            <div class="pt-4">
+                <div class="row comicEditor">
+                    <div class="col-auto coverContainer">
+                        <ImageViewer class="mb-4" :src="Comic.CoverImage.FullSize" :alt="Comic.Title"></ImageViewer>
+                    </div>
+                    <div class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">
+                                Author
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly v-model="Comic.Author">
+                            </div>
                         </div>
-                        <div class="col">
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">
-                                    Author
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly v-model="Comic.Author">
-                                </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">
+                                Release Date
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly :value="Comic.ReleaseDate | moment('LL')">
                             </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">
-                                    Release Date
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly :value="Comic.ReleaseDate | moment('LL')">
-                                </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">
+                                Description
+                            </label>
+                            <div class="col-sm-9">
+                                <p class="form-control-plaintext" placeholder="Short description of the comic" v-html="Comic.Description"></p>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">
-                                    Description
-                                </label>
-                                <div class="col-sm-10">
-                                    <p class="form-control-plaintext" placeholder="Short description of the comic" v-html="Comic.Description"></p>
-                                </div>
-                            </div>
+                        </div>
 
-                            <hr>
+                        <hr>
 
-                            <div class="mt-5">
-                                <h2>Arcs</h2>
-                            </div>
-                            <div class="row comicItems">
-                                <div class="col-6 col-md-4 col-lg-3 col-xxl-2" v-for="arc in Arcs">
-                                    <router-link class="text-decoration-none" :to="{name: 'arc.id', params: {ArcId: arc.Id}}">
-                                        <MediaCard :Image="arc.CoverImage.Thumbnail" :ImageAlt="arc.Title">
-                                            <template slot="title">
-                                                {{arc.Title}}
-                                            </template>
-                                            <template slot="content">
-                                                {{arc.ChaptersCount}} Chapters
-                                            </template>
-                                        </MediaCard>
-                                    </router-link>
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 col-xxl-2">
-                                    <router-link class="text-decoration-none" :to="{name: 'arcs.new'}">
-                                        <MediaAddButton>
-                                            Add Arc
-                                        </MediaAddButton>
-                                    </router-link>
-                                </div>
-                            </div>
-
-                            <div class="d-flex justify-content-end mt-5">
-                                <div>
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="mdi mdi-content-save-outline"></i>
-                                        Save Comic
-                                    </button>
-                                </div>
+                        <div class="d-flex justify-content-end">
+                            <div>
+                                <button type="submit" class="btn btn-outline-primary">
+                                    <i class="mdi mdi-pencil"></i>
+                                    Edit Comic Details
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </template>

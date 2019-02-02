@@ -3,6 +3,7 @@ import {Component} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {ComicEditForm} from '../../../../scripts/forms/comics/ComicEditForm';
+import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
 
 import ImageUploader from '../../../shared/images/ImageUploader/ImageUploader.vue';
 
@@ -15,6 +16,9 @@ export default class extends Vue {
 
     @Require()
     ToastService: ToastService;
+
+    @Require()
+    LoaderService: LoaderService;
 
     @Require()
     ComicEditForm: ComicEditForm;
@@ -30,6 +34,8 @@ export default class extends Vue {
     }
 
     async SubmitForm() {
+        this.LoaderService.show();
+
         this.Comic = await this.ComicEditForm.submit(this.Comic);
 
         this.ToastService.success(`Success! <b>${this.Comic.Title}</b> has been saved.`);
@@ -39,6 +45,8 @@ export default class extends Vue {
             params: {
                 ComicId: this.Comic.Id
             }
-        })
+        });
+
+        this.LoaderService.hide();
     }
 }
