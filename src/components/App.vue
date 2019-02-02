@@ -15,7 +15,7 @@
                         <router-view></router-view>
                     </transition>
 
-                    <LoadingOverlay></LoadingOverlay>
+                    <LoadingOverlay id="ml-global-loader"></LoadingOverlay>
                 </div>
 
                 <FooterNav></FooterNav>

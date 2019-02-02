@@ -5,10 +5,14 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 
 import MediaAddButton from '../../MediaAddButton/MediaAddButton.vue';
+import LoadingOverlay from '../../loading/LoadingOverlay/LoadingOverlay.vue';
+import ImageViewer from '../ImageViewer/ImageViewer.vue';
 
 @Component({
     components: {
-        MediaAddButton
+        MediaAddButton,
+        ImageViewer,
+        LoadingOverlay
     }
 })
 export default class extends Vue {
@@ -19,6 +23,8 @@ export default class extends Vue {
     @Require()
     HttpService: HttpService;
 
+    IsLoading: boolean = false;
+
     ChooseFile() {
         const fileInput = this.$refs['fileInput'] as HTMLInputElement;
 
@@ -26,6 +32,8 @@ export default class extends Vue {
     }
 
     async StartUpload(event: Event) {
+        this.IsLoading = true;
+
         const target = event.target as HTMLInputElement;
 
         const file = target.files && target.files[0];
@@ -36,5 +44,7 @@ export default class extends Vue {
         const imageResponse = await this.HttpService.api.images.post(formData);
 
         this.$emit('input', imageResponse.ImagePath);
+
+        this.IsLoading = false;
     }
 }

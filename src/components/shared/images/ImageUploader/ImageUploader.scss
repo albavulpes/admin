@@ -11,12 +11,13 @@
         z-index: -1;
     }
 
-    .MediaAddButtonComponent {
-        height: 480px;
+    .imageWrapper {
+        position: relative;
+        max-width: 360px;
+        max-height: 480px;
     }
 
-    .MediaAddButtonComponent,
-    .uploadedImage {
-        max-width: 360px;
+    .MediaAddButtonComponent {
+        height: 480px;
     }
 }
