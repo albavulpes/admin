@@ -2,8 +2,9 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {AuthService} from '@albavulpes/ui-core/dist/services/auth/AuthService';
-import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {IdentityStore} from '@albavulpes/ui-core/dist/stores/auth/IdentityStore';
+import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
+import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
 
 @Component({
     metaInfo: {
@@ -21,9 +22,14 @@ export default class extends Vue {
     ToastService: ToastService;
 
     @Require()
+    LoaderService: LoaderService;
+
+    @Require()
     IdentityStore: IdentityStore;
 
     async SubmitForm() {
+        this.LoaderService.show();
+
         try {
             await this.AuthService.login(this.Form.Username, this.Form.Password);
 
@@ -42,5 +48,7 @@ export default class extends Vue {
                 this.ToastService.error(error.message);
             }
         }
+
+        this.LoaderService.hide();
     }
 }

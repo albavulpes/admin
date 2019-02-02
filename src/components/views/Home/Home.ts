@@ -20,8 +20,4 @@ export default class extends Vue {
     get Email() {
         return this.IdentityStore.Email;
     }
-
-    async LogOut() {
-        await this.AuthService.logout();
-    }
 }
