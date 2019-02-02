@@ -2,7 +2,7 @@
 <style lang="scss" src="./LoadingOverlay.scss"></style>
 
 <template>
-    <div class="LoadingOverlayComponent" id="ml-global-loader">
+    <div class="LoadingOverlayComponent">
         <HalfCircleSpinner :animation-duration="1000" :size="60"></HalfCircleSpinner>
     </div>
 </template>
