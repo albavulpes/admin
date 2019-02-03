@@ -6,6 +6,7 @@ import Comics from '../../../components/views/Comics/Comics.vue';
 import ComicViewer from '../../../components/views/Comics/ComicViewer/ComicViewer.vue';
 import ComicEditor from '../../../components/views/Comics/ComicEditor/ComicEditor.vue';
 import ComicDetails from '../../../components/views/Comics/ComicViewer/ComicDetails/ComicDetails.vue';
+import ComicArcs from '../../../components/views/Comics/ComicViewer/ComicArcs/ComicArcs.vue';
 
 export default [
     {
@@ -34,7 +35,7 @@ export default [
                     {
                         name: 'manage.comic.arcs',
                         path: 'arcs',
-                        component: ComicDetails
+                        component: ComicArcs
                     },
                     {
                         name: 'manage.comic.actions',

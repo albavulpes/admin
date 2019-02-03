@@ -1,11 +1,7 @@
-<script lang="ts" src="./Arcs.ts"></script>
+<script lang="ts" src="./ComicArcs.ts"></script>
 
 <template>
-    <div class="ArcsComponent">
-        <h1>Arcs for Comic</h1>
-
-        <hr>
-
+    <div class="ComicArcsComponent">
         <MediaCollection :MediaItems="Arcs"
             :MediaDetailsRoute="arc => ({name: 'manage.arc', params: {ArcId: arc.Id}})"
             :AddMediaRoute="{name: 'manage.arc.new'}"
