@@ -10,6 +10,10 @@ import ComicArcs from '../../../components/views/Comics/ComicViewer/ComicArcs/Co
 import ComicActions from '../../../components/views/Comics/ComicViewer/ComicActions/ComicActions.vue';
 
 import ArcEditor from '../../../components/views/Arcs/ArcEditor/ArcEditor.vue';
+import ArcViewer from '../../../components/views/Arcs/ArcViewer/ArcViewer.vue';
+import ArcActions from '../../../components/views/Arcs/ArcViewer/ArcActions/ArcActions.vue';
+import ArcChapters from '../../../components/views/Arcs/ArcViewer/ArcChapters/ArcChapters.vue';
+import ArcDetails from '../../../components/views/Arcs/ArcViewer/ArcDetails/ArcDetails.vue';
 
 export default [
     {
@@ -71,19 +75,34 @@ export default [
             {
                 name: 'manage.arc.id',
                 path: 'arc/:ArcId',
-                component: ComicViewer,
+                component: ArcViewer,
                 children: [
                     {
-                        name: 'manage.chapter.new',
-                        path: 'chapter/new',
-                        component: ComicViewer
+                        name: 'manage.arc.details',
+                        path: 'details',
+                        component: ArcDetails
                     },
                     {
-                        name: 'manage.chapter.id',
-                        path: 'chapter/:ChapterId',
-                        component: ComicViewer
+                        name: 'manage.arc.chapters',
+                        path: 'chapters',
+                        component: ArcChapters
+                    },
+                    {
+                        name: 'manage.arc.actions',
+                        path: 'actions',
+                        component: ArcActions
                     }
                 ]
+            },
+            {
+                name: 'manage.chapter.new',
+                path: 'chapter/new',
+                component: ComicViewer
+            },
+            {
+                name: 'manage.chapter.id',
+                path: 'chapter/:ChapterId',
+                component: ComicViewer
             }
         ]
     }
