@@ -2,7 +2,6 @@
 @import "~root/styles/meta";
 
 .MediaAddButtonComponent {
+    min-height: 280px;
     box-shadow: none !important;
-
-    height: calc(100% - 1.5rem);
 }
