@@ -12,7 +12,6 @@ Component.registerHooks([
 
 export function init(router: VueRouter) {
     authGuardHook(router);
-    toastClearHook(router);
 }
 
 function authGuardHook(router: VueRouter) {
@@ -32,14 +31,5 @@ function authGuardHook(router: VueRouter) {
             name: 'auth.login',
             replace: true
         });
-    });
-}
-
-function toastClearHook(router: VueRouter) {
-    router.beforeEach(async (to, from, next) => {
-        const toastService = Container.get(ToastService);
-        await toastService.clear();
-
-        next();
     });
 }

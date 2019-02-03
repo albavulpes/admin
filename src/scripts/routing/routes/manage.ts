@@ -5,6 +5,7 @@ import Manage from '../../../components/views/Manage/Manage.vue';
 import Comics from '../../../components/views/Comics/Comics.vue';
 import ComicViewer from '../../../components/views/Comics/ComicViewer/ComicViewer.vue';
 import ComicEditor from '../../../components/views/Comics/ComicEditor/ComicEditor.vue';
+import ComicDetails from '../../../components/views/Comics/ComicViewer/ComicDetails/ComicDetails.vue';
 
 export default [
     {
@@ -20,9 +21,27 @@ export default [
                 component: Comics
             },
             {
-                name: 'manage.comic.id',
+                name: 'manage.comic',
                 path: '/comic/:ComicId',
-                component: ComicViewer
+                redirect: {name: 'manage.comic.details'},
+                component: ComicViewer,
+                children: [
+                    {
+                        name: 'manage.comic.details',
+                        path: 'details',
+                        component: ComicDetails
+                    },
+                    {
+                        name: 'manage.comic.arcs',
+                        path: 'arcs',
+                        component: ComicDetails
+                    },
+                    {
+                        name: 'manage.comic.actions',
+                        path: 'actions',
+                        component: ComicDetails
+                    }
+                ]
             },
             {
                 name: 'manage.comic.new',

@@ -47,7 +47,7 @@ export default class extends Vue {
         this.ToastService.success(`Success! <b>${this.Comic.Title}</b> has been saved.`);
 
         this.$router.push({
-            name: 'manage.comic.id',
+            name: 'manage.comic',
             params: {
                 ComicId: this.Comic.Id
             }

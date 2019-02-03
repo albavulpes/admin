@@ -11,12 +11,4 @@
             }
         }
     }
-
-    .comicEditor {
-        .coverContainer {
-            @include breakpoint(lg) {
-                max-width: 480px;
-            }
-        }
-    }
 }
