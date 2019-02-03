@@ -7,6 +7,7 @@ import ComicViewer from '../../../components/views/Comics/ComicViewer/ComicViewe
 import ComicEditor from '../../../components/views/Comics/ComicEditor/ComicEditor.vue';
 import ComicDetails from '../../../components/views/Comics/ComicViewer/ComicDetails/ComicDetails.vue';
 import ComicArcs from '../../../components/views/Comics/ComicViewer/ComicArcs/ComicArcs.vue';
+import ComicActions from '../../../components/views/Comics/ComicViewer/ComicActions/ComicActions.vue';
 
 export default [
     {
@@ -40,7 +41,7 @@ export default [
                     {
                         name: 'manage.comic.actions',
                         path: 'actions',
-                        component: ComicDetails
+                        component: ComicActions
                     }
                 ]
             },
