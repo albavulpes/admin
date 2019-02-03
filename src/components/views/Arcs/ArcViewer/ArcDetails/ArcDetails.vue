@@ -1,10 +1,10 @@
 <script lang="ts" src="./ArcDetails.ts"></script>
 
 <template>
-    <div class="ComicDetailsComponent">
+    <div class="ArcDetailsComponent">
         <div class="row">
             <div class="col-auto">
-                <ImageViewer class="mb-4" :src="Comic.CoverImage.FullSize" :alt="Comic.Title"></ImageViewer>
+                <ImageViewer class="mb-4" :src="Arc.CoverImage.FullSize" :alt="Arc.Title"></ImageViewer>
             </div>
             <div class="col">
                 <div class="form-group row">
@@ -12,7 +12,7 @@
                         Author
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly v-model="Comic.Author">
+                        <input type="text" class="form-control-plaintext" placeholder="Author of your arc" readonly v-model="Arc.Author">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -20,7 +20,7 @@
                         Publish Date
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control-plaintext" placeholder="Not published yet" readonly :value="Comic.PublishDate | moment('LL')">
+                        <input type="text" class="form-control-plaintext" placeholder="Not published yet" readonly :value="Arc.PublishDate | moment('LL')">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -28,7 +28,7 @@
                         Description
                     </label>
                     <div class="col-sm-9">
-                        <p class="form-control-plaintext" placeholder="Short description of the comic" v-html="Comic.Description"></p>
+                        <p class="form-control-plaintext" placeholder="Short description of the arc" v-html="Arc.Description"></p>
                     </div>
                 </div>
 
@@ -36,9 +36,9 @@
 
                 <div class="d-flex justify-content-end">
                     <div>
-                        <b-button variant="outline-primary" :to="{name: 'manage.comic.edit'}">
+                        <b-button variant="outline-primary" :to="{name: 'manage.arc.edit'}">
                             <i class="mdi mdi-pencil"></i>
-                            Edit Comic Details
+                            Edit Arc Details
                         </b-button>
                     </div>
                 </div>

@@ -5,6 +5,7 @@
     min-height: 280px;
 
     .card {
+        height: 100%;
         margin-bottom: 1.5rem;
         overflow: hidden;
 
@@ -23,8 +24,11 @@
         }
 
         .card-img-top {
-            @include transition(transform);
+            height: 80%;
+            background-position: center;
+            background-size: cover;
 
+            @include transition(transform);
             transform-origin: bottom;
         }
 

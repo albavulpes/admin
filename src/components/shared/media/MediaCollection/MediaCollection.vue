@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-4 col-xl-3" v-for="item in MediaItems">
                 <router-link class="text-decoration-none" :to="MediaDetailsRoute(item)">
-                    <MediaCard :Image="item.CoverImage.FullSize" :ImageAlt="item.Title">
+                    <MediaCard :Image="item.CoverImage.FullSize">
                         <template slot="title">
                             <slot name="title" :item="item">
                                 {{item.Title}}

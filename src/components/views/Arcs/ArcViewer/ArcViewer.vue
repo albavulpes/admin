@@ -1,28 +1,28 @@
 <script lang="ts" src="./ArcViewer.ts"></script>
 
 <template>
-    <div class="ComicViewerComponent" v-if="Comic">
+    <div class="ArcViewerComponent" v-if="Arc">
         <h1 class="mx-3 mb-5">
-            {{Comic.Title}}
+            {{Arc.Title}}
         </h1>
 
         <b-nav tabs class="comicViewerTabs">
-            <b-nav-item :to="{name: 'manage.comic.details'}">
+            <b-nav-item :to="{name: 'manage.arc.details'}">
                 <i class="mdi mdi-information-variant"></i>
                 Details
             </b-nav-item>
-            <b-nav-item :to="{name: 'manage.comic.arcs'}">
+            <b-nav-item :to="{name: 'manage.arc.chapters'}">
                 <i class="mdi mdi-book-open-page-variant"></i>
-                Arcs
+                Chapters
             </b-nav-item>
-            <b-nav-item :to="{name: 'manage.comic.actions'}">
+            <b-nav-item :to="{name: 'manage.arc.actions'}">
                 <i class="mdi mdi-settings"></i>
                 Actions
             </b-nav-item>
         </b-nav>
 
         <div class="pt-4">
-            <router-view :Comic="Comic"></router-view>
+            <router-view :Arc="Arc"></router-view>
         </div>
     </div>
 </template>

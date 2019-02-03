@@ -5,7 +5,8 @@
     <div class="MediaCardComponent">
         <slot>
             <div class="card">
-                <img class="card-img-top" :src="Image" :alt="ImageAlt">
+                <div class="card-img-top" :style="{'background-image': `url('${Image}')`}"></div>
+
                 <div class="card-body">
                     <h5 class="card-title">
                         <slot name="title"></slot>

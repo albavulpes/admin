@@ -6,7 +6,4 @@ export default class extends Vue {
 
     @Prop()
     Image: string;
-
-    @Prop()
-    ImageAlt: string;
 }
