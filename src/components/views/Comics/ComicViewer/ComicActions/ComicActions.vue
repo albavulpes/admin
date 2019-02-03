@@ -45,7 +45,7 @@
                             This action will delete this comic forever never to be recovered again. <b></b>
                         </p>
                         <p class="h6">
-                            Note: Only delete content if you absolutely want to.
+                            Note: Only delete content if you absolutely need it gone.
                         </p>
                         <p class="h6">
                             Remember, just unpublish the content if you want to keep the content but not show the public yet.

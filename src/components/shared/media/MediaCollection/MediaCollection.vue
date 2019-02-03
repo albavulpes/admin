@@ -1,9 +1,10 @@
 <script lang="ts" src="./MediaCollection.ts"></script>
+<style lang="scss" src="./MediaCollection.scss"></style>
 
 <template>
     <div class="MediaCollectionComponent">
         <div class="row">
-            <div class="col-4 col-lg-3" v-for="item in MediaItems">
+            <div class="col-4 col-xl-3" v-for="item in MediaItems">
                 <router-link class="text-decoration-none" :to="MediaDetailsRoute(item)">
                     <MediaCard :Image="item.CoverImage.FullSize" :ImageAlt="item.Title">
                         <template slot="title">
@@ -17,7 +18,7 @@
                     </MediaCard>
                 </router-link>
             </div>
-            <div class="col-4 col-lg-3">
+            <div class="col-4 col-xl-3">
                 <router-link class="text-decoration-none" :to="AddMediaRoute">
                     <MediaAddButton>
                         <slot name="add-button-content"></slot>
