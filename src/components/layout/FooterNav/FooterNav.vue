@@ -2,10 +2,10 @@
 
 <template>
     <div class="FooterNavComponent container-fluid">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-auto">
                 <a href="https://github.com/albavulpes/web">
-                    <i class="fa fa-lg fa-github"></i>
+                    <i class="mdi mdi-18px mdi-github-circle align-middle"></i>
                     Github Project
                 </a>
             </div>

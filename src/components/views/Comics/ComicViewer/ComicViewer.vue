@@ -1,5 +1,4 @@
 <script lang="ts" src="./ComicViewer.ts"></script>
-<style lang="scss" src="./ComicViewer.scss"></style>
 
 <template>
     <div class="ComicViewerComponent" v-if="Comic">

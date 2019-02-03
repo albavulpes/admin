@@ -9,6 +9,8 @@ import ComicDetails from '../../../components/views/Comics/ComicViewer/ComicDeta
 import ComicArcs from '../../../components/views/Comics/ComicViewer/ComicArcs/ComicArcs.vue';
 import ComicActions from '../../../components/views/Comics/ComicViewer/ComicActions/ComicActions.vue';
 
+import ArcEditor from '../../../components/views/Arcs/ArcEditor/ArcEditor.vue';
+
 export default [
     {
         path: '/manage',
@@ -60,7 +62,11 @@ export default [
             },
             {
                 name: 'manage.arc.new',
-                path: '/comic/:ComicId/arc/new'
+                path: '/comic/:ComicId/arc/new',
+                component: ArcEditor,
+                props: {
+                    IsCreateMode: true
+                }
             },
             {
                 name: 'manage.arc.id',
