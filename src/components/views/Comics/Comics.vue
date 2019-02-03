@@ -1,31 +1,22 @@
 <script lang="ts" src="./Comics.ts"></script>
 
 <template>
-    <div class="ComicsComponent viewContainer">
+    <div class="ComicsComponent">
         <h1>Your Comics</h1>
 
         <hr>
 
-        <div class="row">
-            <div class="col-4 col-lg-3" v-for="comic in Comics">
-                <router-link class="text-decoration-none" :to="{name: 'manage.comic', params: {ComicId: comic.Id}}">
-                    <MediaCard :Image="comic.CoverImage.FullSize" :ImageAlt="comic.Title">
-                        <template slot="title">
-                            {{comic.Title}}
-                        </template>
-                        <template slot="content">
-                            {{comic.ArcsCount}} Arcs
-                        </template>
-                    </MediaCard>
-                </router-link>
-            </div>
-            <div class="col-4 col-lg-3">
-                <router-link class="text-decoration-none" :to="{name: 'manage.comic.new'}">
-                    <MediaAddButton>
-                        Add Comic
-                    </MediaAddButton>
-                </router-link>
-            </div>
-        </div>
+        <MediaCollection :MediaItems="Comics"
+            :MediaDetailsRoute="comic => ({name: 'manage.comic', params: {ComicId: comic.Id}})"
+            :AddMediaRoute="{name: 'manage.comic.new'}"
+        >
+            <template slot="content" slot-scope="{item}">
+                {{item.ArcsCount}} Arcs
+            </template>
+
+            <template slot="add-button-content">
+                Add Comic
+            </template>
+        </MediaCollection>
     </div>
 </template>

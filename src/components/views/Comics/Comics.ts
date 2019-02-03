@@ -4,13 +4,11 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
 
-import MediaCard from '../../shared/MediaCard/MediaCard.vue';
-import MediaAddButton from '../../shared/MediaAddButton/MediaAddButton.vue';
+import MediaCollection from '../../shared/media/MediaCollection/MediaCollection.vue';
 
 @Component({
     components: {
-        MediaCard,
-        MediaAddButton
+        MediaCollection
     },
     metaInfo: {
         title: 'Comics'
