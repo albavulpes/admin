@@ -66,10 +66,10 @@
 
                         <div class="d-flex justify-content-end">
                             <div>
-                                <button type="submit" class="btn btn-outline-primary">
+                                <b-button variant="outline-primary" :to="{name: 'manage.comic.edit'}">
                                     <i class="mdi mdi-pencil"></i>
                                     Edit Comic Details
-                                </button>
+                                </b-button>
                             </div>
                         </div>
                     </div>

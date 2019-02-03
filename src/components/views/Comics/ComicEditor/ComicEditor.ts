@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import {Component} from 'vue-property-decorator';
+import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {ComicEditForm} from '../../../../scripts/forms/comics/ComicEditForm';
@@ -23,10 +23,16 @@ export default class extends Vue {
     @Require()
     ComicEditForm: ComicEditForm;
 
-    Comic: Comic = null;
+    @Prop()
+    Comic: Comic;
+
+    @Prop()
+    IsCreateMode: boolean;
 
     created() {
-        this.ResetForm();
+        if (this.IsCreateMode) {
+            this.ResetForm();
+        }
     }
 
     ResetForm() {

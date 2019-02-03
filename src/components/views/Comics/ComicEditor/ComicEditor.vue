@@ -44,15 +44,29 @@
 
                     <section class="d-flex justify-content-between py-3">
                         <div>
-                            <b-button variant="light" @click="ResetForm">
-                                <i class="mdi mdi-refresh"></i>
-                                Reset Form
-                            </b-button>
+                            <template v-if="IsCreateMode">
+                                <b-button variant="light" @click="ResetForm">
+                                    <i class="mdi mdi-refresh"></i>
+                                    Reset Form
+                                </b-button>
+                            </template>
+                            <template v-else>
+                                <b-button variant="light" :to="{name: 'manage.comic.id'}">
+                                    <i class="mdi mdi-chevron-left"></i>
+                                    Cancel
+                                </b-button>
+                            </template>
                         </div>
                         <div>
                             <b-button variant="primary" type="submit" class="px-5">
-                                <i class="mdi mdi-creation"></i>
-                                Create Comic
+                                <template v-if="IsCreateMode">
+                                    <i class="mdi mdi-creation"></i>
+                                    Create Comic
+                                </template>
+                                <template v-else>
+                                    <i class="mdi mdi-content-save-outline"></i>
+                                    Save Comic
+                                </template>
                             </b-button>
                         </div>
                     </section>
