@@ -50,7 +50,7 @@
                                 Release Date
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly :value="Comic.ReleaseDate | moment('LL')">
+                                <input type="text" class="form-control-plaintext" placeholder="No release date" readonly :value="Comic.ReleaseDate | moment('LL')">
                             </div>
                         </div>
                         <div class="form-group row">

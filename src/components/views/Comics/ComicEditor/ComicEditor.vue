@@ -2,7 +2,14 @@
 
 <template>
     <div class="ComicEditorComponent">
-        <h1>Let's create a new comic!</h1>
+        <h1>
+            <template v-if="IsCreateMode">
+                Let's create a new comic!
+            </template>
+            <template v-else>
+                {{Comic.Title}}
+            </template>
+        </h1>
 
         <b-form @submit.prevent="SubmitForm">
             <div class="row mt-3">
