@@ -22,7 +22,7 @@ export class ComicEditForm {
                 Thumbnail: null
             },
             Description: null,
-            ReleaseDate: null
+            PublishDate: null
         } as Comic;
     }
 

@@ -45,7 +45,7 @@
                         </h4>
 
                         <b-form-group label="Publish Date">
-                            <b-form-input type="text" placeholder="Publish date for your comic" v-model="Comic.ReleaseDate"></b-form-input>
+                            <b-form-input type="text" placeholder="Publish date for your comic" v-model="Comic.PublishDate"></b-form-input>
                         </b-form-group>
                     </section>
 
