@@ -7,7 +7,7 @@
                 Let's create a new comic!
             </template>
             <template v-else>
-                {{Comic.Title}}
+                {{FormData.Title}}
             </template>
         </h1>
 
@@ -15,7 +15,7 @@
             <div class="row mt-3">
                 <div class="col-4">
                     <section class="py-3">
-                        <ImageUploader v-model="Comic.CoverImage.FullSize">
+                        <ImageUploader v-model="FormData.CoverImage.FullSize">
                             Add a cover image
                         </ImageUploader>
                     </section>
@@ -27,15 +27,15 @@
                         </h4>
 
                         <b-form-group label="Title">
-                            <b-form-input type="text" placeholder="The title of your comic" v-model="Comic.Title"></b-form-input>
+                            <b-form-input type="text" placeholder="The title of your comic" v-model="FormData.Title"></b-form-input>
                         </b-form-group>
 
                         <b-form-group label="Author">
-                            <b-form-input type="text" placeholder="The author of your comic" v-model="Comic.Author"></b-form-input>
+                            <b-form-input type="text" placeholder="The author of your comic" v-model="FormData.Author"></b-form-input>
                         </b-form-group>
 
                         <b-form-group label="Description">
-                            <b-form-textarea rows="3" placeholder="A short description of your comic" v-model="Comic.Description"></b-form-textarea>
+                            <b-form-textarea rows="3" placeholder="A short description of your comic" v-model="FormData.Description"></b-form-textarea>
                         </b-form-group>
                     </section>
 
@@ -45,7 +45,7 @@
                         </h4>
 
                         <b-form-group label="Publish Date">
-                            <b-form-input type="text" placeholder="Publish date for your comic" v-model="Comic.PublishDate"></b-form-input>
+                            <b-form-input type="text" placeholder="Publish date for your comic" v-model="FormData.PublishDate"></b-form-input>
                         </b-form-group>
                     </section>
 

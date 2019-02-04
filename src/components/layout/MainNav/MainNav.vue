@@ -30,7 +30,7 @@
                     </a>
                 </router-link>
 
-                <router-link tag="li" class="nav-item" :to="{name: 'manage.comics'}" key="manage.comics">
+                <router-link tag="li" class="nav-item" :to="{name: 'comics'}" key="comics">
                     <a class="nav-link">
                         <i class="mdi mdi-library-books"></i>
                         Comics

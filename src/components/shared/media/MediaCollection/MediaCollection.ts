@@ -8,7 +8,7 @@ import MediaAddButton from '../../MediaAddButton/MediaAddButton.vue';
 @Component({
     components: {
         MediaCard,
-        MediaAddButton,
+        MediaAddButton
     }
 })
 export default class extends Vue {
