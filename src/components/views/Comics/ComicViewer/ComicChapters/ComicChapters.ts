@@ -22,5 +22,15 @@ export default class extends Vue {
 
     async created() {
         this.ChapterGroups = await this.HttpService.api.chapters.getAll(this.Comic.Id);
+
+        // If none, just show an empty unassigned arc group
+        if (!this.ChapterGroups || this.ChapterGroups.length === 0) {
+            this.ChapterGroups = [
+                {
+                    Arc: null,
+                    Chapters: []
+                }
+            ];
+        }
     }
 }
