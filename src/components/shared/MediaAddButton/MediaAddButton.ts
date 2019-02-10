@@ -5,8 +5,6 @@ import {Component} from 'vue-property-decorator';
 export default class extends Vue {
 
     ButtonClick() {
-        if (typeof this.$listeners.click === 'function') {
-            this.$listeners.click();
-        }
+        this.$emit('click');
     }
 }

@@ -25,6 +25,6 @@ export default class extends Vue {
     }
 
     async AddPages() {
-
+        console.log('add');
     }
 }

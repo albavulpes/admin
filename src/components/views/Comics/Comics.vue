@@ -6,10 +6,7 @@
 
         <hr>
 
-        <MediaCollection :MediaItems="Comics"
-            :MediaDetailsRoute="comic => ({name: 'manage.comic', params: {ComicId: comic.Id}})"
-            :AddMediaRoute="{name: 'manage.comic.new'}"
-        >
+        <MediaCollection :MediaItems="Comics" @media:selected="ComicSelected" @media:add="AddComic">
             <template slot="content" slot-scope="{item}">
                 {{item.ChaptersCount}} Chapters
             </template>

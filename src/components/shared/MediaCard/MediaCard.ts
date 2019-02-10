@@ -6,4 +6,8 @@ export default class extends Vue {
 
     @Prop()
     Image: string;
+
+    CardClick() {
+        this.$emit('click');
+    }
 }

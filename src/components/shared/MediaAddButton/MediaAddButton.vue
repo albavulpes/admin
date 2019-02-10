@@ -2,7 +2,7 @@
 <style lang="scss" src="./MediaAddButton.scss"></style>
 
 <template>
-    <button type="button" class="MediaAddButtonComponent btn btn-block btn-light" @click="ButtonClick">
+    <b-button variant="light" block class="MediaAddButtonComponent" @click="ButtonClick">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="">
                 <i class="mdi mdi-48px mdi-plus"></i>
@@ -12,5 +12,5 @@
                 </p>
             </div>
         </div>
-    </button>
+    </b-button>
 </template>

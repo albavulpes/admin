@@ -31,4 +31,21 @@ export default class extends Vue {
 
         this.LoaderService.hide();
     }
+
+    ComicSelected(item: Comic) {
+        this.$router.push({
+            name: 'manage.comic',
+            params: {
+                ComicId: item.Id
+            }
+        });
+    }
+
+    AddComic() {
+        console.log('click');
+
+        this.$router.push({
+            name: 'manage.comic.new'
+        });
+    }
 }
