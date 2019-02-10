@@ -8,26 +8,26 @@
             </div>
             <div class="col">
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">
+                    <label class="col-5 col-form-label">
                         Author
                     </label>
-                    <div class="col-sm-9">
+                    <div class="col">
                         <input type="text" class="form-control-plaintext" placeholder="Author of your comic" readonly v-model="Comic.Author">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">
+                    <label class="col-5 col-form-label">
                         Publish Date
                     </label>
-                    <div class="col-sm-9">
+                    <div class="col">
                         <input type="text" class="form-control-plaintext" placeholder="Not published yet" readonly :value="Comic.PublishDate | moment('LL')">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">
+                    <label class="col-5 col-form-label">
                         Description
                     </label>
-                    <div class="col-sm-9">
+                    <div class="col">
                         <p class="form-control-plaintext" placeholder="Short description of the comic" v-html="Comic.Description"></p>
                     </div>
                 </div>

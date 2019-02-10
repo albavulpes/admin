@@ -2,11 +2,8 @@
 $primary: hsl(206, 80%, 30%);
 $secondary: hsl(185, 72%, 41%);
 
-/* Buttons */
-$btn-padding-x: 20px;
-
-$navbar-small-height: 58px;
-$navbar-normal-height: 64px;
+/* Grid */
+$grid-columns: 20;
 
 $grid-breakpoints: (
     xs: 0,
@@ -24,3 +21,6 @@ $container-max-widths: (
     xl: 1140px,
     xxl: 1540px
 );
+
+/* Buttons */
+$btn-padding-x: 20px;

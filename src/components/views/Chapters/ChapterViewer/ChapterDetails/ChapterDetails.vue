@@ -8,30 +8,30 @@
             </div>
             <div class="col">
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">
+                    <label class="col-5 col-form-label">
                         Author
                     </label>
-                    <div class="col-sm-9">
+                    <div class="col">
                         <p class="form-control-plaintext">
                             {{Chapter.Author}}
                         </p>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">
+                    <label class="col-5 col-form-label">
                         Publish Date
                     </label>
-                    <div class="col-sm-9">
+                    <div class="col">
                         <p class="form-control-plaintext">
                             {{Chapter.PublishDate | moment('LL')}}
                         </p>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">
+                    <label class="col-5 col-form-label">
                         Description
                     </label>
-                    <div class="col-sm-9">
+                    <div class="col">
                         <p class="form-control-plaintext descriptionContent" v-html="Chapter.Description"></p>
                     </div>
                 </div>

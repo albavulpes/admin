@@ -13,14 +13,14 @@
 
         <b-form @submit.prevent="SubmitForm">
             <div class="row mt-3">
-                <div class="col-4">
+                <div class="col-auto">
                     <section class="py-3">
                         <ImageUploader v-model="FormData.CoverImage.FullSize">
                             Add a cover image
                         </ImageUploader>
                     </section>
                 </div>
-                <div class="col-8">
+                <div class="col">
                     <section class="py-3">
                         <h4 class="text-black-50 mb-4">
                             Chapter Details
