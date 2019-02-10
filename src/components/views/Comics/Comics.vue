@@ -11,7 +11,7 @@
             :AddMediaRoute="{name: 'manage.comic.new'}"
         >
             <template slot="content" slot-scope="{item}">
-                {{item.ArcsCount}} Arcs
+                {{item.ChaptersCount}} Chapters
             </template>
 
             <template slot="add-button-content">
