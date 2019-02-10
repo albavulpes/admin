@@ -2,7 +2,7 @@
 
 <template>
     <div class="ChapterPagesComponent">
-        <MediaCollection :MediaItems="Pages">
+        <MediaCollection :MediaItems="Pages" @media:add="AddPages">
             <template slot="content" slot-scope="{item}">
                 {{item.ChaptersCount}} Chapters
             </template>

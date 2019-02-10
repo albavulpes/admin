@@ -5,25 +5,21 @@
     <div class="MediaCollectionComponent">
         <div class="row">
             <div class="col-4 col-xl-3" v-for="item in MediaItems">
-                <b-link class="text-decoration-none" :to="MediaDetailsRoute && MediaDetailsRoute(item)">
-                    <MediaCard :Image="item.CoverImage.FullSize">
-                        <template slot="title">
-                            <slot name="title" :item="item">
-                                {{item.Title}}
-                            </slot>
-                        </template>
-                        <template slot="content">
-                            <slot name="content" :item="item"></slot>
-                        </template>
-                    </MediaCard>
-                </b-link>
+                <MediaCard :Image="item.CoverImage.FullSize" @click="MediaItemClick(item)">
+                    <template slot="title">
+                        <slot name="title" :item="item">
+                            {{item.Title}}
+                        </slot>
+                    </template>
+                    <template slot="content">
+                        <slot name="content" :item="item"></slot>
+                    </template>
+                </MediaCard>
             </div>
             <div class="col-4 col-xl-3">
-                <b-link class="text-decoration-none" :to="AddMediaRoute">
-                    <MediaAddButton>
-                        <slot name="add-button-content"></slot>
-                    </MediaAddButton>
-                </b-link>
+                <MediaAddButton @click="AddMediaClick">
+                    <slot name="add-button-content"></slot>
+                </MediaAddButton>
             </div>
         </div>
     </div>

@@ -33,4 +33,22 @@ export default class extends Vue {
             ];
         }
     }
+
+    ChapterSelected(item: Chapter) {
+        this.$router.push({
+            name: 'manage.chapter',
+            params: {
+                ChapterId: item.Id
+            }
+        });
+    }
+
+    AddChapter() {
+        this.$router.push({
+            name: 'manage.chapter.new',
+            query: {
+                comicId: this.Comic.Id
+            }
+        });
+    }
 }

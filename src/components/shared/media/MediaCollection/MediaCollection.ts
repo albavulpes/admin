@@ -16,9 +16,11 @@ export default class extends Vue {
     @Prop()
     MediaItems: MediaContentCollection[];
 
-    @Prop()
-    MediaDetailsRoute: (item: MediaContentCollection) => Route;
+    MediaItemClick(item: MediaContentCollection) {
+        this.$emit('media:selected', item);
+    }
 
-    @Prop()
-    AddMediaRoute: Route;
+    AddMediaClick() {
+        this.$emit('media:add');
+    }
 }

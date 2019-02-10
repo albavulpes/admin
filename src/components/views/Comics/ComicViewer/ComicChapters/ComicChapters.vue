@@ -14,10 +14,7 @@
                 </template>
             </h4>
 
-            <MediaCollection :MediaItems="chapterGroup.Chapters"
-                :MediaDetailsRoute="chapter => ({name: 'manage.chapter', params: {ChapterId: chapter.Id}})"
-                :AddMediaRoute="{name: 'manage.chapter.new', query: {comicId: Comic.Id}}"
-            >
+            <MediaCollection :MediaItems="chapterGroup.Chapters" @media:selected="ChapterSelected" @media:add="AddChapter">
                 <template slot="content" slot-scope="{item}">
                     {{item.PagesCount}} Pages
                 </template>

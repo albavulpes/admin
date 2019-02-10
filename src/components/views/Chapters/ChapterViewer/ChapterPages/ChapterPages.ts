@@ -23,4 +23,8 @@ export default class extends Vue {
     async created() {
         this.Pages = await this.HttpService.api.pages.getAll(this.Chapter.Id);
     }
+
+    async AddPages() {
+
+    }
 }
