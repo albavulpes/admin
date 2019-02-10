@@ -27,7 +27,7 @@ export default [
                     },
                     {
                         name: 'manage.comic.chapters',
-                        path: 'arcs',
+                        path: 'chapters',
                         component: ComicChapters
                     },
                     {
