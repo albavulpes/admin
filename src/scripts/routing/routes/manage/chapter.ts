@@ -10,6 +10,17 @@ import ChapterActions from '../../../../components/views/Chapters/ChapterViewer/
 
 export default [
     {
+        name: 'manage.chapter.new',
+        path: '/chapter/new',
+        component: ChapterEditor,
+        props: (route) => {
+            return {
+                ComicId: route.query['comicId'],
+                IsCreateMode: true
+            };
+        }
+    },
+    {
         name: 'manage.chapter',
         redirect: {name: 'manage.chapter.details'},
         path: '/chapter/:ChapterId',
@@ -43,16 +54,5 @@ export default [
                 component: ChapterEditor
             }
         ]
-    },
-    {
-        name: 'manage.chapter.new',
-        path: '/chapter/new',
-        component: ChapterEditor,
-        props: (route) => {
-            return {
-                ComicId: route.query['comicId'],
-                IsCreateMode: true
-            };
-        }
     }
 ] as RouteConfig[];

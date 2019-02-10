@@ -10,6 +10,14 @@ import ComicActions from '../../../../components/views/Comics/ComicViewer/ComicA
 
 export default [
     {
+        name: 'manage.comic.new',
+        path: '/comic/new',
+        component: ComicEditor,
+        props: {
+            IsCreateMode: true
+        }
+    },
+    {
         name: 'manage.comic',
         redirect: {name: 'manage.comic.details'},
         path: '/comic/:ComicId',
@@ -43,13 +51,5 @@ export default [
                 component: ComicEditor
             }
         ]
-    },
-    {
-        name: 'manage.comic.new',
-        path: '/comic/new',
-        component: ComicEditor,
-        props: {
-            IsCreateMode: true
-        }
     }
 ] as RouteConfig[];

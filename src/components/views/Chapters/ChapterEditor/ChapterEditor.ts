@@ -65,11 +65,11 @@ export default class extends Vue {
                     ChapterId: this.FormData.Id
                 }
             });
-
-            this.LoaderService.hide();
         }
         catch (error) {
-            this.ToastService.success(error);
+            this.ToastService.error(error.message);
         }
+
+        this.LoaderService.hide();
     }
 }
