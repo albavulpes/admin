@@ -10,6 +10,8 @@
         margin-bottom: 1.5rem;
         overflow: hidden;
 
+        align-items: normal !important;
+
         @include transition((margin-top, box-shadow));
 
         &:hover,
