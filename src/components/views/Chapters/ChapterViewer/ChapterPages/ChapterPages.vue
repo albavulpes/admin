@@ -1,4 +1,4 @@
-<script lang="ts" src="./ComicArcs.ts"></script>
+<script lang="ts" src="./ChapterPages.ts"></script>
 
 <template>
     <div class="ComicArcsComponent">

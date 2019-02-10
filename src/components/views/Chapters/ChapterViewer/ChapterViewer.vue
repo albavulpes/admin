@@ -1,4 +1,4 @@
-<script lang="ts" src="./ArcViewer.ts"></script>
+<script lang="ts" src="./ChapterViewer.ts"></script>
 
 <template>
     <div class="ArcViewerComponent" v-if="Arc">

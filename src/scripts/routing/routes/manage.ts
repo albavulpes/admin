@@ -1,16 +1,18 @@
 import {RouteConfig} from 'vue-router';
 
 import manageComic from './manage/comic';
+import manageArc from './manage/chapter';
 
 import Manage from '../../../components/views/Manage/Manage.vue';
 
-import ArcViewer from '../../../components/views/Arcs/ArcViewer/ArcViewer.vue';
-import ArcActions from '../../../components/views/Arcs/ArcViewer/ArcActions/ArcActions.vue';
-import ArcChapters from '../../../components/views/Arcs/ArcViewer/ArcChapters/ArcChapters.vue';
-import ArcDetails from '../../../components/views/Arcs/ArcViewer/ArcDetails/ArcDetails.vue';
+import ArcViewer from '../../../components/views/Chapters/ChapterViewer/ChapterViewer.vue';
+import ArcActions from '../../../components/views/Chapters/ChapterViewer/ChapterActions/ChapterActions.vue';
+import ArcChapters from '../../../components/views/Chapters/ChapterViewer/ChapterPages/ChapterPages.vue';
+import ArcDetails from '../../../components/views/Chapters/ChapterViewer/ChapterDetails/ChapterDetails.vue';
 
 export default [
     ...manageComic,
+    ...manageArc,
     {
         path: '/manage',
         component: Manage,

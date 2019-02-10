@@ -1,4 +1,4 @@
-<script lang="ts" src="./ArcEditor.ts"></script>
+<script lang="ts" src="./ChapterEditor.ts"></script>
 
 <template>
     <div class="ArcEditorComponent">

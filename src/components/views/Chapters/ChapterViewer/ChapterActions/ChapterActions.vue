@@ -1,4 +1,4 @@
-<script lang="ts" src="./ArcActions.ts"></script>
+<script lang="ts" src="./ChapterActions.ts"></script>
 
 <template>
     <div class="ComicActionsComponent">

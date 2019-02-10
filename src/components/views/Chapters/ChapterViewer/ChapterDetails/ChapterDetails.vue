@@ -1,4 +1,4 @@
-<script lang="ts" src="./ArcDetails.ts"></script>
+<script lang="ts" src="./ChapterDetails.ts"></script>
 
 <template>
     <div class="ArcDetailsComponent">

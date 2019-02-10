@@ -15,12 +15,12 @@ export default class extends Vue {
     @Prop()
     Comic: Comic;
 
-    Arcs: Arc[] = [];
+    ChapterGroups: ChapterGroupResponse[] = [];
 
     @Require()
     HttpService: HttpService;
 
     async created() {
-        this.Arcs = await this.HttpService.api.arcs.getAll(this.Comic.Id);
+        this.ChapterGroups = await this.HttpService.api.chapters.getAll(this.Comic.Id);
     }
 }
