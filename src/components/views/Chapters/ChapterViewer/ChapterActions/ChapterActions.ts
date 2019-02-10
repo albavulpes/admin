@@ -11,5 +11,5 @@ import ActionCard from '../../../../shared/management/ActionCard/ActionCard.vue'
 export default class extends Vue {
 
     @Prop()
-    Comic: Comic;
+    Chapter: Chapter;
 }

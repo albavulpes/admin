@@ -12,7 +12,7 @@ export default [
     {
         name: 'manage.chapter',
         redirect: {name: 'manage.chapter.details'},
-        path: '/chapter/:ComicId',
+        path: '/chapter/:ChapterId',
         component: ManageChapter,
         props: true,
         children: [
@@ -26,8 +26,8 @@ export default [
                         component: ChapterDetails
                     },
                     {
-                        name: 'manage.chapter.chapters',
-                        path: 'chapters',
+                        name: 'manage.chapter.pages',
+                        path: 'pages',
                         component: ChapterPages
                     },
                     {
@@ -48,8 +48,11 @@ export default [
         name: 'manage.chapter.new',
         path: '/chapter/new',
         component: ChapterEditor,
-        props: {
-            IsCreateMode: true
+        props: (route) => {
+            return {
+                ComicId: route.query['comicId'],
+                IsCreateMode: true
+            };
         }
     }
 ] as RouteConfig[];

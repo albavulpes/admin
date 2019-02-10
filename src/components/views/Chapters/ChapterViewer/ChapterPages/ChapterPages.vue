@@ -1,17 +1,14 @@
 <script lang="ts" src="./ChapterPages.ts"></script>
 
 <template>
-    <div class="ComicArcsComponent">
-        <MediaCollection :MediaItems="Arcs"
-            :MediaDetailsRoute="arc => ({name: 'manage.arc', params: {ArcId: arc.Id}})"
-            :AddMediaRoute="{name: 'manage.arc.new'}"
-        >
+    <div class="ChapterPagesComponent">
+        <MediaCollection :MediaItems="Pages">
             <template slot="content" slot-scope="{item}">
                 {{item.ChaptersCount}} Chapters
             </template>
 
             <template slot="add-button-content">
-                Add Arc
+                Add Page
             </template>
         </MediaCollection>
     </div>

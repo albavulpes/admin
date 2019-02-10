@@ -8,7 +8,7 @@ import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService'
 export default class extends Vue {
 
     @Prop({required: true})
-    ArcId: string;
+    ChapterId: string;
 
     @Require()
     HttpService: HttpService;
@@ -16,16 +16,16 @@ export default class extends Vue {
     @Require()
     LoaderService: LoaderService;
 
-    Arc: Arc = null;
+    Chapter: Chapter = null;
 
     async created() {
-        await this.FetchArc();
+        await this.FetchChapter();
     }
 
-    async FetchArc() {
+    async FetchChapter() {
         this.LoaderService.show();
 
-        this.Arc = await this.HttpService.api.arcs.get(this.ArcId);
+        this.Chapter = await this.HttpService.api.chapters.get(this.ChapterId);
 
         this.LoaderService.hide();
     }

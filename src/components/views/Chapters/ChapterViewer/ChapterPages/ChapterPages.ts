@@ -13,14 +13,14 @@ import MediaCollection from '../../../../shared/media/MediaCollection/MediaColle
 export default class extends Vue {
 
     @Prop()
-    Comic: Comic;
+    Chapter: Chapter;
 
-    Arcs: Arc[] = [];
+    Pages: Page[] = [];
 
     @Require()
     HttpService: HttpService;
 
     async created() {
-        this.Arcs = await this.HttpService.api.arcs.getAll(this.Comic.Id);
+        this.Pages = await this.HttpService.api.pages.getAll(this.Chapter.Id);
     }
 }

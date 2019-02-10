@@ -11,5 +11,5 @@ import ImageViewer from '../../../../shared/images/ImageViewer/ImageViewer.vue';
 export default class extends Vue {
 
     @Prop()
-    Arc: Arc;
+    Chapter: Chapter;
 }

@@ -1,10 +1,10 @@
 <script lang="ts" src="./ChapterActions.ts"></script>
 
 <template>
-    <div class="ComicActionsComponent">
+    <div class="ChapterActionsComponent">
         <ActionCard>
             <template slot="title">
-                Publish Comic
+                Publish Chapter
             </template>
             <template slot="content">
                 <div class="d-flex">
@@ -24,7 +24,7 @@
             <template slot="actions">
                 <b-button variant="primary">
                     <i class="mdi mdi-publish"></i>
-                    Publish Comic
+                    Publish Chapter
                 </b-button>
             </template>
         </ActionCard>
@@ -32,7 +32,7 @@
         <ActionCard class="border-danger">
             <template slot="title">
                 <span class="text-danger">
-                    Delete Comic
+                    Delete Chapter
                 </span>
             </template>
             <template slot="content">
@@ -56,7 +56,7 @@
             <template slot="actions">
                 <b-button variant="outline-danger">
                     <i class="mdi mdi-delete"></i>
-                    Delete Comic
+                    Delete Chapter
                 </b-button>
             </template>
         </ActionCard>

@@ -1,10 +1,10 @@
 <script lang="ts" src="./ChapterDetails.ts"></script>
 
 <template>
-    <div class="ArcDetailsComponent">
+    <div class="ChapterDetailsComponent">
         <div class="row">
             <div class="col-auto">
-                <ImageViewer class="mb-4" :src="Arc.CoverImage.FullSize" :alt="Arc.Title"></ImageViewer>
+                <ImageViewer class="mb-4" :src="Chapter.CoverImage.FullSize" :alt="Chapter.Title"></ImageViewer>
             </div>
             <div class="col">
                 <div class="form-group row">
@@ -12,7 +12,9 @@
                         Author
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control-plaintext" placeholder="Author of your arc" readonly v-model="Arc.Author">
+                        <p class="form-control-plaintext">
+                            {{Chapter.Author}}
+                        </p>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -20,7 +22,9 @@
                         Publish Date
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control-plaintext" placeholder="Not published yet" readonly :value="Arc.PublishDate | moment('LL')">
+                        <p class="form-control-plaintext">
+                            {{Chapter.PublishDate | moment('LL')}}
+                        </p>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -28,7 +32,7 @@
                         Description
                     </label>
                     <div class="col-sm-9">
-                        <p class="form-control-plaintext" placeholder="Short description of the arc" v-html="Arc.Description"></p>
+                        <p class="form-control-plaintext descriptionContent" v-html="Chapter.Description"></p>
                     </div>
                 </div>
 
@@ -36,9 +40,9 @@
 
                 <div class="d-flex justify-content-end">
                     <div>
-                        <b-button variant="outline-primary" :to="{name: 'manage.arc.edit'}">
+                        <b-button variant="outline-primary" :to="{name: 'manage.chapter.edit'}">
                             <i class="mdi mdi-pencil"></i>
-                            Edit Arc Details
+                            Edit Chapter Details
                         </b-button>
                     </div>
                 </div>

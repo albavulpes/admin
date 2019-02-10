@@ -9,12 +9,12 @@ import ImageViewer from '../../../shared/images/ImageViewer/ImageViewer.vue';
     },
     metaInfo() {
         return {
-            title: this.Arc && this.Arc.Title
+            title: this.Chapter && this.Chapter.Title
         };
     }
 })
 export default class extends Vue {
 
     @Prop()
-    Arc: Arc;
+    Chapter: Chapter;
 }

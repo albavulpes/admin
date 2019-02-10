@@ -2,10 +2,11 @@ import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
-import {ArcEditForm} from '../../../../scripts/forms/arcs/ArcEditForm';
+import {ChapterEditForm} from '../../../../scripts/forms/arcs/ChapterEditForm';
 import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
 
 import ImageUploader from '../../../shared/images/ImageUploader/ImageUploader.vue';
+import cloneDeep from 'lodash/cloneDeep';
 
 @Component({
     components: {
@@ -14,6 +15,15 @@ import ImageUploader from '../../../shared/images/ImageUploader/ImageUploader.vu
 })
 export default class extends Vue {
 
+    @Prop()
+    ComicId: string;
+
+    @Prop()
+    Chapter: Chapter;
+
+    @Prop()
+    IsCreateMode: boolean;
+
     @Require()
     ToastService: ToastService;
 
@@ -21,41 +31,45 @@ export default class extends Vue {
     LoaderService: LoaderService;
 
     @Require()
-    ArcEditForm: ArcEditForm;
+    ChapterEditForm: ChapterEditForm;
 
-    @Prop()
-    Comic: Comic;
-
-    @Prop()
-    Arc: Arc;
-
-    @Prop()
-    IsCreateMode: boolean;
+    FormData: Chapter = null;
 
     created() {
-        if (this.IsCreateMode) {
-            this.ResetForm();
-        }
+        this.ResetForm();
     }
 
     ResetForm() {
-        this.Arc = this.ArcEditForm.getDefaultData();
+        if (this.IsCreateMode) {
+            this.FormData = this.ChapterEditForm.getDefaultData();
+            this.FormData.ComicId = this.ComicId;
+        }
+        else {
+            this.FormData = cloneDeep(this.Chapter);
+        }
     }
 
     async SubmitForm() {
         this.LoaderService.show();
 
-        this.Comic = await this.ArcEditForm.submit(this.Arc);
+        try {
+            this.FormData = await this.ChapterEditForm.submit(this.FormData);
 
-        this.ToastService.success(`Success! <b>${this.Arc.Title}</b> has been saved.`);
+            this.ToastService.success(`Success! <b>${this.FormData.Title}</b> has been saved.`);
 
-        this.$router.push({
-            name: 'manage.arc',
-            params: {
-                ArcId: this.Arc.Id
-            }
-        });
+            this.$emit('update');
 
-        this.LoaderService.hide();
+            this.$router.push({
+                name: 'manage.chapter',
+                params: {
+                    ChapterId: this.FormData.Id
+                }
+            });
+
+            this.LoaderService.hide();
+        }
+        catch (error) {
+            this.ToastService.success(error);
+        }
     }
 }
