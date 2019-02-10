@@ -25,7 +25,8 @@
         }
 
         .card-img-top {
-            height: 80%;
+            flex: 1 1 auto;
+
             background-position: center;
             background-size: cover;
 
@@ -33,12 +34,16 @@
             transform-origin: bottom;
         }
 
-        .card-title {
-            line-height: 1.5rem;
-            margin-bottom: 0.25rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .card-body {
+            flex: 0 0 auto;
+
+            .card-title {
+                line-height: 1.5rem;
+                margin-bottom: 0.25rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     }
 }

@@ -3,8 +3,8 @@
 <template>
     <div class="ChapterPagesComponent">
         <MediaCollection :MediaItems="Pages" @media:add="AddPages">
-            <template slot="content" slot-scope="{item}">
-                {{item.ChaptersCount}} Chapters
+            <template slot="title" slot-scope="{item}">
+                Page {{item.PageNumber}}
             </template>
 
             <template slot="add-button-content">
