@@ -7,7 +7,7 @@ import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService'
 @Component
 export default class extends Vue {
 
-    Comic: Comic = null;
+    Comic: ComicResponse = null;
     Arc: Arc = null;
     Chapter: Chapter = null;
 

@@ -16,7 +16,7 @@ export default class extends Vue {
     @Require()
     LoaderService: LoaderService;
 
-    Comic: Comic = null;
+    Comic: ComicResponse = null;
 
     async created() {
         await this.FetchComic();

@@ -4,7 +4,17 @@
     <div class="ComicActionsComponent">
         <ActionCard>
             <template slot="title">
-                Publish Comic
+                <template v-if="HasPublishDate">
+                    <template v-if="IsPublishedInFuture">
+                        Comic will publish on <b>{{Comic.PublishDate | moment('LLL')}}</b>
+                    </template>
+                    <template v-else>
+                        Comic was published on <b>{{Comic.PublishDate | moment('LLL')}}</b>
+                    </template>
+                </template>
+                <template v-else>
+                    Publish Comic
+                </template>
             </template>
             <template slot="content">
                 <div class="d-flex">
@@ -13,7 +23,17 @@
                     </div>
                     <div class="flex-grow-1 pl-2">
                         <p class="h5 font-weight-normal">
-                            This action will publish this comic and make it available to public.
+                            <template v-if="HasPublishDate">
+                                <template v-if="IsPublishedInFuture">
+                                    This action will publish this comic immediately, ignoring the current publish date, and make it available to public.
+                                </template>
+                                <template v-else>
+                                    This action will unpublish this comic and make it unavailable to public.
+                                </template>
+                            </template>
+                            <template v-else>
+                                This action will publish this comic and make it available to public.
+                            </template>
                         </p>
                         <p class="h6">
                             Note: Published content cannot be deleted. You must unpublish the piece of content before attempting to delete it.
@@ -22,10 +42,18 @@
                 </div>
             </template>
             <template slot="actions">
-                <b-button variant="primary">
-                    <i class="mdi mdi-publish"></i>
-                    Publish Comic
-                </b-button>
+                <template v-if="!HasPublishDate || IsPublishedInFuture">
+                    <b-button variant="primary" @click="PublishComic">
+                        <i class="mdi mdi-publish"></i>
+                        Publish Comic
+                    </b-button>
+                </template>
+                <template v-else>
+                    <b-button variant="outline-primary" @click="UnpublishComic">
+                        <i class="mdi mdi-eye-off"></i>
+                        Unpublish Comic
+                    </b-button>
+                </template>
             </template>
         </ActionCard>
 

@@ -16,7 +16,7 @@ import MediaCollection from '../../shared/media/MediaCollection/MediaCollection.
 })
 export default class extends Vue {
 
-    Comics: Comic[] = [];
+    Comics: ComicResponse[] = [];
 
     @Require()
     HttpService: HttpService;
@@ -32,7 +32,7 @@ export default class extends Vue {
         this.LoaderService.hide();
     }
 
-    ComicSelected(item: Comic) {
+    ComicSelected(item: ComicResponse) {
         this.$router.push({
             name: 'manage.comic',
             params: {
@@ -42,8 +42,6 @@ export default class extends Vue {
     }
 
     AddComic() {
-        console.log('click');
-
         this.$router.push({
             name: 'manage.comic.new'
         });
