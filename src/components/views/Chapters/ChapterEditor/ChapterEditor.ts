@@ -4,9 +4,11 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {ChapterEditForm} from '../../../../scripts/forms/arcs/ChapterEditForm';
 import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
+import {ManageChapterStore} from '../../../../scripts/stores/ManageChapterStore';
+
+import cloneDeep from 'lodash/cloneDeep';
 
 import ImageUploader from '../../../shared/images/ImageUploader/ImageUploader.vue';
-import cloneDeep from 'lodash/cloneDeep';
 
 @Component({
     components: {
@@ -19,9 +21,6 @@ export default class extends Vue {
     ComicId: string;
 
     @Prop()
-    Chapter: Chapter;
-
-    @Prop()
     IsCreateMode: boolean;
 
     @Require()
@@ -32,6 +31,13 @@ export default class extends Vue {
 
     @Require()
     ChapterEditForm: ChapterEditForm;
+
+    @Require()
+    ManageChapterStore: ManageChapterStore;
+
+    get Chapter() {
+        return this.ManageChapterStore.Chapter;
+    }
 
     FormData: Chapter = null;
 

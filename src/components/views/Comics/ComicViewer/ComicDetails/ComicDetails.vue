@@ -1,4 +1,5 @@
 <script lang="ts" src="./ComicDetails.ts"></script>
+<style lang="scss" src="./ComicDetails.scss"></style>
 
 <template>
     <div class="ComicDetailsComponent">

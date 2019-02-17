@@ -5,7 +5,7 @@ import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService'
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 
 @Service({global: true})
-export class ManageComicStore extends VuexStore {
+export class ManageChapterStore extends VuexStore {
 
     @Inject()
     private HttpService: HttpService;
@@ -17,16 +17,16 @@ export class ManageComicStore extends VuexStore {
     private ToastService: ToastService;
 
     @State()
-    Comic: ComicResponse;
+    Chapter: ChapterResponse;
 
     @Action()
-    async fetchComic(id: string) {
+    async fetchChapter(id: string) {
         this.LoaderService.show();
 
         try {
-            const comicResponse = await this.HttpService.api.comics.get(id);
+            const chapterResponse = await this.HttpService.api.chapters.get(id);
 
-            this.updateComic(comicResponse);
+            this.updateChapter(chapterResponse);
         }
         catch (error) {
             this.ToastService.error(error.message);
@@ -36,21 +36,21 @@ export class ManageComicStore extends VuexStore {
     }
 
     @Action()
-    async refetchComic() {
-        if (!this.Comic || !this.Comic.Id) {
+    async refetchChapter() {
+        if (!this.Chapter || !this.Chapter.Id) {
             return;
         }
 
-        await this.fetchComic(this.Comic.Id);
+        await this.fetchChapter(this.Chapter.Id);
     }
 
     @Mutation()
     reset() {
-        this.Comic = null;
+        this.Chapter = null;
     }
 
     @Mutation()
-    private updateComic(comicResponse: ComicResponse) {
-        this.Comic = comicResponse;
+    private updateChapter(comicResponse: ChapterResponse) {
+        this.Chapter = comicResponse;
     }
 }

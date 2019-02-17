@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
-import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ManageComicStore} from '../../../../scripts/stores/ManageComicStore';
 
 @Component
@@ -11,12 +10,11 @@ export default class extends Vue {
     ComicId: string;
 
     @Require()
-    HttpService: HttpService;
-
-    @Require()
     ManageComicStore: ManageComicStore;
 
     async created() {
+        this.ManageComicStore.reset();
+
         await this.ManageComicStore.fetchComic(this.ComicId);
     }
 

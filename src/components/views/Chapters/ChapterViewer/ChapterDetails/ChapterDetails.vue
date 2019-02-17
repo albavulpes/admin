@@ -1,4 +1,5 @@
 <script lang="ts" src="./ChapterDetails.ts"></script>
+<style lang="scss" src="./ChapterDetails.scss"></style>
 
 <template>
     <div class="ChapterDetailsComponent">

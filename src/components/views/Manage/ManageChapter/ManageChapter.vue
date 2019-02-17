@@ -2,6 +2,6 @@
 
 <template>
     <div class="ManageChapterComponent" v-if="Chapter">
-        <router-view :Chapter="Chapter" @update="FetchChapter"></router-view>
+        <router-view></router-view>
     </div>
 </template>
