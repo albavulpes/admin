@@ -2,7 +2,7 @@
 
 <template>
     <div class="ChapterPagesComponent">
-        <div class="row">
+        <Draggable class="row" v-model="Pages" :options="DraggableOptions" @change="OnPageOrderChange">
             <div class="col-5 col-xl-4" v-for="item in Pages" :key="item.Id">
                 <MediaCard :Image="item.CoverImage.FullSize">
                     <template slot="title">
@@ -10,11 +10,11 @@
                     </template>
                 </MediaCard>
             </div>
-            <div class="col-5 col-xl-4">
+            <div class="col-5 col-xl-4 nodrag" key="MediaAddButton">
                 <MediaAddButton @click="AddPages">
                     Add Page
                 </MediaAddButton>
             </div>
-        </div>
+        </Draggable>
     </div>
 </template>
