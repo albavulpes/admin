@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
-import {AuthService} from '@albavulpes/ui-core/dist/services/auth/AuthService';
+import {GoogleAuthService} from '@albavulpes/ui-core/dist/services/auth/GoogleAuthService';
 import {IdentityStore} from '@albavulpes/ui-core/dist/stores/auth/IdentityStore';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
@@ -13,10 +13,8 @@ import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService'
 })
 export default class extends Vue {
 
-    Form: any = {};
-
     @Require()
-    AuthService: AuthService;
+    GoogleAuthService: GoogleAuthService;
 
     @Require()
     ToastService: ToastService;
@@ -27,11 +25,11 @@ export default class extends Vue {
     @Require()
     IdentityStore: IdentityStore;
 
-    async SubmitForm() {
+    async LoginWithGoogle() {
         this.LoaderService.show();
 
         try {
-            await this.AuthService.login(this.Form.Username, this.Form.Password);
+            await this.GoogleAuthService.loginWithGoogle();
 
             this.$router.replace({name: 'home'},
                 () => {
@@ -40,7 +38,7 @@ export default class extends Vue {
         }
         catch (error) {
             if (error.response && error.response.status === 400) {
-                this.ToastService.error(`The username or password you provided are incorrect. Please try again.`, {
+                this.ToastService.error(`Could not sign in. Please try again.`, {
                     timeout: false
                 });
             }

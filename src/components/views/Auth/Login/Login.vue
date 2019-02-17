@@ -17,22 +17,13 @@
                         </h2>
                         <hr>
 
-                        <form @submit.prevent="SubmitForm">
-                            <div class="mt-3 mb-5">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Username</label>
-                                    <input class="form-control" id="exampleInputEmail1" type="text" placeholder="Your username or email address" v-model="Form.Username">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Your password" v-model="Form.Password">
-                                </div>
-                            </div>
+                        <b-button variant="light" size="lg" class="d-flex w-100 justify-content-center align-items-center" @click="LoginWithGoogle">
+                            <i class="mdi mdi-24px mdi-google googleIcon mr-2"></i>
 
-                            <button type="submit" class="btn btn-block btn-primary mt-4">
-                                Log In
-                            </button>
-                        </form>
+                            <span class="font-weight-bold text-black-50">
+                                Log In with Google
+                            </span>
+                        </b-button>
                     </div>
                 </div>
             </div>
