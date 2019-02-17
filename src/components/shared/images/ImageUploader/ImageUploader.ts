@@ -3,6 +3,7 @@ import {Component, Prop, Watch} from 'vue-property-decorator';
 
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
+import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 
 import MediaAddButton from '../../MediaAddButton/MediaAddButton.vue';
 import LoadingOverlay from '../../loading/LoadingOverlay/LoadingOverlay.vue';
@@ -23,6 +24,9 @@ export default class extends Vue {
     @Require()
     HttpService: HttpService;
 
+    @Require()
+    ToastService: ToastService;
+
     IsLoading: boolean = false;
 
     ChooseFile() {
@@ -41,9 +45,14 @@ export default class extends Vue {
         const formData = new FormData();
         formData.append('file', file);
 
-        const imageResponse = await this.HttpService.api.images.post(formData);
+        try {
+            const imageResponse = await this.HttpService.api.images.post(formData);
 
-        this.$emit('input', imageResponse.ImagePath);
+            this.$emit('input', imageResponse.ImagePath);
+        }
+        catch (error) {
+            this.ToastService.error(error.message);
+        }
 
         this.IsLoading = false;
     }

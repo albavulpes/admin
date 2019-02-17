@@ -29,8 +29,8 @@ export default class extends Vue {
         return !!this.Comic.PublishDate;
     }
 
-    get IsPublishedInFuture() {
-        return this.HasPublishDate && moment(this.Comic.PublishDate).isAfter(moment());
+    get IsPublished() {
+        return this.HasPublishDate && moment(this.Comic.PublishDate).isBefore(moment());
     }
 
     async PublishComic() {

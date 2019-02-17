@@ -49,18 +49,23 @@ export default class extends Vue {
     async SubmitForm() {
         this.LoaderService.show();
 
-        this.FormData = await this.ComicEditForm.submit(this.FormData);
+        try {
+            this.FormData = await this.ComicEditForm.submit(this.FormData);
 
-        this.ToastService.success(`Success! <b>${this.FormData.Title}</b> has been saved.`);
+            this.ToastService.success(`Success! <b>${this.FormData.Title}</b> has been saved.`);
 
-        this.$emit('update');
+            this.$emit('update');
 
-        this.$router.push({
-            name: 'manage.comic',
-            params: {
-                ComicId: this.FormData.Id
-            }
-        });
+            this.$router.push({
+                name: 'manage.comic',
+                params: {
+                    ComicId: this.FormData.Id
+                }
+            });
+        }
+        catch (error) {
+            this.ToastService.error(error.message);
+        }
 
         this.LoaderService.hide();
     }
