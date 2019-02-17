@@ -5,7 +5,7 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 
-import MediaAddButton from '../../MediaAddButton/MediaAddButton.vue';
+import MediaAddButton from '../../media/MediaAddButton/MediaAddButton.vue';
 import LoadingOverlay from '../../loading/LoadingOverlay/LoadingOverlay.vue';
 import ImageViewer from '../ImageViewer/ImageViewer.vue';
 

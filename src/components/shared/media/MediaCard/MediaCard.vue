@@ -2,7 +2,7 @@
 <style lang="scss" src="./MediaCard.scss"></style>
 
 <template>
-    <button type="button" class="MediaCardComponent btn btn-block card d-flex flex-column" @click="CardClick">
+    <b-button block variant="light" class="MediaCardComponent card d-flex flex-column" @click="CardClick" :to="to">
         <div class="card-img-top" :style="{'background-image': `url('${Image}')`}"></div>
 
         <div class="card-body text-left" v-if="$slots.body || $slots.title || $slots.content">
@@ -17,5 +17,5 @@
                 </p>
             </slot>
         </div>
-    </button>
+    </b-button>
 </template>

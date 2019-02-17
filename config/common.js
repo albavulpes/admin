@@ -62,7 +62,7 @@ const configs = [
         module: {
             rules: [
                 {
-                    test: /\.ts$/,
+                    test: /(\.d)?\.ts$/,
                     loader: 'ts-loader',
                     options: {
                         transpileOnly: true,
@@ -72,8 +72,8 @@ const configs = [
                 },
                 {
                     test: /\.js$/,
-                    use: ["source-map-loader"],
-                    enforce: "pre"
+                    use: ['source-map-loader'],
+                    enforce: 'pre'
                 }
             ]
         },

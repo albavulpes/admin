@@ -6,14 +6,22 @@
 
         <hr>
 
-        <MediaCollection :MediaItems="Comics" @media:selected="ComicSelected" @media:add="AddComic">
-            <template slot="content" slot-scope="{item}">
-                {{item.ChaptersCount}} Chapters
-            </template>
-
-            <template slot="add-button-content">
-                Add Comic
-            </template>
-        </MediaCollection>
+        <div class="row">
+            <div class="col-5 col-xl-4" v-for="item in Comics" :key="item.Id">
+                <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.comic', params: {ComicId: item.Id}}">
+                    <template slot="title">
+                        {{item.Title}}
+                    </template>
+                    <template slot="content">
+                        {{item.ChaptersCount}} Chapters
+                    </template>
+                </MediaCard>
+            </div>
+            <div class="col-5 col-xl-4">
+                <MediaAddButton :to="{name: 'manage.comic.new'}">
+                    Add Comic
+                </MediaAddButton>
+            </div>
+        </div>
     </div>
 </template>
