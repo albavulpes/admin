@@ -8,6 +8,7 @@ import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService'
 import cloneDeep from 'lodash/cloneDeep';
 
 import ImageUploader from '../../../shared/images/ImageUploader/ImageUploader.vue';
+import {ManageComicStore} from '../../../../scripts/stores/ManageComicStore';
 
 @Component({
     components: {
@@ -26,15 +27,19 @@ export default class extends Vue {
     ComicEditForm: ComicEditForm;
 
     @Prop()
-    Comic: Comic;
-
-    @Prop()
     IsCreateMode: boolean;
+
+    @Require()
+    ManageComicStore: ManageComicStore;
 
     FormData: Comic = null;
 
     created() {
         this.ResetForm();
+    }
+
+    get Comic() {
+        return this.ManageComicStore.Comic;
     }
 
     ResetForm() {
@@ -54,7 +59,7 @@ export default class extends Vue {
 
             this.ToastService.success(`Success! <b>${this.FormData.Title}</b> has been saved.`);
 
-            this.$emit('update');
+            await this.ManageComicStore.refetchComic();
 
             this.$router.push({
                 name: 'manage.comic',

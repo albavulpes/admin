@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
 
+import {Require} from '@albavulpes/ui-core/dist/di';
+import {ManageComicStore} from '../../../../../scripts/stores/ManageComicStore';
+
 import ImageViewer from '../../../../shared/images/ImageViewer/ImageViewer.vue';
 
 @Component({
@@ -10,6 +13,10 @@ import ImageViewer from '../../../../shared/images/ImageViewer/ImageViewer.vue';
 })
 export default class extends Vue {
 
-    @Prop()
-    Comic: Comic;
+    @Require()
+    ManageComicStore: ManageComicStore;
+
+    get Comic() {
+        return this.ManageComicStore.Comic;
+    }
 }

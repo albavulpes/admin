@@ -2,7 +2,7 @@ import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
-import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
+import {ManageComicStore} from '../../../../scripts/stores/ManageComicStore';
 
 @Component
 export default class extends Vue {
@@ -14,19 +14,13 @@ export default class extends Vue {
     HttpService: HttpService;
 
     @Require()
-    LoaderService: LoaderService;
-
-    Comic: ComicResponse = null;
+    ManageComicStore: ManageComicStore;
 
     async created() {
-        await this.FetchComic();
+        await this.ManageComicStore.fetchComic(this.ComicId);
     }
 
-    async FetchComic() {
-        this.LoaderService.show();
-
-        this.Comic = await this.HttpService.api.comics.get(this.ComicId);
-
-        this.LoaderService.hide();
+    get Comic() {
+        return this.ManageComicStore.Comic;
     }
 }

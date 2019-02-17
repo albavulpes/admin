@@ -2,6 +2,6 @@
 
 <template>
     <div class="ManageComicComponent" v-if="Comic">
-        <router-view :Comic="Comic" @update="FetchComic"></router-view>
+        <router-view></router-view>
     </div>
 </template>

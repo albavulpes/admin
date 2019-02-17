@@ -2,6 +2,7 @@ import Vue from 'vue';
 import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
+import {ManageComicStore} from '../../../../../scripts/stores/ManageComicStore';
 
 import MediaCollection from '../../../../shared/media/MediaCollection/MediaCollection.vue';
 
@@ -12,13 +13,13 @@ import MediaCollection from '../../../../shared/media/MediaCollection/MediaColle
 })
 export default class extends Vue {
 
-    @Prop()
-    Comic: Comic;
-
-    ChapterGroups: ChapterGroupResponse[] = [];
+    @Require()
+    ManageComicStore: ManageComicStore;
 
     @Require()
     HttpService: HttpService;
+
+    ChapterGroups: ChapterGroupResponse[] = [];
 
     async created() {
         this.ChapterGroups = await this.HttpService.api.chapters.getAll(this.Comic.Id);
@@ -32,6 +33,10 @@ export default class extends Vue {
                 }
             ];
         }
+    }
+
+    get Comic() {
+        return this.ManageComicStore.Comic;
     }
 
     ChapterSelected(item: Chapter) {

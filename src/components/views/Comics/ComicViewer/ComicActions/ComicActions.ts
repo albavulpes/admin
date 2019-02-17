@@ -4,6 +4,7 @@ import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
+import {ManageComicStore} from '../../../../../scripts/stores/ManageComicStore';
 
 import moment from 'moment';
 
@@ -16,14 +17,18 @@ import ActionCard from '../../../../shared/management/ActionCard/ActionCard.vue'
 })
 export default class extends Vue {
 
-    @Prop()
-    Comic: Comic;
+    @Require()
+    ManageComicStore: ManageComicStore;
 
     @Require()
     HttpService: HttpService;
 
     @Require()
     ToastService: ToastService;
+
+    get Comic() {
+        return this.ManageComicStore.Comic;
+    }
 
     get HasPublishDate() {
         return !!this.Comic.PublishDate;
@@ -37,7 +42,7 @@ export default class extends Vue {
         try {
             await this.HttpService.api.comics.publish(this.Comic.Id, true);
 
-            this.$emit('update');
+            await this.ManageComicStore.refetchComic();
         }
         catch (error) {
             this.ToastService.error(error.message);
@@ -48,7 +53,7 @@ export default class extends Vue {
         try {
             await this.HttpService.api.comics.publish(this.Comic.Id, false);
 
-            this.$emit('update');
+            await this.ManageComicStore.refetchComic();
         }
         catch (error) {
             this.ToastService.error(error.message);
