@@ -14,15 +14,23 @@
                 </template>
             </h4>
 
-            <MediaCollection :MediaItems="chapterGroup.Chapters" @media:selected="ChapterSelected" @media:add="AddChapter">
-                <template slot="content" slot-scope="{item}">
-                    {{item.PagesCount}} Pages
-                </template>
-
-                <template slot="add-button-content">
-                    Add Chapter
-                </template>
-            </MediaCollection>
+            <div class="row">
+                <div class="col-5 col-xl-4" v-for="item in chapterGroup.Chapters" :key="item.Id">
+                    <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.chapter', params: {ChapterId: item.Id}}">
+                        <template slot="title">
+                            {{item.Title}}
+                        </template>
+                        <template slot="content">
+                            {{item.PagesCount}} Pages
+                        </template>
+                    </MediaCard>
+                </div>
+                <div class="col-5 col-xl-4">
+                    <MediaAddButton :to="{name: 'manage.chapter.new', query: {comicId: Comic.Id}}">
+                        Add Chapter
+                    </MediaAddButton>
+                </div>
+            </div>
         </div>
     </div>
 </template>

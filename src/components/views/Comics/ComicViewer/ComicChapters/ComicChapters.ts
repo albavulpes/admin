@@ -4,11 +4,13 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ManageComicStore} from '../../../../../scripts/stores/ManageComicStore';
 
-import MediaCollection from '../../../../shared/media/MediaCollection/MediaCollection.vue';
+import MediaCard from '../../../../shared/media/MediaCard/MediaCard.vue';
+import MediaAddButton from '../../../../shared/media/MediaAddButton/MediaAddButton.vue';
 
 @Component({
     components: {
-        MediaCollection
+        MediaCard,
+        MediaAddButton
     }
 })
 export default class extends Vue {
@@ -37,23 +39,5 @@ export default class extends Vue {
 
     get Comic() {
         return this.ManageComicStore.Comic;
-    }
-
-    ChapterSelected(item: Chapter) {
-        this.$router.push({
-            name: 'manage.chapter',
-            params: {
-                ChapterId: item.Id
-            }
-        });
-    }
-
-    AddChapter() {
-        this.$router.push({
-            name: 'manage.chapter.new',
-            query: {
-                comicId: this.Comic.Id
-            }
-        });
     }
 }

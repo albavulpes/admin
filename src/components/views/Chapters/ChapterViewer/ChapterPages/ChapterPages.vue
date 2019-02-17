@@ -2,14 +2,19 @@
 
 <template>
     <div class="ChapterPagesComponent">
-        <MediaCollection :MediaItems="Pages" @media:add="AddPages">
-            <template slot="title" slot-scope="{item}">
-                Page {{item.PageNumber}}
-            </template>
-
-            <template slot="add-button-content">
-                Add Page
-            </template>
-        </MediaCollection>
+        <div class="row">
+            <div class="col-5 col-xl-4" v-for="item in Pages" :key="item.Id">
+                <MediaCard :Image="item.CoverImage.FullSize">
+                    <template slot="title">
+                        Page {{item.PageNumber}}
+                    </template>
+                </MediaCard>
+            </div>
+            <div class="col-5 col-xl-4">
+                <MediaAddButton @click="AddPages">
+                    Add Page
+                </MediaAddButton>
+            </div>
+        </div>
     </div>
 </template>

@@ -3,11 +3,13 @@ import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 
-import MediaCollection from '../../../../shared/media/MediaCollection/MediaCollection.vue';
+import MediaCard from '../../../../shared/media/MediaCard/MediaCard.vue';
+import MediaAddButton from '../../../../shared/media/MediaAddButton/MediaAddButton.vue';
 
 @Component({
     components: {
-        MediaCollection
+        MediaCard,
+        MediaAddButton
     }
 })
 export default class extends Vue {

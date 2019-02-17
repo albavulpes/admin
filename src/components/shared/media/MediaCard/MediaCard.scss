@@ -2,10 +2,9 @@
 @import "~root/styles/meta";
 
 .MediaCardComponent {
-    min-height: 280px;
+    min-height: 320px;
 
     &.card {
-        height: 100%;
         padding: 0;
         margin-bottom: 1.5rem;
         overflow: hidden;
