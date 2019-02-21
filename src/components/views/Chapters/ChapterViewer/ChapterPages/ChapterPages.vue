@@ -7,7 +7,9 @@
             <div class="col-5 col-xl-4" v-for="item in Pages" :key="item.Id">
                 <MediaCard :Image="item.CoverImage.FullSize">
                     <template slot="content">
-                        Page {{item.PageNumber}}
+                        <div class="text-right">
+                            Page {{item.PageNumber}}
+                        </div>
                     </template>
                 </MediaCard>
             </div>

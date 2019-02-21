@@ -2,12 +2,12 @@
 @import "~root/styles/meta";
 
 .MediaCardComponent {
-    min-height: 320px;
-
     &.card {
         padding: 0;
         margin-bottom: 1.5rem;
         overflow: hidden;
+
+        min-height: 320px;
 
         align-items: normal !important;
 
@@ -39,6 +39,8 @@
             position: absolute;
             top: 0;
             right: 0;
+
+            font-size: 12px;
 
             border-bottom-left-radius: 8px;
         }

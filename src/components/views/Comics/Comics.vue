@@ -1,4 +1,5 @@
 <script lang="ts" src="./Comics.ts"></script>
+<style lang="scss" src="./Comics.scss"></style>
 
 <template>
     <div class="ComicsComponent">
@@ -7,7 +8,7 @@
         <hr>
 
         <div class="row">
-            <div class="col-5 col-xl-4" v-for="item in Comics" :key="item.Id">
+            <div class="col-5" v-for="item in Comics" :key="item.Id">
                 <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.comic', params: {ComicId: item.Id}}">
                     <template slot="title">
                         {{item.Title}}
@@ -20,7 +21,7 @@
                     </template>
                 </MediaCard>
             </div>
-            <div class="col-5 col-xl-4">
+            <div class="col-5">
                 <MediaAddButton :to="{name: 'manage.comic.new'}">
                     Add Comic
                 </MediaAddButton>
