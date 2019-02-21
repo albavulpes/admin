@@ -13,7 +13,7 @@
             </b-nav-item>
             <b-nav-item :to="{name: 'manage.chapter.pages'}">
                 <i class="mdi mdi-book-open-page-variant"></i>
-                Pages
+                Pages ({{Chapter.PagesCount}})
             </b-nav-item>
             <b-nav-item :to="{name: 'manage.chapter.actions'}">
                 <i class="mdi mdi-settings"></i>

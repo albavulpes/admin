@@ -17,5 +17,11 @@
                 </p>
             </slot>
         </div>
+
+        <template v-if="$slots.badge">
+            <div class="badge badge-primary p-2">
+                <slot name="badge"></slot>
+            </div>
+        </template>
     </b-button>
 </template>

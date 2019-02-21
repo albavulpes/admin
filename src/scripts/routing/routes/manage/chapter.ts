@@ -18,6 +18,9 @@ export default [
                 ComicId: route.query['comicId'],
                 IsCreateMode: true
             };
+        },
+        meta: {
+            authorize: true
         }
     },
     {
@@ -26,6 +29,9 @@ export default [
         path: '/chapter/:ChapterId',
         component: ManageChapter,
         props: true,
+        meta: {
+            authorize: true
+        },
         children: [
             {
                 path: '/',

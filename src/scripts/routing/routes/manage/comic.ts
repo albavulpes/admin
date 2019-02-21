@@ -15,6 +15,9 @@ export default [
         component: ComicEditor,
         props: {
             IsCreateMode: true
+        },
+        meta: {
+            authorize: true
         }
     },
     {
@@ -23,6 +26,9 @@ export default [
         path: '/comic/:ComicId',
         component: ManageComic,
         props: true,
+        meta: {
+            authorize: true
+        },
         children: [
             {
                 path: '/',

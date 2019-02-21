@@ -15,6 +15,9 @@
                     <template slot="content">
                         {{item.ChaptersCount}} Chapters
                     </template>
+                    <template slot="badge" v-if="item.IsPublished">
+                        Published
+                    </template>
                 </MediaCard>
             </div>
             <div class="col-5 col-xl-4">

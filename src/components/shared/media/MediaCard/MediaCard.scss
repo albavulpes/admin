@@ -35,6 +35,14 @@
             transform-origin: bottom;
         }
 
+        .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            border-bottom-left-radius: 8px;
+        }
+
         .card-body {
             flex: 0 0 auto;
 

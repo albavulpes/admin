@@ -13,7 +13,8 @@
             </b-nav-item>
             <b-nav-item :to="{name: 'manage.comic.chapters'}">
                 <i class="mdi mdi-book-open-page-variant"></i>
-                Chapters
+
+                Chapters ({{Comic.ChaptersCount}})
             </b-nav-item>
             <b-nav-item :to="{name: 'manage.comic.actions'}">
                 <i class="mdi mdi-settings"></i>
