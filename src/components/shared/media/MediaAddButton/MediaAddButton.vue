@@ -2,7 +2,7 @@
 <style lang="scss" src="./MediaAddButton.scss"></style>
 
 <template>
-    <b-button variant="light" block class="MediaAddButtonComponent card d-flex justify-content-center align-items-center" @click="ButtonClick" :to="to">
+    <b-button variant="light" block class="MediaAddButtonComponent card bg-light d-flex justify-content-center align-items-center" @click="ButtonClick" :to="to">
         <div>
             <i class="mdi mdi-48px mdi-plus"></i>
 

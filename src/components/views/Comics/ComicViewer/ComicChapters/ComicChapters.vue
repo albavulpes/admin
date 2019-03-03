@@ -1,5 +1,4 @@
 <script lang="ts" src="./ComicChapters.ts"></script>
-<style lang="scss" src="./ComicChapters.scss"></style>
 
 <template>
     <div class="ComicChaptersComponent">
@@ -15,8 +14,8 @@
                 </template>
             </h4>
 
-            <div class="row">
-                <div class="col-5" v-for="item in chapterGroup.Chapters" :key="item.Id">
+            <div class="row px-2">
+                <div v-for="item in chapterGroup.Chapters" :key="item.Id">
                     <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.chapter', params: {ChapterId: item.Id}}">
                         <template slot="title">
                             {{item.Title}}
@@ -26,7 +25,7 @@
                         </template>
                     </MediaCard>
                 </div>
-                <div class="col-5">
+                <div>
                     <MediaAddButton :to="{name: 'manage.chapter.new', query: {comicId: Comic.Id}}">
                         Add Chapter
                     </MediaAddButton>

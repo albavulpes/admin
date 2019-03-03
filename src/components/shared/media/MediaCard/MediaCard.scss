@@ -3,11 +3,12 @@
 
 .MediaCardComponent {
     &.card {
-        padding: 0;
-        margin-bottom: 1.5rem;
-        overflow: hidden;
+        width: 200px;
+        height: 300px;
 
-        min-height: 320px;
+        padding: 0;
+        margin: 0 0.5rem 1.5rem;
+        overflow: hidden;
 
         align-items: normal !important;
 

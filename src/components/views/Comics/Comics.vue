@@ -7,8 +7,8 @@
 
         <hr>
 
-        <div class="row">
-            <div class="col-5" v-for="item in Comics" :key="item.Id">
+        <div class="row px-2">
+            <div v-for="item in Comics" :key="item.Id">
                 <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.comic', params: {ComicId: item.Id}}">
                     <template slot="title">
                         {{item.Title}}
@@ -21,7 +21,7 @@
                     </template>
                 </MediaCard>
             </div>
-            <div class="col-5">
+            <div>
                 <MediaAddButton :to="{name: 'manage.comic.new'}">
                     Add Comic
                 </MediaAddButton>

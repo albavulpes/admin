@@ -3,17 +3,22 @@
 
 <template>
     <div class="ChapterPagesComponent">
-        <Draggable class="row" v-model="Pages" :options="DraggableOptions" @change="OnPageOrderChange">
-            <div class="col-5 col-xl-4" v-for="item in Pages" :key="item.Id">
+        <Draggable class="row px-2" v-model="Pages" :options="DraggableOptions" @change="OnPageOrderChange">
+            <div v-for="item in Pages" :key="item.Id">
                 <MediaCard :Image="item.CoverImage.FullSize">
                     <template slot="content">
-                        <div class="text-right">
-                            Page {{item.PageNumber}}
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                Page {{item.PageNumber}}
+                            </div>
+                            <div>
+
+                            </div>
                         </div>
                     </template>
                 </MediaCard>
             </div>
-            <div class="col-5 col-xl-4 nodrag" key="MediaAddButton">
+            <div class="nodrag" key="MediaAddButton">
                 <MediaAddButton @click="AddPages">
                     Add Page
                 </MediaAddButton>
