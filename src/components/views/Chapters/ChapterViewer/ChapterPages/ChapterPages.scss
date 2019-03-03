@@ -1,5 +1,20 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
 .ChapterPagesComponent {
     .MediaCardComponent {
+        &.selected {
+            border-color: $primary;
+            box-shadow: $primary 0 0 0 3px;
+
+            .selectionBox {
+                .visibleBox {
+                    background: $primary;
+                    color: $white;
+                }
+            }
+        }
+
         .card-body {
             padding: 0.5rem;
         }

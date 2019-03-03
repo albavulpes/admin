@@ -30,6 +30,8 @@ export default class extends Vue {
 
     Pages: Page[] = [];
 
+    SelectedPageIds: string[] = [];
+
     async created() {
         await this.FetchPages();
     }
@@ -53,8 +55,15 @@ export default class extends Vue {
         console.log('click');
     }
 
-    async OnPageSelect() {
-        console.log('select');
+    async OnPageSelect(page: Page) {
+        const pageIdIndex = this.SelectedPageIds.indexOf(page.Id);
+
+        if (pageIdIndex >= 0) {
+            this.SelectedPageIds.splice(pageIdIndex, 1);
+        }
+        else {
+            this.SelectedPageIds.push(page.Id);
+        }
     }
 
     async OnPageOrderChange(dragEvent: DragChangeEvent<Page>) {
@@ -77,5 +86,9 @@ export default class extends Vue {
 
     async AddPages() {
         console.log('add');
+    }
+
+    IsSelected(page: Page) {
+        return this.SelectedPageIds.includes(page.Id);
     }
 }
