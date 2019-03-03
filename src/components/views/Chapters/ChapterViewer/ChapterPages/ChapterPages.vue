@@ -16,14 +16,30 @@
 
             <div class="px-3">
                 <template v-if="SelectedPageIds.length > 0">
-                    <b-button variant="outline-dark" @click="DeselectAll">
+                    <b-dropdown variant="outline-primary">
+                        <template slot="button-content">
+                            Actions...
+                        </template>
+
+                        <b-dropdown-item>
+                            <i class="mdi mdi-publish"></i>
+                            Publish
+                        </b-dropdown-item>
+                        <b-dropdown-divider></b-dropdown-divider>
+                        <b-dropdown-item class="text-danger">
+                            <i class="mdi mdi-delete"></i>
+                            Delete
+                        </b-dropdown-item>
+                    </b-dropdown>
+
+                    <b-button variant="light" @click="DeselectAll">
                         <i class="mdi mdi-cancel"></i>
 
                         Deselect All
                     </b-button>
                 </template>
 
-                <b-button variant="outline-dark" @click="SelectAll">
+                <b-button variant="light" @click="SelectAll">
                     <i class="mdi mdi-check-all"></i>
                     Select All
                 </b-button>
