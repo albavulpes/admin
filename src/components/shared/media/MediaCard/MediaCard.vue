@@ -18,6 +18,14 @@
             </slot>
         </div>
 
+        <template v-if="Selectable">
+            <button class="btn selectionBox" @click.stop="Select">
+                <slot name="select">
+                    <i class="mdi mdi-checkbox-blank-circle-outline text-primary"></i>
+                </slot>
+            </button>
+        </template>
+
         <template v-if="$slots.badge">
             <div class="badge badge-primary text-uppercase py-2 px-3">
                 <slot name="badge"></slot>

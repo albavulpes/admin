@@ -3,5 +3,21 @@
         .card-body {
             padding: 0.5rem;
         }
+
+        .pageContextMenu {
+            > .btn {
+                border-radius: 50px;
+
+                width: 28px;
+                height: 28px;
+                padding: 2px;
+                margin: -8px 0;
+
+                &:not(:hover) {
+                    background: none;
+                    border-color: transparent;
+                }
+            }
+        }
     }
 }

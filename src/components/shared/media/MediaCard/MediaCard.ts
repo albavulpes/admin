@@ -9,11 +9,16 @@ export default class extends Vue {
     Image: string;
 
     @Prop()
+    Selectable: boolean;
+
+    @Prop()
     to: Route;
 
     CardClick() {
-        if (this.$listeners.click) {
-            this.$emit('click');
-        }
+        this.$emit('click');
+    }
+
+    Select() {
+        this.$emit('selected');
     }
 }

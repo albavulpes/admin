@@ -49,6 +49,14 @@ export default class extends Vue {
         this.Pages = await this.HttpService.api.pages.getAll(this.Chapter.Id);
     }
 
+    async OnPageClick() {
+        console.log('click');
+    }
+
+    async OnPageSelect() {
+        console.log('select');
+    }
+
     async OnPageOrderChange(dragEvent: DragChangeEvent<Page>) {
         if (!dragEvent.moved) {
             return;

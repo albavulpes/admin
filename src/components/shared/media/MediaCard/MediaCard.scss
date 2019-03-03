@@ -8,32 +8,29 @@
 
         padding: 0;
         margin: 0 0.5rem 1.5rem;
-        overflow: hidden;
 
+        background: $white !important;
         align-items: normal !important;
 
         @include transition((margin-top, box-shadow));
-
-        &:hover,
-        &:focus {
-            text-decoration: none !important;
-
-            margin-top: -2px;
-            box-shadow: $box-shadow;
-
-            .card-img-top {
-                transform: scale(1.025);
-            }
-        }
 
         .card-img-top {
             flex: 1 1 auto;
 
             background-position: center;
             background-size: cover;
+        }
 
-            @include transition(transform);
-            transform-origin: bottom;
+        .card-body {
+            flex: 0 0 auto;
+
+            .card-title {
+                line-height: 1.5rem;
+                margin-bottom: 0.25rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
 
         .badge {
@@ -46,15 +43,31 @@
             border-bottom-left-radius: 8px;
         }
 
-        .card-body {
-            flex: 0 0 auto;
+        .selectionBox {
+            position: absolute;
+            top: 0;
+            left: 0;
 
-            .card-title {
-                line-height: 1.5rem;
-                margin-bottom: 0.25rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+            background: $white;
+
+            width: 32px;
+            height: 32px;
+            padding: 4px;
+            border-bottom-right-radius: 8px;
+
+            opacity: 0;
+            @include transition(opacity);
+        }
+
+        &:hover,
+        &:active {
+            text-decoration: none !important;
+
+            margin-top: -2px;
+            box-shadow: $box-shadow;
+
+            .selectionBox {
+                opacity: 1;
             }
         }
     }
