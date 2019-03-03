@@ -3,6 +3,34 @@
 
 <template>
     <div class="ChapterPagesComponent">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h3>
+                    {{Pages.length}} pages
+
+                    <template v-if="SelectedPageIds.length > 0">
+                        ({{SelectedPageIds.length }} selected)
+                    </template>
+                </h3>
+            </div>
+
+            <div class="px-3">
+                <template v-if="SelectedPageIds.length > 0">
+                    <b-button variant="outline-dark" @click="DeselectAll">
+                        <i class="mdi mdi-cancel"></i>
+
+                        Deselect All
+                    </b-button>
+                </template>
+
+                <b-button variant="outline-dark" @click="SelectAll">
+                    <i class="mdi mdi-check-all"></i>
+                    Select All
+                </b-button>
+            </div>
+        </div>
+        <hr>
+
         <Draggable class="row px-2" v-model="Pages" :options="DraggableOptions" @change="OnPageOrderChange">
             <div v-for="item in Pages" :key="item.Id">
                 <MediaCard

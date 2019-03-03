@@ -55,7 +55,7 @@ export default class extends Vue {
         console.log('click');
     }
 
-    async OnPageSelect(page: Page) {
+    OnPageSelect(page: Page) {
         const pageIdIndex = this.SelectedPageIds.indexOf(page.Id);
 
         if (pageIdIndex >= 0) {
@@ -64,6 +64,18 @@ export default class extends Vue {
         else {
             this.SelectedPageIds.push(page.Id);
         }
+    }
+
+    SelectAll() {
+        this.SelectedPageIds = this.Pages.map(p => p.Id);
+    }
+
+    DeselectAll() {
+        this.SelectedPageIds = [];
+    }
+
+    IsSelected(page: Page) {
+        return this.SelectedPageIds.includes(page.Id);
     }
 
     async OnPageOrderChange(dragEvent: DragChangeEvent<Page>) {
@@ -88,7 +100,5 @@ export default class extends Vue {
         console.log('add');
     }
 
-    IsSelected(page: Page) {
-        return this.SelectedPageIds.includes(page.Id);
-    }
+
 }

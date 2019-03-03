@@ -19,7 +19,7 @@
         </div>
 
         <template v-if="$slots.badge">
-            <div class="badge badge-primary text-uppercase py-2 px-3">
+            <div class="badge badge-primary text-uppercase">
                 <slot name="badge"></slot>
             </div>
         </template>
