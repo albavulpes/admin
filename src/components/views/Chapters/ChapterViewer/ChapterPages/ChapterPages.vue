@@ -84,7 +84,7 @@
                         </template>
                     </template>
 
-                    <template slot="badge">
+                    <template slot="badge" v-if="item.IsPublished">
                         Published
                     </template>
                 </MediaCard>
