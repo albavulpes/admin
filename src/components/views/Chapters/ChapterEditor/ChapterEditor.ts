@@ -21,6 +21,9 @@ export default class extends Vue {
     ComicId: string;
 
     @Prop()
+    ArcId: string;
+
+    @Prop()
     IsCreateMode: boolean;
 
     @Require()
@@ -49,6 +52,7 @@ export default class extends Vue {
         if (this.IsCreateMode) {
             this.FormData = this.ChapterEditForm.getDefaultData();
             this.FormData.ComicId = this.ComicId;
+            this.FormData.ArcId = this.ArcId;
         }
         else {
             this.FormData = cloneDeep(this.Chapter);
@@ -63,7 +67,7 @@ export default class extends Vue {
 
             this.ToastService.success(`Success! <b>${this.FormData.Title}</b> has been saved.`);
 
-            this.$emit('update');
+            await this.ManageChapterStore.refetchChapter();
 
             this.$router.push({
                 name: 'manage.chapter',

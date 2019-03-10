@@ -16,6 +16,7 @@ export default [
         props: (route) => {
             return {
                 ComicId: route.query['comicId'],
+                ArcId: route.query['arcId'],
                 IsCreateMode: true
             };
         },

@@ -30,7 +30,7 @@
                         </MediaCard>
                     </div>
                     <div class="nodrag" key="MediaAddButton">
-                        <MediaAddButton :to="{name: 'manage.chapter.new', query: {comicId: Comic.Id}}">
+                        <MediaAddButton :to="{name: 'manage.chapter.new', query: {comicId: Comic.Id, arcId: chapterGroup.Arc && chapterGroup.Arc.Id}}">
                             Add Chapter
                         </MediaAddButton>
                     </div>
