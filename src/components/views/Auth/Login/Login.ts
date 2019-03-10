@@ -28,24 +28,12 @@ export default class extends Vue {
     async LoginWithGoogle() {
         this.LoaderService.show();
 
-        try {
-            await this.GoogleAuthService.loginWithGoogle();
+        await this.GoogleAuthService.loginWithGoogle();
 
-            this.$router.replace({name: 'home'},
-                () => {
-                    this.ToastService.success(`Welcome back, ${this.IdentityStore.UserName}`);
-                });
-        }
-        catch (error) {
-            if (error.response && error.response.status === 400) {
-                this.ToastService.error(`Could not sign in. Please try again.`, {
-                    timeout: false
-                });
-            }
-            else {
-                this.ToastService.error(error.message);
-            }
-        }
+        this.$router.replace({name: 'home'},
+            () => {
+                this.ToastService.success(`Welcome back, ${this.IdentityStore.UserName}`);
+            });
 
         this.LoaderService.hide();
     }

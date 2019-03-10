@@ -4,7 +4,7 @@
 
 "@albavulpes/ui-core@https://github.com/albavulpes/ui-core":
   version "0.7.0"
-  resolved "https://github.com/albavulpes/ui-core#97810ddfc9d83c59defb6216736f67c1dc47b134"
+  resolved "https://github.com/albavulpes/ui-core#e80ce0c89248d572f0588e9c68bcfaed064c08e5"
   dependencies:
     "@types/gapi" "^0.0.36"
     "@types/scriptjs" "^0.0.2"
