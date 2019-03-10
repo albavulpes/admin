@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Install') {
+            steps {
+				powershell 'yarn install --frozen-lockfile'
+            }
+        }
         stage('Clean') {
             steps {
 				powershell 'yarn run clean'
