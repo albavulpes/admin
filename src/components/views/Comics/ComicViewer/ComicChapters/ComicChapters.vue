@@ -2,7 +2,7 @@
 
 <template>
     <div class="ComicChaptersComponent">
-        <Draggable v-model="ChapterGroups" :options="DraggableOptions">
+        <Draggable v-model="ChapterGroups" filter=".nodrag" animation="250">
             <div v-for="chapterGroup in ChapterGroups" :class="{nodrag: !chapterGroup.Arc}">
                 <h4 class="my-3">
                     <template v-if="chapterGroup.Arc">
@@ -15,7 +15,7 @@
                     </template>
                 </h4>
 
-                <Draggable class="row px-2" v-model="chapterGroup.Chapters" :options="DraggableOptions" group="arcs">
+                <Draggable class="row px-2" v-model="chapterGroup.Chapters" filter=".nodrag" animation="250" group="arcs">
                     <div v-for="item in chapterGroup.Chapters" :key="item.Id">
                         <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.chapter', params: {ChapterId: item.Id}}">
                             <template slot="title">

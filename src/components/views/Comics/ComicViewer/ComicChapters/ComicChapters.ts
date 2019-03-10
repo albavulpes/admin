@@ -54,11 +54,4 @@ export default class extends Vue {
     get Comic() {
         return this.ManageComicStore.Comic;
     }
-
-    get DraggableOptions() {
-        return {
-            filter: '.nodrag',
-            animation: 250
-        };
-    }
 }

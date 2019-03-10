@@ -38,7 +38,7 @@
     "vue-router": "^3.0.2",
     "vue2-animate": "^2.1.0",
     "vue2-filters": "^0.3.0",
-    "vuedraggable": "^2.17.0",
+    "vuedraggable": "^2.19.0",
     "vuex": "^3.0.1",
     "zepto": "^1.2.0"
   },
@@ -78,8 +78,6 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn && yarn run clean && yarn run wp",
-    "wp": "yarn run wp:vendor && yarn run wp:app",
     "wp:vendor": "webpack --config webpack.vendor.config.js",
     "wp:app": "webpack --config webpack.app.config.js",
     "start": "webpack-dev-server --config webpack.app.config.js"
