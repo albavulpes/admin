@@ -3,8 +3,8 @@
 
 
 "@albavulpes/ui-core@https://github.com/albavulpes/ui-core":
-  version "0.6.0"
-  resolved "https://github.com/albavulpes/ui-core#71088b5206f83fbfac40dfb0065eec110bfa0a0b"
+  version "0.7.0"
+  resolved "https://github.com/albavulpes/ui-core#97810ddfc9d83c59defb6216736f67c1dc47b134"
   dependencies:
     "@types/gapi" "^0.0.36"
     "@types/scriptjs" "^0.0.2"
