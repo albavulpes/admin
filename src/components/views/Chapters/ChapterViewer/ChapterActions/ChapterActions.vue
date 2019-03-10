@@ -82,10 +82,40 @@
                 </div>
             </template>
             <template slot="actions">
-                <b-button variant="outline-danger">
+                <ConfirmButton
+                    variant="outline-danger"
+                    YesButtonVariant="danger"
+                    NoButtonVariant="outline-primary"
+                    @click="DeleteChapter"
+                >
                     <i class="mdi mdi-delete"></i>
                     Delete Chapter
-                </b-button>
+
+                    <template slot="title">
+                        Delete Chapter
+                    </template>
+
+                    <template slot="body">
+                        <p>
+                            Are you sure you want to delete this chapter?
+                        </p>
+
+                        <p class="h5 font-weight-normal">
+                            Chapter: {{Chapter.Title}}
+                        </p>
+
+                        <p class="mt-3 text-danger">
+                            Note: This action cannot be undone.
+                        </p>
+                    </template>
+
+                    <template slot="yes-button-content">
+                        Yes - Delete
+                    </template>
+                    <template slot="no-button-content">
+                        No - Keep
+                    </template>
+                </ConfirmButton>
             </template>
         </ActionCard>
     </div>
