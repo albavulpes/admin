@@ -19,6 +19,10 @@
 
             background-position: center;
             background-size: cover;
+
+            &.noImage {
+                background-color: $light;
+            }
         }
 
         .card-body {

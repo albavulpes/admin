@@ -3,7 +3,18 @@
 
 <template>
     <b-button block variant="light" class="MediaCardComponent card d-flex flex-column" @click="CardClick" :to="to">
-        <div class="card-img-top" :style="{'background-image': `url('${Image}')`}"></div>
+        <template v-if="Image">
+            <div class="card-img-top" :style="{'background-image': `url('${Image}')`}"></div>
+        </template>
+        <template v-else>
+            <div class="card-img-top d-flex justify-content-center align-items-center noImage">
+                <p class="text-black-50">
+                    <i class="mdi mdi-image-filter-hdr mdi-48px"></i>
+                    <br>
+                    No Cover
+                </p>
+            </div>
+        </template>
 
         <div class="card-body text-left p-3" v-if="$slots.body || $slots.title || $slots.content">
             <slot name="body">
