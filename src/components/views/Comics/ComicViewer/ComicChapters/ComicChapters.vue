@@ -17,7 +17,7 @@
 
                 <Draggable class="row px-2" v-model="chapterGroup.Chapters" filter=".nodrag" animation="250" group="arcs">
                     <div v-for="item in chapterGroup.Chapters" :key="item.Id">
-                        <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.chapter', params: {ChapterId: item.Id}}">
+                        <MediaCard :Image="item.CoverImage.FullSize" :to="{name: 'manage.chapter.details', params: {ChapterId: item.Id}}">
                             <template slot="title">
                                 {{item.Title}}
                             </template>

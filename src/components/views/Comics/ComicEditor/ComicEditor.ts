@@ -62,7 +62,7 @@ export default class extends Vue {
             await this.ManageComicStore.refetchComic();
 
             this.$router.push({
-                name: 'manage.comic',
+                name: 'manage.comic.details',
                 params: {
                     ComicId: this.FormData.Id
                 }

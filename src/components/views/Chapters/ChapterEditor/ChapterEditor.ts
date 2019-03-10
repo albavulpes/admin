@@ -70,7 +70,7 @@ export default class extends Vue {
             await this.ManageChapterStore.refetchChapter();
 
             this.$router.push({
-                name: 'manage.chapter',
+                name: 'manage.chapter.details',
                 params: {
                     ChapterId: this.FormData.Id
                 }

@@ -36,7 +36,7 @@ export default class extends Vue {
 
     ComicSelected(item: ComicResponse) {
         this.$router.push({
-            name: 'manage.comic',
+            name: 'manage.comic.details',
             params: {
                 ComicId: item.Id
             }

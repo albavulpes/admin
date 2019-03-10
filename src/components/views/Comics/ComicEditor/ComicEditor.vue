@@ -58,7 +58,7 @@
                                 </b-button>
                             </template>
                             <template v-else>
-                                <b-button variant="light" exact :to="{name: 'manage.comic'}">
+                                <b-button variant="light" exact :to="{name: 'manage.comic.details'}">
                                     <i class="mdi mdi-chevron-left"></i>
                                     Cancel
                                 </b-button>
