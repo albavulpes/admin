@@ -5,8 +5,7 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {ManageComicStore} from '../../../../../scripts/stores/ManageComicStore';
-
-import moment from 'moment';
+import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
 
 import ActionCard from '../../../../shared/management/ActionCard/ActionCard.vue';
 
@@ -26,6 +25,9 @@ export default class extends Vue {
     @Require()
     ToastService: ToastService;
 
+    @Require()
+    LoaderService: LoaderService;
+
     get Comic() {
         return this.ManageComicStore.Comic;
     }
@@ -39,6 +41,8 @@ export default class extends Vue {
     }
 
     async PublishComic() {
+        this.LoaderService.show();
+
         try {
             await this.HttpService.api.comics.publish(this.Comic.Id, true);
 
@@ -47,9 +51,13 @@ export default class extends Vue {
         catch (error) {
             this.ToastService.error(error.message);
         }
+
+        this.LoaderService.hide();
     }
 
     async UnpublishComic() {
+        this.LoaderService.show();
+
         try {
             await this.HttpService.api.comics.publish(this.Comic.Id, false);
 
@@ -58,5 +66,7 @@ export default class extends Vue {
         catch (error) {
             this.ToastService.error(error.message);
         }
+
+        this.LoaderService.hide();
     }
 }

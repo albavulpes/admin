@@ -4,7 +4,17 @@
     <div class="ChapterActionsComponent">
         <ActionCard>
             <template slot="title">
-                Publish Chapter
+                <template v-if="HasPublishDate">
+                    <template v-if="IsPublished">
+                        Chapter was published on <b>{{Chapter.PublishDate | moment('LLL')}}</b>
+                    </template>
+                    <template v-else>
+                        Chapter will publish on <b>{{Chapter.PublishDate | moment('LLL')}}</b>
+                    </template>
+                </template>
+                <template v-else>
+                    Publish Chapter
+                </template>
             </template>
             <template slot="content">
                 <div class="d-flex">
@@ -13,7 +23,17 @@
                     </div>
                     <div class="flex-grow-1 pl-2">
                         <p class="h5 font-weight-normal">
-                            This action will publish this comic and make it available to public.
+                            <template v-if="HasPublishDate">
+                                <template v-if="IsPublished">
+                                    This action will unpublish this chapter and make it unavailable to public.
+                                </template>
+                                <template v-else>
+                                    This action will publish this chapter immediately, ignoring the current publish date, and make it available to public.
+                                </template>
+                            </template>
+                            <template v-else>
+                                This action will publish this chapter and make it available to public.
+                            </template>
                         </p>
                         <p class="h6">
                             Note: Published content cannot be deleted. You must unpublish the piece of content before attempting to delete it.
@@ -22,10 +42,18 @@
                 </div>
             </template>
             <template slot="actions">
-                <b-button variant="primary">
-                    <i class="mdi mdi-publish"></i>
-                    Publish Chapter
-                </b-button>
+                <template v-if="!HasPublishDate || !IsPublished">
+                    <b-button variant="primary" @click="PublishChapter">
+                        <i class="mdi mdi-publish"></i>
+                        Publish Chapter
+                    </b-button>
+                </template>
+                <template v-else>
+                    <b-button variant="outline-primary" @click="UnpublishChapter">
+                        <i class="mdi mdi-eye-off"></i>
+                        Unpublish Chapter
+                    </b-button>
+                </template>
             </template>
         </ActionCard>
 
@@ -42,7 +70,7 @@
                     </div>
                     <div class="flex-grow-1 pl-2">
                         <p class="h5 font-weight-normal">
-                            This action will delete this comic forever never to be recovered again. <b></b>
+                            This action will delete this chapter forever never to be recovered again. <b></b>
                         </p>
                         <p class="h6">
                             Note: Only delete content if you absolutely need it gone.
