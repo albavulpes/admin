@@ -1,0 +1,35 @@
+//noinspection CssUnknownTarget
+@import "~root/styles/meta";
+
+.ComicChaptersComponent {
+    .chapterGroupArc {
+        margin-left: 20px;
+
+        .card-header {
+            margin-top: -1px;
+            margin-left: -20px;
+            margin-right: -1px;
+
+            background-color: mix(white, $secondary, 90%);
+            border: $card-border-color 1px solid;
+        }
+
+        .dragHandle {
+            float: left;
+            margin: -15px 15px -15px -20px;
+            line-height: 2.3;
+            padding: 0 8px;
+
+            cursor: move;
+
+            //position: absolute;
+            //top: -1px;
+            //left: -15px;
+            //
+            //background-color: $light;
+            //border-right-color: transparent;
+            //
+            //padding: 8px 0;
+        }
+    }
+}
