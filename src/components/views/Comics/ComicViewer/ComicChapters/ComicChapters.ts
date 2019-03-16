@@ -30,14 +30,14 @@ export default class extends Vue {
 
         this.ChapterGroups = chapterGroups
             .sort((a, b) => {
-                if (!a.Arc || !a.Arc.Title) {
+                if (!a.Arc || !a.Arc.ArcNumber) {
                     return 1;
                 }
-                if (!b.Arc || !b.Arc.Title) {
+                if (!b.Arc || !b.Arc.ArcNumber) {
                     return -1;
                 }
 
-                return a.Arc.Title > b.Arc.Title ? 1 : -1;
+                return a.Arc.ArcNumber - b.Arc.ArcNumber;
             });
 
         // If none, just show an empty unassigned arc group
@@ -53,5 +53,9 @@ export default class extends Vue {
 
     get Comic() {
         return this.ManageComicStore.Comic;
+    }
+
+    get ArcsCount() {
+        return this.ChapterGroups.filter(c => !!c.Arc).length;
     }
 }

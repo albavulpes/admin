@@ -2,7 +2,7 @@
 
 <template>
     <div class="ChapterViewerComponent" v-if="Chapter">
-        <h1 class="mx-3 mb-5">
+        <h1 class="mb-5">
             {{Chapter.Title}}
         </h1>
 

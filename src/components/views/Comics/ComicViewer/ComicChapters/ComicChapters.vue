@@ -3,6 +3,23 @@
 
 <template>
     <div class="ComicChaptersComponent">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h3>
+                    {{Comic.ChaptersCount}} {{Comic.ChaptersCount | pluralize('chapter')}} in {{ArcsCount}} {{ArcsCount | pluralize('arc')}}
+                </h3>
+            </div>
+
+            <div>
+                <b-button variant="outline-primary">
+                    <i class="mdi mdi-library-plus"></i>
+                    Create New Arc
+                </b-button>
+            </div>
+        </div>
+
+        <hr>
+
         <Draggable v-model="ChapterGroups" filter=".nodrag" handle=".dragHandle" animation="250">
             <b-card no-body class="chapterGroupArc mb-5" :class="{nodrag: !chapterGroup.Arc}" v-for="chapterGroup in ChapterGroups">
                 <template slot="header">
@@ -30,7 +47,7 @@
                                     {{item.Title}}
                                 </template>
                                 <template slot="content">
-                                    {{item.PagesCount}} Pages
+                                    {{item.PagesCount}} {{item.PagesCount | pluralize('page')}}
                                 </template>
                                 <template slot="badge" v-if="item.IsPublished">
                                     Published

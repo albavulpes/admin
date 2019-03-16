@@ -6,7 +6,7 @@
         <div class="d-flex justify-content-between">
             <div>
                 <h3>
-                    {{Pages.length}} pages
+                    {{Pages.length}} {{Pages.length | pluralize('page')}}
 
                     <template v-if="SelectedPageIds.length > 0">
                         ({{SelectedPageIds.length }} selected)
