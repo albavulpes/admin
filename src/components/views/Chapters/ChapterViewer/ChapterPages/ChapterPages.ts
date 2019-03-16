@@ -4,6 +4,7 @@ import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ManageChapterStore} from '../../../../../scripts/stores/ManageChapterStore';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
+import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
 
 import Draggable, {DragChangeEvent} from 'vuedraggable';
 
@@ -24,6 +25,9 @@ export default class extends Vue {
 
     @Require()
     ToastService: ToastService;
+
+    @Require()
+    LoaderService: LoaderService;
 
     @Require()
     ManageChapterStore: ManageChapterStore;
@@ -86,6 +90,8 @@ export default class extends Vue {
         const movedEvent = dragEvent.moved;
         const page = movedEvent.element;
 
+        this.LoaderService.show();
+
         try {
             await this.HttpService.api.pages.reorder(page.Id, movedEvent.newIndex);
 
@@ -94,6 +100,8 @@ export default class extends Vue {
         catch (error) {
             this.ToastService.error(error);
         }
+
+        this.LoaderService.hide();
     }
 
     async AddPages() {

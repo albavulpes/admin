@@ -3,6 +3,8 @@ import {Component, Prop} from 'vue-property-decorator';
 import {Require} from '@albavulpes/ui-core/dist/di';
 import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ManageComicStore} from '../../../../../scripts/stores/ManageComicStore';
+import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
+import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
 
 import Draggable, {DragChangeEvent} from 'vuedraggable';
 import MediaCard from '../../../../shared/media/MediaCard/MediaCard.vue';
@@ -23,22 +25,22 @@ export default class extends Vue {
     @Require()
     HttpService: HttpService;
 
+    @Require()
+    ToastService: ToastService;
+
+    @Require()
+    LoaderService: LoaderService;
+
     ChapterGroups: ChapterGroupResponse[] = [];
 
     async created() {
-        const chapterGroups = await this.HttpService.api.chapters.getAll(this.Comic.Id);
+        await this.FetchChapterGroups();
+    }
 
-        this.ChapterGroups = chapterGroups
-            .sort((a, b) => {
-                if (!a.Arc || !a.Arc.ArcNumber) {
-                    return 1;
-                }
-                if (!b.Arc || !b.Arc.ArcNumber) {
-                    return -1;
-                }
+    async FetchChapterGroups() {
+        this.LoaderService.show();
 
-                return a.Arc.ArcNumber - b.Arc.ArcNumber;
-            });
+        this.ChapterGroups = await this.HttpService.api.chapters.getAll(this.Comic.Id);
 
         // If none, just show an empty unassigned arc group
         if (!this.ChapterGroups || this.ChapterGroups.length === 0) {
@@ -49,6 +51,8 @@ export default class extends Vue {
                 }
             ];
         }
+
+        this.LoaderService.hide();
     }
 
     get Comic() {
@@ -57,5 +61,27 @@ export default class extends Vue {
 
     get ArcsCount() {
         return this.ChapterGroups.filter(c => !!c.Arc).length;
+    }
+
+    async OnChapterOrderChange(dragEvent: DragChangeEvent<Chapter>) {
+        if (!dragEvent.moved) {
+            return;
+        }
+
+        const movedEvent = dragEvent.moved;
+        const chapter = movedEvent.element;
+
+        this.LoaderService.show();
+
+        try {
+            await this.HttpService.api.chapters.reorder(chapter.Id, movedEvent.newIndex);
+
+            await this.FetchChapterGroups();
+        }
+        catch (error) {
+            this.ToastService.error(error);
+        }
+
+        this.LoaderService.hide();
     }
 }
