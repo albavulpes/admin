@@ -117,7 +117,11 @@ export default class extends Vue {
 
         const pagePublishPromises = this.SelectedPageIds
             .map(async (pageId) => {
-                await this.HttpService.api.pages.publish(pageId, true);
+                try {
+                    await this.HttpService.api.pages.publish(pageId, true);
+                }
+                catch (err) {
+                }
             });
 
         await Promise.all(pagePublishPromises);
