@@ -29,6 +29,10 @@
             </slot>
         </div>
 
+        <template v-if="Selectable || $slots.badge">
+            <div class="topGradientOverlay"></div>
+        </template>
+
         <template v-if="$slots.badge">
             <div class="badge badge-primary text-uppercase">
                 <slot name="badge"></slot>
