@@ -21,7 +21,7 @@
                             Actions...
                         </template>
 
-                        <b-dropdown-item>
+                        <b-dropdown-item @click="PublishSelectedPages">
                             <i class="mdi mdi-publish"></i>
                             Publish
                         </b-dropdown-item>
@@ -67,9 +67,15 @@
                                         <i class="mdi mdi-dots-vertical"></i>
                                     </template>
 
-                                    <b-dropdown-item>Action</b-dropdown-item>
-                                    <b-dropdown-item>Another action</b-dropdown-item>
-                                    <b-dropdown-item>Something else here</b-dropdown-item>
+                                    <b-dropdown-item>
+                                        <i class="mdi mdi-publish"></i>
+                                        Publish
+                                    </b-dropdown-item>
+                                    <b-dropdown-divider></b-dropdown-divider>
+                                    <b-dropdown-item class="text-danger">
+                                        <i class="mdi mdi-delete"></i>
+                                        Delete
+                                    </b-dropdown-item>
                                 </b-dropdown>
                             </div>
                         </div>

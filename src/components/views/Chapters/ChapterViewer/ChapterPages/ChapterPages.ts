@@ -108,5 +108,26 @@ export default class extends Vue {
         console.log('add');
     }
 
+    async PublishSelectedPages() {
+        if (!Array.isArray(this.SelectedPageIds)) {
+            return;
+        }
 
+        this.LoaderService.show();
+
+        const pagePublishPromises = this.SelectedPageIds
+            .map(async (pageId) => {
+                await this.HttpService.api.pages.publish(pageId, true);
+            });
+
+        await Promise.all(pagePublishPromises);
+
+        await this.FetchPages();
+
+        this.DeselectAll();
+
+        await this.ToastService.success(`Success! ${pagePublishPromises.length} pages were published.`);
+
+        this.LoaderService.hide();
+    }
 }

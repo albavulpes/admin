@@ -12,6 +12,8 @@
         background: $white !important;
         align-items: normal !important;
 
+        cursor: pointer;
+
         @include transition((margin-top, box-shadow));
 
         .card-img-top {
