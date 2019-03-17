@@ -5,23 +5,27 @@ import {HttpService} from '@albavulpes/ui-core/dist/services/app/HttpService';
 import {ManageChapterStore} from '../../../../../scripts/stores/ManageChapterStore';
 import {ToastService} from '@albavulpes/ui-core/dist/services/ui/ToastService';
 import {LoaderService} from '@albavulpes/ui-core/dist/services/ui/LoaderService';
+import {PagesService} from '../../../../../scripts/services/PagesService';
 
 import Draggable, {DragChangeEvent} from 'vuedraggable';
 
 import MediaCard from '../../../../shared/media/MediaCard/MediaCard.vue';
-import MediaAddButton from '../../../../shared/media/MediaAddButton/MediaAddButton.vue';
+import AddPageButton from './AddPageButton/AddPageButton.vue';
 
 @Component({
     components: {
         Draggable,
         MediaCard,
-        MediaAddButton
+        AddPageButton
     }
 })
 export default class extends Vue {
 
     @Require()
     HttpService: HttpService;
+
+    @Require()
+    PagesService: PagesService;
 
     @Require()
     ToastService: ToastService;
@@ -52,7 +56,7 @@ export default class extends Vue {
     }
 
     async FetchPages() {
-        this.Pages = await this.HttpService.api.pages.getAll(this.Chapter.Id);
+        this.Pages = await this.PagesService.getAllPageForChapter(this.Chapter.Id);
     }
 
     async OnPageClick() {
@@ -93,19 +97,34 @@ export default class extends Vue {
         this.LoaderService.show();
 
         try {
-            await this.HttpService.api.pages.reorder(page.Id, movedEvent.newIndex);
+            await this.PagesService.reorderPage(page.Id, movedEvent.newIndex);
 
             await this.FetchPages();
         }
         catch (error) {
-            this.ToastService.error(error);
+            this.ToastService.error(error.message);
         }
 
         this.LoaderService.hide();
     }
 
-    async AddPages() {
-        console.log('add');
+    async AddPages(event: Event) {
+        const target = event.target as HTMLInputElement;
+
+        const files = target.files;
+
+        this.LoaderService.show();
+
+        try {
+            await this.PagesService.createPagesFromImageFiles(this.Chapter.Id, files);
+
+            await this.FetchPages();
+        }
+        catch (error) {
+            this.ToastService.error(error.message);
+        }
+
+        this.LoaderService.hide();
     }
 
     async PublishSelectedPages() {

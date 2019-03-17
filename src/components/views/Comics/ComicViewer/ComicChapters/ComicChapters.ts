@@ -79,7 +79,7 @@ export default class extends Vue {
             await this.FetchChapterGroups();
         }
         catch (error) {
-            this.ToastService.error(error);
+            this.ToastService.error(error.message);
         }
 
         this.LoaderService.hide();

@@ -96,9 +96,7 @@
                 </MediaCard>
             </div>
             <div class="nodrag" key="MediaAddButton">
-                <MediaAddButton @click="AddPages">
-                    Add Page
-                </MediaAddButton>
+                <AddPageButton @input="AddPages"></AddPageButton>
             </div>
         </Draggable>
     </div>
