@@ -1,0 +1,19 @@
+.PageModalComponent {
+    .modal {
+        display: flex !important;
+    }
+
+    .modal-dialog {
+        max-width: 1200px;
+        max-height: calc(100vh - 100px);
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
+    .pageModalImage {
+        max-width: 1200px;
+        max-height: calc(100vh - 100px);
+    }
+}

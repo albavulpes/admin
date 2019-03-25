@@ -49,11 +49,13 @@
 
         <Draggable class="row px-2" v-model="Pages" :options="DraggableOptions" @change="OnPageOrderChange">
             <div v-for="item in Pages" :key="item.Id">
+
+                <!-- Page Tile-->
                 <MediaCard
                     :class="{selected: IsSelected(item)}"
                     :Image="item.CoverImage.FullSize"
                     :Selectable="true"
-                    @click="OnPageClick"
+                    @click="OnPageClick(item)"
                     @selected="OnPageSelect(item)"
                 >
                     <template slot="content">
@@ -94,10 +96,17 @@
                         Published
                     </template>
                 </MediaCard>
+
             </div>
+
+            <!-- Add Page Button -->
             <div class="nodrag" key="MediaAddButton">
                 <AddPageButton @input="AddPages"></AddPageButton>
             </div>
         </Draggable>
+
+        <template v-if="PageShown">
+            <PageModal v-model="PageShown"></PageModal>
+        </template>
     </div>
 </template>

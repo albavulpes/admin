@@ -11,12 +11,14 @@ import Draggable, {DragChangeEvent} from 'vuedraggable';
 
 import MediaCard from '../../../../shared/media/MediaCard/MediaCard.vue';
 import AddPageButton from './AddPageButton/AddPageButton.vue';
+import PageModal from './PageModal/PageModal.vue';
 
 @Component({
     components: {
         Draggable,
         MediaCard,
-        AddPageButton
+        AddPageButton,
+        PageModal
     }
 })
 export default class extends Vue {
@@ -40,6 +42,8 @@ export default class extends Vue {
 
     SelectedPageIds: string[] = [];
 
+    PageShown: Page = null;
+
     async created() {
         await this.FetchPages();
     }
@@ -59,8 +63,8 @@ export default class extends Vue {
         this.Pages = await this.PagesService.getAllPageForChapter(this.Chapter.Id);
     }
 
-    async OnPageClick() {
-        console.log('click');
+    async OnPageClick(page: Page) {
+        this.PageShown = page;
     }
 
     OnPageSelect(page: Page) {
