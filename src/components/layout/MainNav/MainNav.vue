@@ -4,7 +4,7 @@
 <template>
     <nav class="MainNavComponent navbar-dark h-100">
         <div class="logoContainer text-center p-3">
-            <img class="brandLogo m-2" src="../../../assets/images/logo.png" alt="AlbaVulpes Logo">
+            <img class="brandLogo m-2" src="../../../assets/images/logo_shadow.png" alt="AlbaVulpes Logo">
 
             <p class="h3 text-white mb-1">
                 Alba Vulpes
