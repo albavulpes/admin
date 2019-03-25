@@ -13,7 +13,7 @@
                     </template>
                 </template>
                 <template v-else>
-                    Publish Comic
+                    Publish Comic: {{Comic.Title}}
                 </template>
             </template>
             <template slot="content">
@@ -60,7 +60,7 @@
         <ActionCard class="border-danger" v-if="!IsPublished">
             <template slot="title">
                 <span class="text-danger">
-                    Delete Comic
+                    Delete Comic: {{Comic.Title}}
                 </span>
             </template>
             <template slot="content">

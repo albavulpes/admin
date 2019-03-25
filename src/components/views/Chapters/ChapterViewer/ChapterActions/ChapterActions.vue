@@ -13,7 +13,7 @@
                     </template>
                 </template>
                 <template v-else>
-                    Publish Chapter
+                    Publish Chapter: {{Chapter.Title}}
                 </template>
             </template>
             <template slot="content">
@@ -60,7 +60,7 @@
         <ActionCard class="border-danger">
             <template slot="title">
                 <span class="text-danger">
-                    Delete Chapter
+                    Delete Chapter: {{Chapter.Title}}
                 </span>
             </template>
             <template slot="content">
