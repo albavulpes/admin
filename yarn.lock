@@ -3,8 +3,8 @@
 
 
 "@albavulpes/ui-core@https://github.com/albavulpes/ui-core":
-  version "0.7.0"
-  resolved "https://github.com/albavulpes/ui-core#e80ce0c89248d572f0588e9c68bcfaed064c08e5"
+  version "0.8.0"
+  resolved "https://github.com/albavulpes/ui-core#583c5e682b08fd23ce6785cf548e16ca6248d8cd"
   dependencies:
     "@types/gapi" "^0.0.36"
     "@types/scriptjs" "^0.0.2"
@@ -5214,9 +5214,9 @@ querystring@0.2.0:
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
 querystringify@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
-  integrity sha512-sluvZZ1YiTLD5jsqZcDmFyV2EwToyXZBfpoVOmktMmW+VEnhgakFHnasVph65fOjGPTWN0Nw3+XQaSeMayr0kg==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
+  integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.0.6"
